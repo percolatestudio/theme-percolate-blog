@@ -3,6 +3,8 @@
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
 
 <head>
+
+  <script type="text/javascript" src="<?php echo site_url(''); ?>/livereload.js"></script>
   <!-- boilerplate -->
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1;<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>"/>
@@ -20,7 +22,7 @@
 
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory'); ?>/style.css" />
-	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('template_directory'); ?>/stylesheets/css/print.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('template_directory'); ?>/css/views/print.css" />
 	<link rel='stylesheet' type="text/css" href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic|Lora' >
 
 	<?php automatic_feed_links(); ?>
@@ -30,5 +32,3 @@
 
 </head>
 <body <?php body_class($class); ?> lang="en">
-  <!-- Prompt IE 6 users to install Chrome Frame. -->
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->

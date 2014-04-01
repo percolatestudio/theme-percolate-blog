@@ -1,0 +1,53 @@
+body.single {
+  background: #f7f7f2;
+  #content {
+    .fill-with-absolute-position;
+  }
+  .post-hero {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    height: 60%;
+    width: 100%;
+    margin-bottom: 3em;
+  }
+  .entry-wrapper {
+    .page-margins;
+    .std-xpadding;
+
+
+    @media only screen and (min-width: 40em) {
+      .display(flex);
+      .flex-wrap(wrap);
+    }
+    .entry {
+      @media only screen and (min-width: 40em) {
+        .flex(6);
+        padding-right: 2em;
+      }
+    }
+    .sidebar {
+      @media only screen and (min-width: 40em) {
+        .flex(1);
+        padding-top: 1em;
+      }
+      .author, .date, >a {
+        .font-s2;
+      }
+    }
+  }
+  .post-title {
+    .page-title(@color-well);
+    .type-secondary;
+    letter-spacing: -.02em;
+    margin-bottom: 2rem;
+  }
+  .post-subtitle {
+    .page-subtitle(@color-well);
+    .type-light;
+    margin-bottom: 1.5rem;
+  }
+}

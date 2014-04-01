@@ -36,28 +36,28 @@
   </ul>
   <hr>
   <ul class="two-up">
-    <li><h6>l3 - 56/64 </h6><div class="font-l3">Wild Blue</div></li>
-    <li><h6>l2 - 48/56</h6><div class="font-l2">Transcend</div></li>
-    <li><h6>l1 - 36/44</h6><div class="font-l1">Yonder</div></li>
-    <li><h6>m3 - 28/32</h6><div class="font-m3">Explore</div></li>
-    <li><h6>m2 - 24/28</h6><div class="font-m2">Excite</div></li>
-    <li><h6>m1 - 20/24 </h6><div class="font-m1">Great</div></li>
-    <li><h6>s3 - 16/22</h6><div class="font-s3">Space</div></li>
-    <li><h6>s2 - 14/20</h6><div class="font-s2">Knows</div></li>
-    <li><h6>s1 - 13/18</h6><div class="font-s1">No Boundaries</div></li>
+    <li><h6>l3 - 64/68 </h6><div class="font-l3">Wild Blue</div></li>
+    <li><h6>l2 - 56/60</h6><div class="font-l2">Transcend</div></li>
+    <li><h6>l1 - 48/52</h6><div class="font-l1">Yonder</div></li>
+    <li><h6>m3 - 40/44</h6><div class="font-m3">Explore</div></li>
+    <li><h6>m2 - 32/36</h6><div class="font-m2">Excite</div></li>
+    <li><h6>m1 - 24/28 </h6><div class="font-m1">Great</div></li>
+    <li><h6>s3 - 16/24</h6><div class="font-s3">Space</div></li>
+    <li><h6>s2 - 14/22</h6><div class="font-s2">Knows</div></li>
+    <li><h6>s1 - 12/18</h6><div class="font-s1">No Boundaries</div></li>
   </ul>
   <ul class="two-up">
     <br>
     <li>
-      <h6>16/22</h6>
+      <h6>16/24</h6>
       <div class="font-s3"><em>Body</em> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </div>
     </li>
     <li>
-      <h6>14/20</h6>
+      <h6>14/22</h6>
       <div class="font-s2"><em>Subtext</em> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </div>
     </li>
     <li>
-      <h6>13/18</h6>
+      <h6>12/18</h6>
       <div class="font-s1"><em>Fineprint</em> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </div>
     </li>
   </ul>
@@ -214,13 +214,13 @@
 
 </div>
 
-  <div id="links" class="module">
+<div id="links" class="module">
   <h5 class="subtitle">Links</h5>
   <a>Standard link</a>
   <a class="inverse">Inverse link</a>
 </div>
 
-  <div id="lists" class="module">
+<div id="lists" class="module">
   <h5 class="subtitle">Lists</h5>
   <ul class="two-up">
     <li>
@@ -247,55 +247,8 @@
   </ul>
 </div>
 
-  <div id="misc" class="module">
+<div id="misc" class="module">
   <h5 class="subtitle">Misc</h5>
-  <span class="badge-active">Active</span>
-  <span class="badge-inactive">Active</span>
-
-  <div class="timeline list-expandable">
-    <div>
-      <div class="highlight-wrapper">
-        <span class="highlight download">15k</span>
-      </div>
-      <span class="icon-circle-empty"></span>
-      <span class="meta"><span class="version">0.6.3</span> <span class="date">Nov 17, 2013</span></span>
-    </div>
-    <div>
-      <div class="highlight-wrapper">
-        <span class="highlight rating">Top 10<br>Week</span>
-      </div>
-      <span class="icon-star"></span>
-      <span class="meta"><span class="date">Nov 17, 2013</span></span>
-    </div>
-    <div>
-      <div class="highlight-wrapper">
-        <span class="highlight download">15k</span>
-      </div>
-      <span class="icon-circle-empty"></span>
-      <span class="meta"><span class="version">0.6.3</span> <span class="date">Nov 17, 2013</span></span>
-    </div>
-    <div>
-      <div class="highlight-wrapper">
-        <span class="highlight"></span>
-      </div>
-      <span class="icon-circle-empty"></span>
-      <span class="meta"><span class="version">0.6.3</span> <span class="date">Nov 17, 2013</span></span>
-    </div>
-    <div>
-      <div class="highlight-wrapper">
-        <span class="highlight download">15k</span>
-      </div>
-      <span class="icon-circle-empty"></span>
-      <span class="meta"><span class="date">Nov 17, 2013</span></span>
-    </div>
-    <div class="view-link">
-      <div class="highlight-wrapper">
-        <span class="highlight"></span>
-      </div>
-      <span class="icon-arrow-down"></span>
-      <span class="meta">See More</span>
-    </div>
-  </div>
 </div>
 
   <div id="formatting" class="formatting module">

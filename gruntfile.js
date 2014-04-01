@@ -16,8 +16,12 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         // Which files to watch (all .less files recursively in the less directory)
-        files: ['stylesheets/**/*.less', 'style.less'],
+        files: ['css/**/*.less', 'style.less'],
         tasks: ['less']
+      },
+      livereload: {
+          options: { livereload: true },
+          files: ['style.css', '*.php', '**/*.php', 'js/*.js', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
       }
     }
   });
