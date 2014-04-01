@@ -1,0 +1,47 @@
+.wp_syntax {
+  overflow: auto;
+  margin:20px 0 30px;
+  background:rgba(255, 255, 221, .9);
+  border-left: 3px solid #ffff99;
+}
+
+/* IE FIX */
+.wp_syntax {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.wp_syntax table {
+  border-collapse: collapse;
+}
+
+.wp_syntax div, .wp_syntax td {
+  vertical-align: top;
+  padding: 2px 4px;
+}
+
+.wp_syntax .line_numbers {
+  text-align: right;
+  background-color: #def;
+  color: gray;
+  overflow: visible;
+}
+
+/* potential overrides for other styles */
+.wp_syntax pre {
+  margin: 0;
+  width: auto;
+  float: none;
+  clear: none;
+  overflow: visible;
+  background: none;
+}
+pre{
+  white-space: pre;
+  padding:10px;
+  font-size: 12px;
+  line-height: 19px;
+  background:rgba(255, 255, 204, .9);
+  font-family:"Andale Mono", "Monaco", monospace;  
+}

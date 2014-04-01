@@ -1,0 +1,1 @@
+<?php if(!is_home()){ get_breadcrumbs(); }?>

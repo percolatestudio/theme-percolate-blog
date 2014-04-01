@@ -1,0 +1,69 @@
+//Expandable lists or link grids that are able to expand to view all
+.view-link {
+  display: none;
+}
+
+.list-horiz {
+  &.small {
+    .font-s2;
+  }
+  > a {
+    .type-bold;
+    color: @color-medium;
+    &:hover {
+      color: @color-primary;
+    }
+  }
+  > .bullet:after {
+    .type-bold;
+    color: @color-medium;
+    content: "\2219";
+  }
+}
+
+.list-vertical {
+  overflow: hidden;
+  > * {
+    .type-bold;
+    #text > .font-s3-responsive;
+    display: block;
+    margin-top: 0;
+    & + a {
+      margin-top: .5em;
+    }
+  }
+  //Vertical user link list as found on package and app pages for contributors
+  &.users {
+    > * {
+      margin-bottom: .75em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      >.avatar {
+        height: 24px;
+        margin-right: 6px;
+        width: 24px;
+        @media only screen and (min-width: 40em) {
+          height: 30px;
+          margin-right: 10px;
+          width: 30px;
+        }
+      }
+      >.icon-ellipses:before {
+        font-size: 24px;
+        line-height: 16px;
+        margin-right: 6px;
+        text-align: center;
+        text-decoration: none !important;
+        vertical-align: middle;
+        width: 24px;
+        @media only screen and (min-width: 40em) {
+          font-size: 30px;
+          line-height: 24px;
+          margin-right: 10px;
+          width: 30px;
+        }
+      }
+    }
+  }//users
+}

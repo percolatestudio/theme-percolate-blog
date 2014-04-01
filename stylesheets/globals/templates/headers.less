@@ -1,0 +1,48 @@
+header {
+  &.default {
+    .page-margins;
+    .std-xpadding;
+    padding-top: 4em;
+    @media screen and (min-width: 30em) {
+      text-align: center;
+    }
+    @media screen and (min-width: 40em) {
+      padding-top: 6em;
+    }
+    @media screen and (min-width: 50em) {
+      padding-top: 8em;
+    }
+    > .page-title {
+      #text > .page-title (@color-well);
+      .type-light;
+      margin-bottom: .75rem;
+      &:only-child {
+        margin-bottom: 0;
+      }
+
+    }
+    > .subtitle {
+      #text > .section-subtitle(@color-well);
+      letter-spacing: .03em;
+      .font-s2;
+      @media screen and (min-width: 30em) { .font-s3; }
+    }
+    > .description {
+      #text > .page-subtitle (@color-well);
+      margin-bottom: 1em;
+    }
+    > .list-horiz {
+      #text > .font-s3-responsive;
+    }
+    > .btn-group {
+      margin-top: 1em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &.overlay-responsive {
+    padding-top: 1.5em;
+    @media screen and (min-width: 30em) { padding-top: 3em; }
+    @media screen and (min-width: 40em) { padding-top: 6em; }
+  }
+}

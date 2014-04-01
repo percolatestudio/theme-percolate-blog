@@ -1,0 +1,54 @@
+#transitions {
+  .container(@time) {
+    opacity: 1;
+    .transition(opacity 0ms linear @time);
+    &.transitioning {
+      opacity: 0.9999;
+      > .current-page, > .next-page {
+        .transition(all @time ease-in-out);
+      }
+    }
+  }
+
+  // apply these mixins to the transition container for a given transition type
+  .left-to-right() {
+    > .current-page {
+      .transform(translateX(0) translateZ(0));
+    }
+
+    > .next-page {
+      .transform(translateX(100%) translateZ(0));
+    }
+
+    &.transitioning {
+      > .current-page {
+        .transform(translateX(-100%) translateZ(0));
+      }
+
+      > .next-page {
+        .transform(translateX(0) translateZ(0));
+      }
+    }
+  }
+
+  .right-to-left() {
+    > .current-page {
+      .transform(translateX(0) translateZ(0));
+    }
+
+    > .next-page {
+      .transform(translateX(-100%) translateZ(0));
+    }
+
+    &.transitioning {
+      > .current-page {
+        .transform(translateX(100%) translateZ(0));
+      }
+
+      > .next-page {
+        .transform(translateX(0) translateZ(0));
+      }
+    }
+  }
+
+}

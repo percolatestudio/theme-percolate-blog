@@ -1,0 +1,69 @@
+//Main look and feel
+.section-title {
+  .type-light;
+  #text > .section-title(@color-well);
+  line-height: 1em !important;
+  display: inline-block;
+
+}
+
+//Layout for the top of <section>'s
+.section-heading {
+  .std-xpadding;
+  overflow: hidden;
+  text-align: left;
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+  @media screen and (min-width: 30em) {
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+  }
+
+  > .section-title {
+    clear: both;
+    display: inline-block;
+  }
+  > .a-select {
+    vertical-align: text-bottom;
+  }
+
+  // Layout for left aligned .top
+  // Elements that arent the title are aligned right
+  > *:not(.section-title) {
+    float: right;
+    margin-left: .5em;
+    & + *:not(.section-title) {
+      margin-left: 0;
+    }
+  }
+
+  // Layout for center-aligned heading, usually involving a grid
+  // Elements that arent the title are stacked
+  &.center {
+    @media only screen and (min-width: 40em) {
+      text-align: center; //only happens on wide screens
+      .section-title {
+        display: block;
+        float: none;
+        text-align: center;
+      }
+      >*:not(.section-title) {
+        float: none;
+        margin: .5em 0 0;
+      }
+    }
+    @media screen and (min-width: 50em) {
+      padding-bottom: 2.5em;
+      padding-top: 2.5em;
+    }
+  }
+  &.select {
+    @media screen and (min-width: 30em) {
+      padding-bottom: 1em;
+    }
+    @media screen and (min-width: 50em) {
+      padding-bottom: 1.5em;
+    }
+  }
+}

@@ -1,0 +1,217 @@
+/* Generic */
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer;
+}
+
+/* Spacing */
+label {
+  .font-s2;
+  @media screen and (min-width: 40em) { .font-s3; }
+  display: block;
+  margin-bottom: .5em;
+  & + input,
+  & + select,
+  & + textarea,
+  & + .a-select {
+    margin-bottom: 1em;
+  }
+  &.checkbox,
+  &.radio {
+    min-height: 1em;
+    input {
+      margin-left: .25em;
+    }
+    & + button {
+      /* accounts for 4px margin bottom to = 16px */
+      margin-top: 12px;
+    }
+  }
+  >*.alert {
+    .type-bold;
+    color: @color-alert;
+  }
+}
+
+/* Input styles */
+input:not([type="checkbox"]):not([type="radio"]) {
+  padding: .375em .75em; //more compact buttons
+  line-height: 1.5em !important;
+  @media screen and (min-width: 40em) {
+    padding: .375em 1em;
+  }
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
+  .font-s2;
+  @media screen and (min-width: 40em) { .font-s3; }
+
+  #forms > .placeholder(@color-medium-rare);
+  border-radius: 3px;
+  box-shadow: #ddd 0 0 0 1px inset;
+  box-sizing: border-box;
+  padding: .375em .75em;
+  .transition( border 300ms ease-in, box-shadow 300ms ease-in );
+  &:active,
+  &:focus {
+    border-color: lighten(@color-primary, 50%);
+    box-shadow: @color-primary 0 0px 3px 0;
+  }
+  /* Alerts */
+  &.alert {
+    border: 1px solid @color-alert;
+    box-shadow: @color-alert 0 0 5px 0;
+  }
+  /* Inverted colorway */
+  &.inverse {
+    #forms > .placeholder(@color-medium-rare);
+    background-color: #333;
+    box-shadow: #383838 0 0 0 1px inset;
+    color: @color-empty;
+  }
+}
+
+
+
+
+/* Styles for inputs with icons inside of them, see styleguide for markup */
+.input-symbol {
+  display: inline-block;
+  position: relative;
+  //icon position and padding for input
+  &.left {
+    > [class^="icon-"], > [class*=" icon-"] {
+      left: 1em/2;
+    }
+    > input, > .pseudo-input {
+      padding-left: 2.5em !important;
+    }
+  }
+  &.right {
+    > [class^="icon-"], > [class*=" icon-"] {
+      right: 1em/2;
+    }
+    > input, > .pseudo-input {
+      padding-right: 1.75em  !important;
+    }
+  }
+  &.center { //centered but the icon is still left aligned
+    > [class^="icon-"], > [class*=" icon-"] {
+      left: 1em/2;
+    }
+  }
+  > input, > button, > .pseudo-input {
+    width: 100%;
+
+    /* highlight submit button when input focussed */
+    &:focus + button {
+      &[class^="icon-"], &[class*=" icon-"] {
+        color: @color-primary;
+      }
+    }
+
+  }
+  > [class^="icon-"], > [class*=" icon-"] {
+    background: transparent;
+    bottom: 0;
+    color: @color-medium-rare;
+    position: absolute;
+    top: 50%;
+    width: 1em;
+    .transform(translateY(-50%));
+    .transition( all 100ms ease-in );
+    &.inverse {
+      color: @color-medium;
+    }
+  }
+}
+
+
+/* Appears on the search page */
+.input-cmd-line {
+  display: inline-block;
+  position: relative;
+
+  &.right {
+    > [class^="icon-"], > [class*=" icon-"] {
+      right: .75em;
+    }
+     > .pseudo-input {
+      padding-right: 3.5em !important;
+    }
+  }
+  > .pseudo-input {
+    width: 100%;
+
+    .type-code;
+    color: @color-tertiary;
+    cursor: text;
+    font-size: .8rem;
+    padding: .63em 1em; //results in a 36, 40, 44px height
+    text-align: left;
+    @media only screen and (min-width: 30em) { font-size: .9rem; }
+    @media only screen and (min-width: 50em) { font-size: 1rem; }
+
+    &:before {
+      content: '$ ';
+    }
+  }
+  > [class^="icon-"], > [class*=" icon-"] {
+    .font-s1;
+    @media screen and (min-width: 30em) { .font-s3; }
+    @media screen and (min-width: 40em) { font-size: 18px; }
+
+    background: transparent;
+    bottom: 0;
+    color: @color-medium-rare;
+    line-height: 1em !important; //ensures that we'll be able to vertical align consistently
+    position: absolute;
+    top: 50%;
+    width: 1em;
+    height: 1em;
+    .transform(translateY(-50%));
+    .transition( all 100ms ease-in );
+
+    &:hover {
+      color: @color-primary;
+      &:after{ //tooltips
+        .font-s2;
+        @media screen and (min-width: 30em) { .font-s3; }
+        .type-primary;
+        .transform( translateX(-50%) );
+
+        background-color: rgba(0,0,0,.7);
+        border-radius: 3px;
+        color: @color-empty;
+        content: attr(data-title);
+        left: 50%;
+        padding: .25em .75em;
+        position: absolute;
+        top: 2em;
+        white-space: nowrap;
+        z-index: 98;
+      }
+    }
+  }
+}
+
+
+// a form input with no chrome at all (ie. appears just as text)
+// search overlay page
+input[type="text"],
+input[type="search"],
+input[type="email"],
+textarea {
+  &.nochrome {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    &:focus, &:active, &:hover {
+      box-shadow: none;
+    }
+  }
+
+}

@@ -1,0 +1,128 @@
+a,
+button {
+  &[class^="btn-"],
+  &[class*=" btn-"] {
+    /* Sizing */
+    .font-s2;
+    line-height: 1.5em !important; //override line-height always so we can use em's to size.
+    padding: .375em .75em; //more compact buttons
+    @media screen and (min-width: 40em) {
+      .font-s3;
+      line-height: 1.5em !important; //override line-height always so we can use em's to size.
+      padding: .375em 1em;
+    }
+
+    .type-bold;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important; //prevents global link styles from applying
+    .transition( all 200ms ease-in );
+    white-space: nowrap;
+    &[class*="primary"] {
+      background-color: @color-primary;
+      color: @color-empty;
+      &:hover{
+        background-color: darken(@color-primary, 5%);
+      }
+      &:active {
+        box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
+      }
+    }
+    &[class*="secondary"] {
+      background: @color-secondary;
+      color: @color-empty;
+      &:hover{
+        background-color: darken(@color-secondary, 5%);
+      }
+      &:active{
+        box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
+      }
+    }
+    &[class*="tertiary"],
+    &[class*="toggle"] {
+      box-shadow: @color-primary 0 0 0 1px inset;
+      color: @color-primary;
+      .transition( box-shadow 100ms ease-in-out, color 300ms ease-in );
+      &:hover{
+        box-shadow: darken(@color-primary, 10%) 0 0 0 1px inset;
+        color: darken(@color-primary, 10%);
+      }
+      &:active, &.active {
+        box-shadow: @color-primary 0 0 0 3em inset;
+        color: @color-empty;
+      }
+    }
+    &[class*="github"] {
+      .font-s2;
+      box-shadow: @color-empty 0 0 0 1px inset;
+      color: @color-empty;
+      line-height: 1.5em !important; //override line-height always so we can use em's to size.
+      padding: .3em .7em;
+      .transition( box-shadow 100ms ease-in-out, color 300ms ease-in );
+
+      &:active, &.active {
+        box-shadow: rgba(255,255,255, .7) 0 0 0 3em inset;
+        color: @color-primary;
+      }
+      header.black & {
+        box-shadow: @color-well 0 0 0 1px inset;
+        color: @color-well;
+      }
+      .nav-visible & {
+        box-shadow: none;
+        background-color: @color-secondary;
+        color: @color-empty;
+      }
+    }
+    &[class*="cmd-line"] {
+      .type-code;
+      cursor: text;
+      font-size: .70em;
+      padding: .5em 1.1em; //results in a 28, 32, 36px high button respectively
+      text-align: left;
+      @media only screen and (min-width: 30em) { font-size: .80em; }
+      @media only screen and (min-width: 40em) { font-size: .90em; }
+      &:before {
+        content: '$ ';
+      }
+      >[class^="icon-"], >[class*=" icon-"] {
+        color: @color-medium-rare;
+        margin-left: -6px;
+      }
+    }
+    &[disabled] {
+      opacity: .2;
+    }
+  }
+  >[class^="icon-"],
+  >[class*=" icon-"] {
+    font-size: 1em;
+    line-height: inherit;
+    vertical-align: text-top;
+  }
+}
+
+.btn-group {
+  .display(flex);
+  .flex-wrap(wrap);
+  max-width: 400px;
+  width: 100%;
+  > .btn-toggle {
+    #text > .ellipsize;
+    .flex(1);
+    border-radius: 0;
+    float: left;
+
+    & + .btn-toggle {
+      margin-left: -1px;
+    }
+    &:first-of-type {
+      border-radius: 3px 0 0 3px;
+    }
+    &:last-of-type {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}

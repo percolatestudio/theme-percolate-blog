@@ -1,0 +1,25 @@
+a, .pseudo-link {
+  color: @color-primary;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: darken(@color-primary, 10%);
+    text-decoration: underline;
+  }
+  &:active {
+    color: @color-well;
+  }
+  &.nochrome {
+    color: @color-well;
+  }
+}
+
+a.inverse {
+  color: @color-empty;
+  &:hover {
+    color: @color-rare;
+  }
+  &:active {
+    color: @color-medium-rare;
+  }
+}
