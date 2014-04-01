@@ -17,10 +17,7 @@ module.exports = function(grunt) {
       styles: {
         // Which files to watch (all .less files recursively in the less directory)
         files: ['stylesheets/**/*.less', 'style.less'],
-        tasks: ['less'],
-        options: {
-          nospawn: true
-        }
+        tasks: ['less']
       }
     }
   });
