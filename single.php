@@ -1,29 +1,31 @@
 <?php get_header(); ?>
 
-<div id="content" class="<?php if ( has_post_thumbnail() ) {echo 'has-image';}?>">
-	<?php if (have_posts()) : ?>
+<div id="content">
+  <?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 
-      <?php if ( has_post_thumbnail()) {
-       $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-       echo '<div class="post-hero" style=" background-image: url(' . $large_image_url[0] . ')"" ></div>';
-       ;
- }?>
+
+      <?php if(has_post_thumbnail()) {
+        $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+      } ?>
+      <header
+        class="<?php if(has_post_thumbnail()) {echo 'has-image';}?>"
+        style='background-image: url("<?php echo $large_image_url[0] ?>");'>
+        <div class="hero-content">
+          <h1 class="post-title"><?php the_title() ?></h1>
+  		  	<h2 class="post-subtitle">
+  	        <?php
+  		  	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
+      		  if($summary !== ''){ echo $summary; }
+            ?>
+  		  	</h2>
+        </div>
+      </header>
+
 
 		  	<div class="entry-wrapper">
-		  	  <div class="entry">
-  		  	  <h1 class="post-title"><?php the_title() ?></h1>
-    		  	<h2 class="post-subtitle">
-      		  	<?php
-      		  	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
-          		  if($summary !== ''){ echo $summary; }
-                ?>
-    		  	</h2>
-
-    		  	<div class="formatting">
-    		  		<?php the_content(); ?>
-    		  	</div>
-
+		  	  <div class="entry formatting">
+    		  	<?php the_content(); ?>
   		  		<?php wp_link_pages(); ?>
 		  	  </div>
 		  	  <div class="sidebar">
