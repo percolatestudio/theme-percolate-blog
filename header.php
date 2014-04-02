@@ -32,12 +32,17 @@
 
 </head>
 <body <?php body_class($class); ?> lang="en">
+
   <a class="menu-toggle btn-primary">Hello</a>
   <nav class="list-vertical">
-    <a href="">Home</a>
-    <a href="">Product Design</a>
-    <a href="">Engineering</a>
-    <a href="">Business</a>
-    <a href="">Talks</a>
-    <a href="">About</a>
+    <div class="wrapper">
+      <a href="">Home</a>
+      <a href="">Product Design</a>
+      <a href="">Engineering</a>
+      <a href="">Business</a>
+      <a href="">Talks</a>
+      <a href="">About</a>
+    </div>
   </nav>
+  <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>
+  <div class="content">

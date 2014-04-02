@@ -1,3 +1,6 @@
+
+  </div><!-- end .content wrapper -->
+
   <!-- <?php echo get_num_queries() . " queries, "; timer_stop(1); echo " seconds"; ?> -->
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.

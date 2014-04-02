@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="content">
+
   <?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
 
@@ -42,8 +42,6 @@
 
 
 
-		  </div>
-
       <?php // include('snip_recent.php'); ?>
 
 		<?php endwhile; ?>
@@ -57,6 +55,5 @@
 	  comments_template();
 	?>
   <?php // get_sidebar(); ?>
-</div>
 
 <?php get_footer(); ?>
