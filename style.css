@@ -204,9 +204,6 @@ select {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-html {
-  overflow-y: auto;
-}
 body {
   font-size: 16px;
   line-height: 24px;
@@ -1446,6 +1443,103 @@ a.inverse:active {
   display: inline-block;
   vertical-align: middle;
 }
+html {
+  overflow: hidden;
+  background: #313140;
+}
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  -moz-transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  -o-transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+}
+body.menu-active {
+  -webkit-transform: translateX(200px);
+  -moz-transform: translateX(200px);
+  -o-transform: translateX(200px);
+  -ms-transform: translateX(200px);
+  transform: translateX(200px);
+}
+body.menu-active .content-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  z-index: 2;
+}
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow-y: auto;
+}
+nav {
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+  perspective: 1500px;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: -200px;
+  width: 200px;
+  height: 100%;
+}
+nav .wrapper {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  -webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
+  -webkit-transform-origin: 100% 0%;
+  -moz-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  transform-origin: 100% 0%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+body.menu-active nav .wrapper {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
 .page-template-page-styleguide-php {
   overflow: hidden;
 }
@@ -1673,104 +1767,8 @@ a.inverse:active {
   position: relative;
   z-index: 20;
 }
-html {
-  overflow-x: hidden;
-  background: #313140;
-}
-body {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  -webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  -moz-transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  -o-transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  transition: all 600ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-}
-body.menu-active {
-  -webkit-transform: translateX(200px);
-  -moz-transform: translateX(200px);
-  -o-transform: translateX(200px);
-  -ms-transform: translateX(200px);
-  transform: translateX(200px);
-}
-body.menu-active .content-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  background: transparent;
-  z-index: 2;
-}
-.content {
-  overflow-y: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-}
-nav {
-  -webkit-perspective: 1500px;
-  -moz-perspective: 1500px;
-  perspective: 1500px;
-  position: absolute;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: -200px;
-  width: 200px;
-  height: 100%;
-  z-index: 1;
-}
 nav .wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
   background: #fa8d3b;
-  -webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.05);
-  -webkit-transform: rotateY(-90deg);
-  -moz-transform: rotateY(-90deg);
-  -o-transform: rotateY(-90deg);
-  -ms-transform: rotateY(-90deg);
-  transform: rotateY(-90deg);
-  -webkit-transform-origin: 100% 0%;
-  -moz-transform-origin: 100% 0%;
-  -o-transform-origin: 100% 0%;
-  -ms-transform-origin: 100% 0%;
-  transform-origin: 100% 0%;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-body.menu-active nav .wrapper {
-  -webkit-transform: rotateY(0deg);
-  -moz-transform: rotateY(0deg);
-  -o-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
-  transform: rotateY(0deg);
 }
 body.single {
   background: #f7f7f2;
@@ -1853,7 +1851,7 @@ body.single header.has-image:after {
   height: auto;
   background: black;
   content: "";
-  opacity: 0.1;
+  opacity: 0.2;
   z-index: 0;
 }
 body.single header .hero-content {
