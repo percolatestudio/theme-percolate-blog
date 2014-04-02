@@ -3,8 +3,6 @@
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
 
 <head>
-
-  <script type="text/javascript" src="<?php echo site_url(''); ?>/livereload.js"></script>
   <!-- boilerplate -->
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1;<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>"/>

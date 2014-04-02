@@ -20,8 +20,8 @@ module.exports = function(grunt) {
         tasks: ['less']
       },
       livereload: {
-          options: { livereload: true },
-          files: ['style.css', '*.php', '**/*.php', 'js/*.js', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+          //options: { livereload: true },
+          //files: ['style.css', '*.php', '**/*.php', 'js/*.js', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
       }
     }
   });

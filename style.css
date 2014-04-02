@@ -277,12 +277,12 @@ hr {
 }
 code,
 pre {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 22px;
   font-family: "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, monospace;
   font-weight: 400;
-  background: #f9f9f9;
-  box-shadow: #f1f1f1 0 0 0 1px inset;
+  background: #fdfdfb;
+  box-shadow: #f7f7f2 0 0 0 1px inset;
   border-radius: 2px;
 }
 code {
@@ -1051,7 +1051,7 @@ textarea.nochrome:hover {
   padding: 0;
 }
 .formatting table tr:nth-child(2n) {
-  background-color: #f1f1f1;
+  background-color: #f7f7f2;
 }
 .formatting table tr th {
   font-weight: bold;
@@ -1077,8 +1077,8 @@ textarea.nochrome:hover {
 }
 @font-face {
   font-family: 'icon-atmos';
-  src: url('../fonts/icon-atmos.eot');
-  src: url('../fonts/icon-atmos.eot?#iefix') format('embedded-opentype'), url('../fonts/icon-atmos.woff') format('woff'), url('../fonts/icon-atmos.ttf') format('truetype'), url('../fonts/icon-atmos.svg#icon-atmos') format('svg');
+  src: url('./fonts/icon-atmos.eot');
+  src: url('./fonts/icon-atmos.eot?#iefix') format('embedded-opentype'), url('./fonts/icon-atmos.woff') format('woff'), url('./fonts/icon-atmos.ttf') format('truetype'), url('./fonts/icon-atmos.svg#icon-atmos') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1444,10 +1444,11 @@ a.inverse:active {
   vertical-align: middle;
 }
 html {
-  overflow: hidden;
   background: #313140;
+  overflow: hidden;
 }
 body {
+  background: #f7f7f2;
   position: absolute;
   top: 0;
   right: 0;
@@ -1693,7 +1694,7 @@ body.menu-active nav .wrapper {
   box-shadow: #eeeeee 0 0 0 1px inset;
 }
 .page-template-page-styleguide-php #colors .color-raw:after {
-  background: #f1f1f1;
+  background: #f7f7f2;
 }
 .page-template-page-styleguide-php #colors .color-rare:after {
   background: #eeeeee;
@@ -1770,9 +1771,6 @@ body.menu-active nav .wrapper {
 nav .wrapper {
   background: #fa8d3b;
 }
-body.single {
-  background: #f7f7f2;
-}
 body.single .entry-wrapper {
   margin: 0;
   padding-left: 1.25em;
@@ -1831,28 +1829,12 @@ body.single .entry-wrapper .sidebar > a {
   font-size: 14px;
   line-height: 22px;
 }
-body.single header.has-image {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 75%;
-  width: 100%;
+body.single header {
+  height: 50%;
   margin-bottom: 3em;
-}
-body.single header.has-image:after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  background: black;
-  content: "";
-  opacity: 0.2;
-  z-index: 0;
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
 }
 body.single header .hero-content {
   position: absolute;
@@ -1878,62 +1860,94 @@ body.single header .hero-content {
     width: 75%;
   }
 }
-body.single header .post-title {
-  color: #ffffff;
+body.single header .hero-content .post-title {
+  color: #313140;
   font-size: 32px;
   line-height: 36px;
   line-height: 1;
   font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
   font-weight: 400;
-  text-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
   letter-spacing: -0.02em;
   text-transform: capitalize;
 }
 @media screen and (min-width: 30em) {
-  body.single header .post-title {
+  body.single header .hero-content .post-title {
     font-size: 40px;
     line-height: 44px;
   }
 }
 @media screen and (min-width: 40em) {
-  body.single header .post-title {
+  body.single header .hero-content .post-title {
     font-size: 48px;
     line-height: 52px;
   }
 }
 @media screen and (min-width: 50em) {
-  body.single header .post-title {
+  body.single header .hero-content .post-title {
     font-size: 56px;
     line-height: 60px;
   }
 }
 @media only screen and (min-width: 40em) {
-  body.single header .post-title {
+  body.single header .hero-content .post-title {
     margin-bottom: 1rem;
   }
 }
-body.single header .post-subtitle {
-  color: #ffffff;
+body.single header .hero-content .post-subtitle {
+  color: #313140;
   font-size: 20px;
   line-height: 24px;
   font-weight: 300;
 }
 @media screen and (min-width: 30em) {
-  body.single header .post-subtitle {
+  body.single header .hero-content .post-subtitle {
     font-size: 20px;
     line-height: 24px;
   }
 }
 @media screen and (min-width: 40em) {
-  body.single header .post-subtitle {
+  body.single header .hero-content .post-subtitle {
     font-size: 24px;
     line-height: 28px;
   }
 }
+body.single header.has-image {
+  height: 75%;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  transform: translateZ(0px);
+  background-color: #444444;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body.single header.has-image:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: black;
+  content: "";
+  opacity: 0.2;
+  z-index: 0;
+}
+body.single header.has-image .hero-content .post-title {
+  color: #ffffff;
+  text-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+}
+body.single header.has-image .hero-content .post-subtitle {
+  color: #ffffff;
+}
 body.single .entry > p {
   position: relative;
 }
-body.single .entry > p:first-of-type:first-letter {
+body.single .entry > p:first-child:first-of-type:first-letter {
   color: #313140;
   font-size: 32px;
   line-height: 36px;
@@ -1947,19 +1961,19 @@ body.single .entry > p:first-of-type:first-letter {
   vertical-align: top;
 }
 @media screen and (min-width: 30em) {
-  body.single .entry > p:first-of-type:first-letter {
+  body.single .entry > p:first-child:first-of-type:first-letter {
     font-size: 40px;
     line-height: 44px;
   }
 }
 @media screen and (min-width: 40em) {
-  body.single .entry > p:first-of-type:first-letter {
+  body.single .entry > p:first-child:first-of-type:first-letter {
     font-size: 48px;
     line-height: 52px;
   }
 }
 @media screen and (min-width: 50em) {
-  body.single .entry > p:first-of-type:first-letter {
+  body.single .entry > p:first-child:first-of-type:first-letter {
     font-size: 56px;
     line-height: 60px;
   }

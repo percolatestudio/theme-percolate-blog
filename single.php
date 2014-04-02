@@ -29,8 +29,10 @@
   		  		<?php wp_link_pages(); ?>
 		  	  </div>
 		  	  <div class="sidebar">
-            <?php echo get_avatar( get_the_author_meta('user_email'), $size = '72'); ?>
-            <div class="author">By  <?php the_author_posts_link(); ?></div>
+
+
+		  	    <?php include('snip_attribution.php'); ?>
+
     		  	<span class="date"><?php the_time('M jS Y'); ?></span>
     		  	<?php the_tags('<div class="list-horiz"><li><b>Tags: </b></li><li>','</li><li>','</li></div>'); ?>
   		    	<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>&nbsp;&nbsp;&nbsp;

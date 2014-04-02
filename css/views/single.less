@@ -1,6 +1,4 @@
 body.single {
-  background: #f7f7f2;
-
   .entry-wrapper {
     .page-margins;
     .std-xpadding;
@@ -27,24 +25,12 @@ body.single {
     }
   }
   header {
-    &.has-image {
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+    height: 50%;
+    margin-bottom: 3em;
+    position: relative;
+    width: 100%;
+    background-color: @color-empty;
 
-      position: relative;
-      height: 75%;
-      width: 100%;
-      margin-bottom: 3em;
-      &:after {
-        .fill-with-absolute-position;
-        background: black;
-        content: "";
-        opacity: 0.2;
-        z-index: 0;
-      }
-    }
     .hero-content {
       .position(absolute, 53%, auto, auto, 50%);
       .transform(translate3d(-50%, -50%, 0px));
@@ -53,27 +39,59 @@ body.single {
       .std-xpadding;
       @media only screen and (min-width: 30em) { width: 75%; }
       z-index: 1;
-    }
-    .post-title {
-      .page-title(@color-empty);
-      .type-secondary;
-      text-shadow: rgba(0,0,0,.15) 0 1px 3px;
-      letter-spacing: -.02em;
-      text-transform: capitalize;
 
-      @media only screen and (min-width: 40em) { margin-bottom: 1rem; }
+      .post-title {
+        .page-title(@color-well);
+        .type-secondary;
+        letter-spacing: -.02em;
+        text-transform: capitalize;
+
+        @media only screen and (min-width: 40em) { margin-bottom: 1rem; }
+      }
+      .post-subtitle {
+        .page-subtitle(@color-well);
+        .type-light;
+      }
     }
-    .post-subtitle {
-      .page-subtitle(@color-empty);
-      .type-light;
-    }
+
+    &.has-image {
+      height: 75%;
+
+      //.backface-visibility(hidden);
+      .transform(translateZ(0));
+
+      background-color: @color-medium-well;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      &:after {
+        .fill-with-absolute-position;
+        background: black;
+        content: "";
+        opacity: 0.2;
+        z-index: 0;
+      }
+      .hero-content {
+        .post-title {
+          color: @color-empty;
+          text-shadow: rgba(0,0,0,.15) 0 1px 3px;
+        }
+        .post-subtitle {
+          color: @color-empty;
+        }
+      }//has-image hero-content
+    }//has image
+
 
   }//header
   .entry {
     > p {
       position: relative;
     }
-    > p:first-of-type:first-letter {
+    > p:first-child:first-of-type:first-letter {
+      //add dropcap if the first child is a paragraph
       .page-title(@color-well);
       line-height: 1;
       .type-secondary;
@@ -83,6 +101,9 @@ body.single {
       top: 0px;
       vertical-align: top;
     }
+  }//entry
+  .sidebar {
+
   }
 
 }
