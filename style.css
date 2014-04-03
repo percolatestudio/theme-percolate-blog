@@ -1868,17 +1868,17 @@ nav .wrapper a {
 }
 .posts-twoup .post-content {
   position: absolute;
-  top: 50%;
+  top: 30%;
   right: auto;
   bottom: auto;
   left: 50%;
   width: auto;
   height: auto;
-  -webkit-transform: translate3d(-50%, -50%, 0px);
-  -moz-transform: translate3d(-50%, -50%, 0px);
-  -o-transform: translate3d(-50%, -50%, 0px);
-  -ms-transform: translate3d(-50%, -50%, 0px);
-  transform: translate3d(-50%, -50%, 0px);
+  -webkit-transform: translate3d(0%, -50%, 0px);
+  -moz-transform: translate3d(0%, -50%, 0px);
+  -o-transform: translate3d(0%, -50%, 0px);
+  -ms-transform: translate3d(0%, -50%, 0px);
+  transform: translate3d(0%, -50%, 0px);
   text-align: center;
   width: 100%;
   z-index: 1;
@@ -1984,27 +1984,37 @@ body.single header {
   background-color: #ffffff;
 }
 body.single header .hero-content {
+  margin: 0;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
   position: absolute;
   top: 53%;
   right: auto;
   bottom: auto;
-  left: 50%;
+  left: auto;
   width: auto;
   height: auto;
-  -webkit-transform: translate3d(-50%, -50%, 0px);
-  -moz-transform: translate3d(-50%, -50%, 0px);
-  -o-transform: translate3d(-50%, -50%, 0px);
-  -ms-transform: translate3d(-50%, -50%, 0px);
-  transform: translate3d(-50%, -50%, 0px);
+  -webkit-transform: translate3d(0, -50%, 0px);
+  -moz-transform: translate3d(0, -50%, 0px);
+  -o-transform: translate3d(0, -50%, 0px);
+  -ms-transform: translate3d(0, -50%, 0px);
+  transform: translate3d(0, -50%, 0px);
   text-align: center;
-  width: 100%;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
   z-index: 1;
 }
-@media only screen and (min-width: 30em) {
+@media screen and (min-width: 30em) {
   body.single header .hero-content {
-    width: 75%;
+    margin: 0 5.555555555555555%;
+  }
+}
+@media screen and (min-width: 60em) {
+  body.single header .hero-content {
+    margin: 0 11.11111111111111%;
+  }
+}
+@media screen and (min-width: 80em) {
+  body.single header .hero-content {
+    margin: 0 16.666666666666664%;
   }
 }
 body.single header .hero-content .post-title {
@@ -2048,14 +2058,14 @@ body.single header .hero-content .post-subtitle {
 }
 @media screen and (min-width: 30em) {
   body.single header .hero-content .post-subtitle {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 24px;
+    line-height: 28px;
   }
 }
 @media screen and (min-width: 40em) {
   body.single header .hero-content .post-subtitle {
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 32px;
+    line-height: 36px;
   }
 }
 body.single header.has-image {
@@ -2120,6 +2130,7 @@ body.single .entry > p:first-child:first-of-type:first-letter {
   }
 }
 body.single .sidebar .author {
+  margin-bottom: 1.5em;
   font-size: 14px;
   line-height: 22px;
 }

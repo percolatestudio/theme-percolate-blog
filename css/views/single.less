@@ -29,12 +29,13 @@ body.single {
     background-color: @color-empty;
 
     .hero-content {
-      .position(absolute, 53%, auto, auto, 50%);
-      .transform(translate3d(-50%, -50%, 0px));
-      text-align: center;
-      width: 100%;
+      .page-margins;
       .std-xpadding;
-      @media only screen and (min-width: 30em) { width: 75%; }
+      .position(absolute, 53%, auto, auto, auto);
+      .transform(translate3d(0, -50%, 0px));
+      text-align: center;
+
+
       z-index: 1;
 
       .post-title {
@@ -98,6 +99,7 @@ body.single {
   }//entry
   .sidebar {
     .author {
+      margin-bottom: 1.5em;
       .font-s2;
       .avatar {
         margin-bottom: 1em;
