@@ -2,6 +2,7 @@ body.single {
   .entry-wrapper {
     .page-margins;
     .std-xpadding;
+    .std-ypadding;
 
 
     @media only screen and (min-width: 40em) {
@@ -16,17 +17,13 @@ body.single {
     }
     .sidebar {
       @media only screen and (min-width: 40em) {
-        .flex(1);
+        .flex(1.5);
         padding-top: 1em;
-      }
-      .author, .date, >a {
-        .font-s2;
       }
     }
   }
   header {
     height: 50%;
-    margin-bottom: 3em;
     position: relative;
     width: 100%;
     background-color: @color-empty;
@@ -57,11 +54,8 @@ body.single {
     &.has-image {
       height: 75%;
 
-      //.backface-visibility(hidden);
-      .transform(translateZ(0));
 
       background-color: @color-medium-well;
-      background-attachment: fixed;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -103,7 +97,23 @@ body.single {
     }
   }//entry
   .sidebar {
-
+    .author {
+      .font-s2;
+      .avatar {
+        margin-bottom: 1em;
+      }
+      .name {
+        .type-secondary;
+        .font-s3;
+        display: inline-block;
+      }
+      .description {
+        .type-light;
+      }
+    }//author
+    .date {
+      .font-s2;
+    }
   }
 
 }

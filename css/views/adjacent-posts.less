@@ -1,0 +1,61 @@
+.posts-twoup {
+  position: relative;
+  @media only screen and (min-width: 40em) {
+    .display(flex);
+    .flex-wrap(wrap);
+  }
+  > * {
+    @media only screen and (min-width: 40em) {
+      .flex(1);
+      background: @color-rare;
+      display: block;
+      height: 400px;
+      position: relative;
+    }
+  }
+  > * {
+    background-color: @color-medium-well;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &:after {
+      .fill-with-absolute-position;
+      background: black;
+      content: "";
+      opacity: 0.2;
+      z-index: 0;
+    }
+  }
+  .post-content {
+    .position(absolute, 50%, auto, auto, 50%);
+    .transform(translate3d(-50%, -50%, 0px));
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+
+    .std-xpadding;
+  }
+  .title {
+    .font-m3;
+    .type-secondary;
+    display: inline-block;
+    letter-spacing: -.02em;
+    text-transform: capitalize;
+    margin-bottom: .25em;
+    text-shadow: rgba(0,0,0,.15) 0 1px 3px;
+    a {
+      text-decoration: none;
+    }
+  }
+  .subtitle {
+    .font-m1;
+    .type-light;
+    color: @color-empty;
+    margin-bottom: .5em;
+  }
+  .attribution {
+    .type-secondary;
+    .font-s2;
+    color: @color-empty;
+  }
+}

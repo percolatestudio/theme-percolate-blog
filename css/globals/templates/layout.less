@@ -39,6 +39,10 @@ nav {
 
 
     .transform(rotateY(-90deg));
-    body.menu-active & { .transform(rotateY(0deg)); }
+    opacity: .25;
+    body.menu-active & {
+      .transform(rotateY(0deg));
+      opacity: 1;
+    }
   }
 }

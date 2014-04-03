@@ -2,7 +2,7 @@
   <h2 class="occasion"><span>Recent Posts</span></h2>
   <ul>
     <?php
-      $postslist = get_posts('numberposts=8&order=DESC&orderby=date');
+      $postslist = get_posts('numberposts=2&order=DESC&orderby=date');
       foreach ($postslist as $post) :
         setup_postdata($post);
     ?>

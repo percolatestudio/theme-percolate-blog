@@ -31,16 +31,8 @@
 </head>
 <body <?php body_class($class); ?> lang="en">
 
-  <a class="menu-toggle btn-primary">Hello</a>
-  <nav class="list-vertical">
-    <div class="wrapper">
-      <a href="">Home</a>
-      <a href="">Product Design</a>
-      <a href="">Engineering</a>
-      <a href="">Business</a>
-      <a href="">Talks</a>
-      <a href="">About</a>
-    </div>
-  </nav>
+  <a class="menu-toggle btn-github"><span class="icon-list"></span></a>
+  <?php include('snip_menu.php'); ?>
+
   <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>
   <div class="content">

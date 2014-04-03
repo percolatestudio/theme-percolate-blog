@@ -1533,6 +1533,7 @@ nav .wrapper {
   -o-transform: rotateY(-90deg);
   -ms-transform: rotateY(-90deg);
   transform: rotateY(-90deg);
+  opacity: .25;
 }
 body.menu-active nav .wrapper {
   -webkit-transform: rotateY(0deg);
@@ -1540,6 +1541,7 @@ body.menu-active nav .wrapper {
   -o-transform: rotateY(0deg);
   -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  opacity: 1;
 }
 .page-template-page-styleguide-php {
   overflow: hidden;
@@ -1769,12 +1771,154 @@ body.menu-active nav .wrapper {
   z-index: 20;
 }
 nav .wrapper {
-  background: #fa8d3b;
+  background: #444444;
+  padding: 0 1.25em;
+}
+nav .wrapper a {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 1em;
+}
+.comments-wrapper {
+  background: #ffffff;
+  padding-top: 1.5em;
+  padding-bottom: 5em;
+}
+@media screen and (min-width: 30em) {
+  .comments-wrapper {
+    padding-top: 2em;
+  }
+}
+@media screen and (min-width: 40em) {
+  .comments-wrapper {
+    padding-top: 3em;
+  }
+}
+.comments-wrapper .comments {
+  margin: 0;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+@media screen and (min-width: 30em) {
+  .comments-wrapper .comments {
+    margin: 0 5.555555555555555%;
+  }
+}
+@media screen and (min-width: 60em) {
+  .comments-wrapper .comments {
+    margin: 0 11.11111111111111%;
+  }
+}
+@media screen and (min-width: 80em) {
+  .comments-wrapper .comments {
+    margin: 0 16.666666666666664%;
+  }
+}
+.comments-wrapper .comments textarea {
+  max-width: 100%;
+  width: 100%;
+}
+.posts-twoup {
+  position: relative;
+}
+@media only screen and (min-width: 40em) {
+  .posts-twoup {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .posts-twoup > * {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: #eeeeee;
+    display: block;
+    height: 400px;
+    position: relative;
+  }
+}
+.posts-twoup > * {
+  background-color: #444444;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.posts-twoup > *:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: black;
+  content: "";
+  opacity: 0.2;
+  z-index: 0;
+}
+.posts-twoup .post-content {
+  position: absolute;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate3d(-50%, -50%, 0px);
+  -moz-transform: translate3d(-50%, -50%, 0px);
+  -o-transform: translate3d(-50%, -50%, 0px);
+  -ms-transform: translate3d(-50%, -50%, 0px);
+  transform: translate3d(-50%, -50%, 0px);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+.posts-twoup .title {
+  font-size: 32px;
+  line-height: 36px;
+  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+  display: inline-block;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  margin-bottom: .25em;
+  text-shadow: rgba(0, 0, 0, 0.15) 0 1px 3px;
+}
+.posts-twoup .title a {
+  text-decoration: none;
+}
+.posts-twoup .subtitle {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: .5em;
+}
+.posts-twoup .attribution {
+  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #ffffff;
 }
 body.single .entry-wrapper {
   margin: 0;
   padding-left: 1.25em;
   padding-right: 1.25em;
+  padding-top: 1.5em;
+  padding-bottom: 5em;
 }
 @media screen and (min-width: 30em) {
   body.single .entry-wrapper {
@@ -1789,6 +1933,16 @@ body.single .entry-wrapper {
 @media screen and (min-width: 80em) {
   body.single .entry-wrapper {
     margin: 0 16.666666666666664%;
+  }
+}
+@media screen and (min-width: 30em) {
+  body.single .entry-wrapper {
+    padding-top: 2em;
+  }
+}
+@media screen and (min-width: 40em) {
+  body.single .entry-wrapper {
+    padding-top: 3em;
   }
 }
 @media only screen and (min-width: 40em) {
@@ -1817,21 +1971,14 @@ body.single .entry-wrapper {
   body.single .entry-wrapper .sidebar {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+    -webkit-flex: 1.5;
+    -ms-flex: 1.5;
+    flex: 1.5;
     padding-top: 1em;
   }
 }
-body.single .entry-wrapper .sidebar .author,
-body.single .entry-wrapper .sidebar .date,
-body.single .entry-wrapper .sidebar > a {
-  font-size: 14px;
-  line-height: 22px;
-}
 body.single header {
   height: 50%;
-  margin-bottom: 3em;
   position: relative;
   width: 100%;
   background-color: #ffffff;
@@ -1913,13 +2060,7 @@ body.single header .hero-content .post-subtitle {
 }
 body.single header.has-image {
   height: 75%;
-  -webkit-transform: translateZ(0px);
-  -moz-transform: translateZ(0px);
-  -o-transform: translateZ(0px);
-  -ms-transform: translateZ(0px);
-  transform: translateZ(0px);
   background-color: #444444;
-  background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1977,4 +2118,25 @@ body.single .entry > p:first-child:first-of-type:first-letter {
     font-size: 56px;
     line-height: 60px;
   }
+}
+body.single .sidebar .author {
+  font-size: 14px;
+  line-height: 22px;
+}
+body.single .sidebar .author .avatar {
+  margin-bottom: 1em;
+}
+body.single .sidebar .author .name {
+  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-block;
+}
+body.single .sidebar .author .description {
+  font-weight: 300;
+}
+body.single .sidebar .date {
+  font-size: 14px;
+  line-height: 22px;
 }

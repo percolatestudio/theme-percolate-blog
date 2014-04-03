@@ -22,7 +22,6 @@
         </div>
       </header>
 
-
 		  	<div class="entry-wrapper">
 		  	  <div class="entry formatting">
     		  	<?php the_content(); ?>
@@ -32,30 +31,37 @@
 
 
 		  	    <?php include('snip_attribution.php'); ?>
+            <?php include('snip_sociallinks.php'); ?>
 
-    		  	<span class="date"><?php the_time('M jS Y'); ?></span>
+    		  	<span class="date"><?php the_time('M j, Y'); ?></span>
     		  	<?php the_tags('<div class="list-horiz"><li><b>Tags: </b></li><li>','</li><li>','</li></div>'); ?>
   		    	<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>&nbsp;&nbsp;&nbsp;
 
 
-  		    	<?php // include('snip_sociallinks.php'); ?>
+
   		    </div>
 		  	</div>
 
 
 
-      <?php // include('snip_recent.php'); ?>
+        <?php // include('snip_recent.php'); ?>
+
 
 		<?php endwhile; ?>
 	<?php else : ?>
   	<p>404</p>
 	<?php endif; ?>
+
+
+
 	<?php
 	  wp_reset_query();
 	  global $withcomments;
 	  $withcomments = 1;
 	  comments_template();
 	?>
+
+  <?php include('snip_adjacentposts.php'); ?>
   <?php // get_sidebar(); ?>
 
 <?php get_footer(); ?>
