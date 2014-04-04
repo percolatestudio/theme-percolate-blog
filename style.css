@@ -876,6 +876,8 @@ textarea.nochrome:hover {
 .formatting h4,
 .formatting h5 {
   font-weight: 600;
+  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
+  font-weight: 400;
   line-height: 1em;
   padding: .5em 0;
 }
@@ -888,20 +890,6 @@ textarea.nochrome:hover {
 }
 .formatting hr + * {
   margin-top: 0 !important;
-}
-.formatting h1 {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #eeeeee;
-}
-.formatting h2 {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #eeeeee;
-}
-.formatting h3 {
-  margin-bottom: .25rem;
-}
-.formatting h4 {
-  margin-bottom: .125rem;
 }
 .formatting p {
   line-height: 1.75em;
@@ -991,8 +979,8 @@ textarea.nochrome:hover {
   font-weight: 400;
   border-left: 3px solid #6064ad;
   color: #666666;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   padding: .75em 1.25em .75em 1.5em;
 }
 .formatting blockquote p:only-of-type {
@@ -1022,8 +1010,8 @@ textarea.nochrome:hover {
   list-style-type: disc;
 }
 .formatting pre {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .formatting pre code {
   overflow: hidden;
@@ -1868,6 +1856,8 @@ nav .wrapper a {
   z-index: 0;
 }
 .posts-twoup .post-content {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
   position: absolute;
   top: 35%;
   right: auto;
@@ -1883,8 +1873,6 @@ nav .wrapper a {
   text-align: center;
   width: 100%;
   z-index: 1;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
 }
 @media screen and (min-width: 40em) {
   .posts-twoup .post-content {
@@ -1978,22 +1966,19 @@ body.single .entry-wrapper {
 }
 @media only screen and (min-width: 40em) {
   body.single .entry-wrapper .entry {
-    -webkit-box-flex: 6;
-    -moz-box-flex: 6;
-    -webkit-flex: 6;
-    -ms-flex: 6;
-    flex: 6;
-    padding-right: 2em;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding-right: 1.25em;
   }
 }
 @media only screen and (min-width: 40em) {
   body.single .entry-wrapper .sidebar {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -webkit-flex: 1.5;
-    -ms-flex: 1.5;
-    flex: 1.5;
+    width: 20% !important;
     padding-top: 1em;
+    padding-left: 1.25em;
   }
 }
 body.single header {
@@ -2070,7 +2055,7 @@ body.single header .hero-content .post-title {
   }
 }
 body.single header .hero-content .post-subtitle {
-  color: #313140;
+  color: #444444;
   font-size: 20px;
   line-height: 24px;
   font-weight: 300;
@@ -2149,12 +2134,12 @@ body.single .entry > p:first-child:first-of-type:first-letter {
   }
 }
 body.single .sidebar .author {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   font-size: 14px;
   line-height: 22px;
 }
 body.single .sidebar .author .avatar {
-  margin-bottom: 1em;
+  margin-bottom: .75em;
 }
 body.single .sidebar .author .name {
   font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;

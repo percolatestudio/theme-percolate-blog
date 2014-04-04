@@ -11,14 +11,15 @@ body.single {
     }
     .entry {
       @media only screen and (min-width: 40em) {
-        .flex(6);
-        padding-right: 2em;
+        .flex(1);
+        padding-right: 1.25em;
       }
     }
     .sidebar {
       @media only screen and (min-width: 40em) {
-        .flex(1.5);
+        width: 20% !important;
         padding-top: 1em;
+        padding-left: 1.25em;
       }
     }
   }
@@ -47,7 +48,7 @@ body.single {
         @media only screen and (min-width: 40em) { margin-bottom: 1rem; }
       }
       .post-subtitle {
-        .page-subtitle(@color-well);
+        .page-subtitle(@color-medium-well);
         .type-light;
       }
     }
@@ -99,10 +100,10 @@ body.single {
   }//entry
   .sidebar {
     .author {
-      margin-bottom: 1.5em;
+      margin-bottom: 2em;
       .font-s2;
       .avatar {
-        margin-bottom: 1em;
+        margin-bottom: .75em;
       }
       .name {
         .type-secondary;
