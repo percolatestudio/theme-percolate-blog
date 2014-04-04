@@ -3,7 +3,7 @@
   <?php foreach( get_coauthors() as $coauthor ) : ?>
     <div class="author">
       <?php $author_posts_url = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename ); ?>
-      <a href="<?php echo $author_posts_url; ?>"><?php echo get_avatar( $coauthor->user_email, '72' ); ?></a>
+      <a class="avatar-wrapper" href="<?php echo $author_posts_url; ?>"><?php echo get_avatar( $coauthor->user_email, '72' ); ?></a>
       <div class="meta">
         <a class="name" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a>
         <div class="description"><?php echo $coauthor->description; ?></div>
