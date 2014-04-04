@@ -12,7 +12,6 @@
   hr + * {
     margin-top: 0 !important;
   }
-
   p {
     line-height: 1.75em;
     margin-bottom: 1rem;
@@ -21,6 +20,9 @@
     &:first-of-type:not(:only-of-type) {
       margin-top: 0;
     }
+  }
+  a {
+    .link-underline();
   }
   aside, .note {
     background: @color-note;
