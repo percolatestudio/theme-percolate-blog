@@ -46,25 +46,21 @@
           foreach ($coauthors as $index => $coauthor) :
             $author_posts_url = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename );
         ?>
-          <a class="author inverse" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a>
-
-          <span>
-            <?php
+          <a class="author inverse" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a><span><?php
               $coauthorsLength = count($coauthors);
               if($index < $coauthorsLength - 1) {
                 // draw a comma or and
                 if($index == $coauthorsLength - 2) {
                   if ($coauthorsLength == 2) {
-                    echo "&amp;";
+                    echo " &amp; ";
                   } else {
-                    echo "and";
+                    echo " and ";
                   }
                 } else {
-                  echo ",";
+                  echo ", ";
                 }
               }
-            ?>
-          </span>
+            ?></span>
         <?php endforeach; ?>
       </div>
     </div>
@@ -75,6 +71,7 @@
   <?php if(get_adjacent_post(false, '', false)) {?>
   <div class="post <?php if(has_post_thumbnail($next_post->ID)) {echo 'has-image';}?>"
     style='background-image: url("<?php echo $next_image[0] ?>");'>
+
     <div class="post-content">
       <h3 class="title">
         <a class="inverse" href="<?php echo $next_link; ?>"><?php echo $next_title; ?></a>
