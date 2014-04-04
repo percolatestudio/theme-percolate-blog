@@ -1,17 +1,19 @@
 .posts-twoup {
   position: relative;
-  @media only screen and (min-width: 40em) {
-    .display(flex);
-    .flex-wrap(wrap);
-  }
+  display: block;
+
+  .display(flex);
+  .flex-wrap(wrap);
+
   > * {
-    @media only screen and (min-width: 40em) {
-      .flex(1);
-      background: @color-rare;
-      display: block;
-      height: 400px;
-      position: relative;
-    }
+    .flex(1);
+    background: @color-rare;
+    display: block;
+    height: 240px;
+    @media screen and (min-width: 40em) { height: 400px; }
+    min-width: 40em / 2 ;
+    position: relative;
+
   }
   > * {
     background-color: @color-medium-well;
@@ -27,8 +29,10 @@
     }
   }
   .post-content {
-    .position(absolute, 30%, auto, auto, 50%);
-    .transform(translate3d(0%, -50%, 0px));
+    .position(absolute, 35%, auto, auto, 50%);
+    @media screen and (min-width: 40em) { top: 40%; }
+
+    .transform(translate3d(-50%, 0, 0px));
     text-align: center;
     width: 100%;
     z-index: 1;
@@ -36,7 +40,7 @@
     .std-xpadding;
   }
   .title {
-    .font-m3;
+    .post-title(@color-empty);
     .type-secondary;
     display: inline-block;
     letter-spacing: -.02em;
@@ -48,7 +52,7 @@
     }
   }
   .subtitle {
-    .font-m1;
+    .post-subtitle(@color-empty);
     .type-light;
     color: @color-empty;
     margin-bottom: .5em;
