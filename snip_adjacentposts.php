@@ -27,6 +27,7 @@
 
 
   ?>
+  <?php if(get_adjacent_post(false, '', true)) {?>
   <div class="post <?php if(has_post_thumbnail($previous_post->ID)) {echo 'has-image';}?>"
     style='background-image: url("<?php echo $previous_image[0] ?>");'>
     <div class="post-content">
@@ -68,7 +69,10 @@
       </div>
     </div>
   </div>
+  <?php }?>
 
+
+  <?php if(get_adjacent_post(false, '', false)) {?>
   <div class="post <?php if(has_post_thumbnail($next_post->ID)) {echo 'has-image';}?>"
     style='background-image: url("<?php echo $next_image[0] ?>");'>
     <div class="post-content">
@@ -106,5 +110,5 @@
       </div>
     </div>
   </div>
-
+  <?php } ?>
 </div>
