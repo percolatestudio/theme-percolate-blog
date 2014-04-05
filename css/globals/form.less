@@ -10,12 +10,6 @@ label {
   @media screen and (min-width: 40em) { .font-s3; }
   display: block;
   margin-bottom: .5em;
-  & + input,
-  & + select,
-  & + textarea,
-  & + .a-select {
-    margin-bottom: 1em;
-  }
   &.checkbox,
   &.radio {
     min-height: 1em;
@@ -31,6 +25,13 @@ label {
     .type-bold;
     color: @color-alert;
   }
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea,
+.a-select {
+  margin-bottom: 1em;
 }
 
 /* Input styles */

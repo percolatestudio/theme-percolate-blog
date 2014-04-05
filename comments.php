@@ -12,16 +12,17 @@
     	}
     ?>
 
-    <h2 class="occasion">
+    <div class="subtitle">
     	<?php comments_number(
-      	'<span class="number">No</span> Comments',
+      	'Comments',
       	'<span class="number">1</span> Comment',
       	'<span class="number">%</span> Comments' );?>
-    </h2>
+    </div>
+
     <!-- You can start editing here. -->
     <?php if ( have_comments() ) : ?>
     	<ol class="commentlist">
-    	<?php wp_list_comments('type=comment&reverse_top_level=true&callback=my_comment'); ?>
+    	<?php wp_list_comments('type=comment&reverse_top_level=true&callback=my_comment&'); ?>
     	</ol>
     	<?php if(get_previous_comments_link() || get_next_comments_link() ) {?>
     	<div class="navigation">
@@ -40,30 +41,30 @@
 
     <?php if ( comments_open() ) : ?>
     	<div id="respond">
-    		<h3 class="occasion"><?php comment_form_title( 'Add your comment', 'Add your comment to %s' ); ?></h3>
     		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
     			<p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
     		<?php else : ?>
     			<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-    			<?php if ( is_user_logged_in() ) : ?>
-    			  <p>
-    				Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a>
-    				</p>
-    			<?php else : ?>
-    				  <label for="author"><strong>Name</strong></label>
-    					<input class="text" type="text" name="author" id="author" placeholder="What shall we call you?" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-    					<small><em><?php if ($req) echo "Required"; ?></em></small>
 
-    				  <label for="email"><strong>Email</strong></label>
-    					<input class="text" type="text" name="email" id="email" placeholder="Your email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-    					<small><em><?php if ($req) echo "Required"; ?> &amp; will not be published</em></small>
 
-    			<?php endif; ?>
-    				  <label for="comment">Comment</label>
-    					<textarea name="comment" placeholder="I read each &amp; every message" id="comment" cols="100%" rows="3" tabindex="3"></textarea>
-    					<button name="submit" type="submit" id="submit" tabindex="4" class="btn default occasion">Add your comment</button>
-    					<?php comment_id_fields(); ?>
+  					<?php comment_id_fields(); ?>
+      			<?php if ( is_user_logged_in() ) : ?>
+      			  <p>
+      				Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a>
+      				</p>
+      			<?php else : ?>
+      			  <!-- <label for="author"><strong>Name</strong></label> -->
+    					<input class="text" type="text" name="author" id="author" placeholder="Name" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 
+    			    <!-- <label for="email"><strong>Email</strong></label> -->
+    					<input class="text" type="text" name="email" id="email" placeholder="Email (will not be published)" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+
+      			<?php endif; ?>
+
+            <!-- <label for="comment">Comment</label> -->
+            <textarea name="comment" placeholder="Share your thoughts" id="comment" cols="100%" rows="3" tabindex="3"></textarea>
+
+      			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-secondary">Comment</button>
     				<?php do_action('comment_form', $post->ID); ?>
     			</form>
     			<div class="cancel-comment-reply">
@@ -73,4 +74,7 @@
     	</div>
     <?php endif; // if you delete this the sky will fall on your head ?>
   </div><!-- End comments -->
+  <div class="sidebar">
+    hlleo
+  </div>
 </div><!-- End comments-wrapper -->

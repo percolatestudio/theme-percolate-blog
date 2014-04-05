@@ -1,12 +1,45 @@
 .comments-wrapper {
-  background: @color-empty;
+  .page-margins;
+  .std-xpadding;
   .std-ypadding;
+  border-top: 1px solid @color-rare;
+
+  @media only screen and (min-width: 40em) {
+    .display(flex);
+    .flex-wrap(wrap);
+  }
+
   .comments {
-    .page-margins;
-    .std-xpadding;
+    @media only screen and (min-width: 40em) {
+      .flex(1);
+      padding-right: 1.25em;
+    }
+  }
+  .sidebar {
+    @media only screen and (min-width: 40em) {
+      width: 20% !important;
+      padding-left: 1.25em;
+    }
+  }
+
+
+  .comments {
+
+    .subtitle {
+      .page-subtitle(@color-well);
+      .type-secondary;
+      margin-bottom: .5em;
+    }
+    input,
     textarea {
       max-width: 100%;
       width: 100%;
+    }
+    button[type=submit] {
+      width: 100%;
+      @media only screen and (min-width: 40em) {
+        width: auto;
+      }
     }
   }
 }
