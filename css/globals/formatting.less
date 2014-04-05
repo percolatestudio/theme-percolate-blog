@@ -13,6 +13,7 @@
     margin-top: 0 !important;
   }
   p {
+    .cf;
     line-height: 1.75em;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -20,8 +21,22 @@
     &:first-of-type:not(:only-of-type) {
       margin-top: 0;
     }
+    &:last-of-type:not(:only-of-type) {
+      margin-bottom: 0;
+      &:after {
+        content: "\e600";
+        font-family: 'icon-atmos';
+        display: inline-block;
+        line-height: inherit;
+        margin-left: 4px;
+      }
+    }
+    > img:only-child {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
   }
-  a {
+  a:not(.img) {
     .link-underline();
   }
   aside, .note {
@@ -70,10 +85,11 @@
 
   img{
     display: inline-block;
-    padding: 0 1.25em;
+    margin: 1rem 1.25em;
     max-width: 100%;
     position: relative;
     vertical-align: top;
+    height: auto;
     &.alignright{
       float: right;
       margin-right: 0;
@@ -88,6 +104,9 @@
       margin-left: auto;
       margin-right: auto;
       margin-top: 1rem;
+    }
+    &.alignnone {
+      margin: 0;
     }
   }
   blockquote {
