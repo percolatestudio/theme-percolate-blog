@@ -28,7 +28,7 @@
   ?>
   <?php if(get_adjacent_post(false, '', true)) {?>
   <div class="post <?php if(has_post_thumbnail($previous_post->ID)) {echo 'has-image';}?>"
-    style='background-image: url("<?php echo $previous_image[0] ?>");'>
+    style='background-image: url("<?php echo $previous_image[0] ?>");' title="<?php echo $previous_title; ?>">
     <div class="post-content">
       <h3 class="title">
         <a class="inverse" href="<?php echo $previous_link; ?>"><?php echo $previous_title; ?></a>
@@ -69,7 +69,7 @@
 
   <?php if(get_adjacent_post(false, '', false)) {?>
   <div class="post <?php if(has_post_thumbnail($next_post->ID)) {echo 'has-image';}?>"
-    style='background-image: url("<?php echo $next_image[0] ?>");'>
+    style='background-image: url("<?php echo $next_image[0] ?>");' title="<?php echo $next_title; ?>">
 
     <div class="post-content">
       <h3 class="title">
