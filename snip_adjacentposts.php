@@ -1,5 +1,4 @@
-<div class="posts-twoup">
-
+<div class="posts-grid">
   <?php
     //previous post
     $in_same_cat = false;
