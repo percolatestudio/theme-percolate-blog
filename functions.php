@@ -8,7 +8,9 @@
   include(THEMELIB . 'excerpt.php');
   include(THEMELIB . 'misc.php');
   include(THEMELIB . 'my_comments.php');
+  include(THEMELIB . 'media_class.php');
   include(THEMELIB . 'navigation.php');
+  include(THEMELIB . 'settings_social.php');
   include(THEMELIB . 'social.php');
   include(THEMELIB . 'post_images.php');
 

@@ -9,9 +9,51 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0, width=device-width">
 
 	<!-- seo -->
-	<title><?php wp_title(''); ?></title>
-	<meta name="template" content="<?php wp_title(''); ?> blog" />
-	<meta name="description" content="<?php bloginfo('description'); ?>" />
+	<title><?php wp_title('');?><?php  echo '| ' .get_bloginfo('name');?></title>
+
+
+
+	<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post();
+	  $subtitle = get_post_meta($post->ID, "subtitle_value", $single = true);
+  ?>
+    <!-- If we're on a single post or page -->
+    <meta name="description" content="<?php echo $subtitle; ?>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@<?php echo get_option('twitter');?>">
+    <meta name="twitter:title" content="<?php wp_title(''); ?>">
+    <meta name="twitter:description" content="<?php echo $subtitle; ?>">
+    <meta name="twitter:creator" content="@<?php the_author_meta('twitter') ?>">
+    <meta name="twitter:image" content="<?php echo $large_image_url[0] ?>">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<?php wp_title(''); ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="<?php echo get_permalink( $post->ID ); ?>" />
+    <meta property="og:image" content="<?php echo $large_image_url[0] ?>" />
+    <meta property="og:description" content="<?php echo $subtitle; ?>" />
+    <meta property="og:site_name" content="<?php echo get_bloginfo('name')?>" />
+    <meta property="fb:admins" content="Facebook numeric ID" />
+
+  <?php endwhile; endif; elseif(is_home()) : ?>
+    <!-- If we're on the home page -->
+    <meta name="description" content="<?php bloginfo('description'); ?>" />
+
+  <?php endif; ?>
+
+  <?php if(has_post_thumbnail()) {
+    $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+  } ?>
+
+
+
+
+
+
+
+
+
 
 	<!-- blog -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
