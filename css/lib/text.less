@@ -19,14 +19,33 @@
 .post-title (@color) { //for secondary posts like related next/prev
   color: @color;
   .font-m2;
-  @media screen and (min-width: 40em) { .font-m3; }
+  @media screen and (min-width: 30em) { .font-m3; }
+  @media screen and (min-width: 40em) { .font-m2; }
+  @media screen and (min-width: 50em) { .font-m3; }
 }
 
 .post-subtitle (@color) { //for secondary posts like related next/prev
   color: @color;
   .font-s3;
-  @media screen and (min-width: 40em) { .font-m1; }
+  @media screen and (min-width: 30em) { .font-m1; }
+  @media screen and (min-width: 40em) { .font-s3; }
+  @media screen and (min-width: 50em) { .font-m1; }
 }
+
+.post-title-oneup (@color) { //for secondary posts like related next/prev
+  color: @color;
+  .font-m2;
+  @media screen and (min-width: 30em) { .font-m3; }
+  @media screen and (min-width: 40em) { .font-l1; }
+}
+
+.post-subtitle-oneup (@color) { //for secondary posts like related next/prev
+  color: @color;
+  .font-s3;
+  @media screen and (min-width: 30em) { .font-m1; }
+  @media screen and (min-width: 50em) { .font-m3; }
+}
+
 
 .font-s3-responsive() {
   .font-s1;
