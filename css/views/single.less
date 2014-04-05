@@ -23,10 +23,12 @@ body.single {
     }
   }
   header {
-    height: 50%;
+    background-color: @color-medium-well;
+    height: 75%;
+    overflow: hidden;
     position: relative;
     width: 100%;
-    background-color: @color-empty;
+
 
     .hero-content {
       .page-margins;
@@ -34,12 +36,10 @@ body.single {
       .position(absolute, 53%, 0, auto, 0);
       .transform(translate3d(0, -50%, 0px));
       text-align: center;
-
-
       z-index: 1;
 
       .post-title {
-        .page-title(@color-well);
+        .page-title(@color-empty);
         .type-secondary;
         letter-spacing: -.02em;
         text-transform: capitalize;
@@ -47,16 +47,26 @@ body.single {
         @media only screen and (min-width: 40em) { margin-bottom: 1rem; }
       }
       .post-subtitle {
-        .page-subtitle(@color-medium-well);
+        .page-subtitle(@color-empty);
         .type-light;
       }
     }
 
+    &:after { // This is the texture on the backgrounds w/o images
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      .position(absolute, -20%, auto, auto, -10%);
+      color: white;
+      content: attr(title);
+      font-size: 2000%;
+      line-height: .85em;
+      opacity: .015;
+      text-transform: uppercase;
+      z-index: 0;
+    }
+
     &.has-image {
-      height: 75%;
 
-
-      background-color: @color-medium-well;
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -70,7 +80,6 @@ body.single {
       }
       .hero-content {
         .post-title {
-          color: @color-empty;
           text-shadow: rgba(0,0,0,.15) 0 1px 3px;
         }
         .post-subtitle {
@@ -78,7 +87,6 @@ body.single {
         }
       }//has-image hero-content
     }//has image
-
 
   }//header
   .entry {
@@ -102,33 +110,38 @@ body.single {
     padding-top: 1.25em;
     @media only screen and (min-width: 40em) {
       border-top: none;
-      padding-top: 1.25em;
+      padding-top: .25em;
     }
     .author {
-      .font-s2;
+      margin-bottom: 1.5em;
+      @media only screen and (min-width: 40em) { margin-bottom: 2em; }
 
       .display(flex);
       .flex-wrap(wrap);
       .align-items(center);
 
       .avatar-wrapper {
+        display: block;
         margin-right: 1.25em;
         .avatar {
+          display: block;
           height: auto;
-          width: 48px;
+          width: 3em;
         }
       }
       .meta {
         .flex(1);
       }
 
-      margin-bottom: 1.5em;
-      @media only screen and (min-width: 40em) { margin-bottom: 2em; }
+
 
       @media only screen and (min-width: 40em) {
         display: block;
         .avatar-wrapper {
-
+          margin-bottom: .75em;
+          .avatar {
+            width: 5em;
+          }
         }
       }
 
@@ -136,6 +149,7 @@ body.single {
         .type-secondary;
         .font-s3;
         display: inline-block;
+        line-height: 1;
       }
       .description {
         .type-light;

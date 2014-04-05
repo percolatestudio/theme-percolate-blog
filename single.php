@@ -10,7 +10,7 @@
       } ?>
       <header
         class="<?php if(has_post_thumbnail()) {echo 'has-image';}?>"
-        style='background-image: url("<?php echo $large_image_url[0] ?>");'>
+        style='background-image: url("<?php echo $large_image_url[0] ?>");' title="<?php the_title() ?>">
         <div class="hero-content">
           <h1 class="post-title"><?php the_title() ?></h1>
   		  	<h2 class="post-subtitle">
