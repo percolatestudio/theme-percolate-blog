@@ -248,7 +248,7 @@ h5 {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  color: #999999;
+  color: #cccccc;
   text-transform: uppercase;
 }
 h6 {
@@ -276,7 +276,7 @@ em {
 }
 hr {
   border: none;
-  border-top: 1px solid #999999;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
 }
 code,
@@ -506,7 +506,7 @@ a[class^="btn-"][class*="cmd-line"] > [class*=" icon-"],
 button[class^="btn-"][class*="cmd-line"] > [class*=" icon-"],
 a[class*=" btn-"][class*="cmd-line"] > [class*=" icon-"],
 button[class*=" btn-"][class*="cmd-line"] > [class*=" icon-"] {
-  color: #999999;
+  color: #cccccc;
   margin-left: -6px;
 }
 a[class^="btn-"][disabled],
@@ -632,19 +632,19 @@ textarea {
 }
 input:not([type="checkbox"]):not([type="radio"])::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"])::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"]):-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"]):-input-placeholder,
 textarea:-input-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"]):active,
 textarea:active,
@@ -665,19 +665,19 @@ textarea.inverse {
 }
 input:not([type="checkbox"]):not([type="radio"]).inverse::-moz-placeholder,
 textarea.inverse::-moz-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"]).inverse::-webkit-input-placeholder,
 textarea.inverse::-webkit-input-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"]).inverse:-ms-input-placeholder,
 textarea.inverse:-ms-input-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 input:not([type="checkbox"]):not([type="radio"]).inverse:-input-placeholder,
 textarea.inverse:-input-placeholder {
-  color: #999999;
+  color: #cccccc;
 }
 /* Styles for inputs with icons inside of them, see styleguide for markup */
 .input-symbol {
@@ -732,7 +732,7 @@ textarea.inverse:-input-placeholder {
 .input-symbol > [class*=" icon-"] {
   background: transparent;
   bottom: 0;
-  color: #999999;
+  color: #cccccc;
   position: absolute;
   top: 50%;
   width: 1em;
@@ -801,6 +801,7 @@ textarea.nochrome:hover {
 }
 .formatting p {
   *zoom: 1;
+  color: #444444;
   line-height: 1.75em;
   margin-bottom: 1rem;
   margin-top: 1rem;
@@ -814,6 +815,10 @@ textarea.nochrome:hover {
   display: table;
   /* 2 */
 
+}
+.formatting p:only-of-type {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 .formatting p:first-of-type:not(:only-of-type) {
   margin-top: 0;
@@ -1120,7 +1125,7 @@ a.inverse:hover {
   color: #eeeeee;
 }
 a.inverse:active {
-  color: #999999;
+  color: #cccccc;
 }
 .view-link {
   display: none;
@@ -1623,7 +1628,7 @@ body.menu-active nav .wrapper {
   background: #eeeeee;
 }
 .page-template-page-styleguide-php #colors .color-medium-rare:after {
-  background: #999999;
+  background: #cccccc;
 }
 .page-template-page-styleguide-php #colors .color-medium:after {
   background: #666666;
@@ -1758,7 +1763,7 @@ nav .wrapper a {
     padding-bottom: 3em;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   .comments-wrapper {
     display: -webkit-box;
     display: -moz-box;
@@ -1770,7 +1775,7 @@ nav .wrapper a {
     flex-wrap: wrap;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   .comments-wrapper .comments {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -1780,7 +1785,7 @@ nav .wrapper a {
     padding-right: 1.25em;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   .comments-wrapper .sidebar {
     width: 20% !important;
     padding-left: 1.25em;
@@ -1818,6 +1823,120 @@ nav .wrapper a {
   .comments-wrapper .comments button[type=submit] {
     width: auto;
   }
+}
+.comments-wrapper .comment-lockup {
+  position: relative;
+  margin-bottom: 1.5em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.comments-wrapper .comment-lockup .avatar-wrapper {
+  display: block;
+  margin-right: 1.25em;
+}
+.comments-wrapper .comment-lockup .avatar-wrapper .avatar {
+  display: block;
+  height: auto;
+  width: 3em;
+}
+.comments-wrapper .comment-lockup .meta {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.comments-wrapper .comment-lockup .name {
+  background-image: none;
+  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+  display: inline-block;
+  line-height: 1.75em;
+}
+.comments-wrapper .comment-lockup .formatting {
+  margin-bottom: .5em;
+}
+.comments-wrapper .comment-lockup .bullet {
+  display: inline-block;
+  margin: 0 .75em;
+  color: #cccccc;
+}
+.comments-wrapper .comment-lockup .bullet:before {
+  content: '\02022';
+}
+.comments-wrapper .comment-lockup .date,
+.comments-wrapper .comment-lockup .comment-reply-link {
+  font-size: 14px;
+  line-height: 22px;
+  text-transform: uppercase;
+  line-height: 1.75em;
+  text-decoration: none;
+  color: #cccccc;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMTElIiBzdG9wLWNvbG9yPSIjY2NjY2NjIiBzdG9wLW9wYWNpdHk9IjEiLz48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjY2NjY2NjIiBzdG9wLW9wYWNpdHk9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjbGVzc2hhdC1nZW5lcmF0ZWQpIiAvPjwvc3ZnPg==);
+  background-image: -webkit-linear-gradient(bottom, transparent 11%, #cccccc 11%, #cccccc 0%, transparent 0%);
+  background-image: -moz-linear-gradient(bottom, transparent 11%, #cccccc 11%, #cccccc 0%, transparent 0%);
+  background-image: -o-linear-gradient(bottom, transparent 11%, #cccccc 11%, #cccccc 0%, transparent 0%);
+  background-image: linear-gradient(to top, transparent 11%, #cccccc 11%, #cccccc 0%, transparent 0%);
+}
+.comments-wrapper .comment-lockup .date:hover,
+.comments-wrapper .comment-lockup .comment-reply-link:hover {
+  color: #6064ad;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMTElIiBzdG9wLWNvbG9yPSIjNjA2NGFkIiBzdG9wLW9wYWNpdHk9IjEiLz48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjA2NGFkIiBzdG9wLW9wYWNpdHk9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjbGVzc2hhdC1nZW5lcmF0ZWQpIiAvPjwvc3ZnPg==);
+  background-image: -webkit-linear-gradient(bottom, transparent 11%, #6064ad 11%, #6064ad 0%, transparent 0%);
+  background-image: -moz-linear-gradient(bottom, transparent 11%, #6064ad 11%, #6064ad 0%, transparent 0%);
+  background-image: -o-linear-gradient(bottom, transparent 11%, #6064ad 11%, #6064ad 0%, transparent 0%);
+  background-image: linear-gradient(to top, transparent 11%, #6064ad 11%, #6064ad 0%, transparent 0%);
+}
+.comments-wrapper .comment-lockup .date:active,
+.comments-wrapper .comment-lockup .comment-reply-link:active {
+  color: #313140;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMTAwJSIgeDI9IjAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMTElIiBzdG9wLWNvbG9yPSIjMzEzMTQwIiBzdG9wLW9wYWNpdHk9IjEiLz48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMzEzMTQwIiBzdG9wLW9wYWNpdHk9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjbGVzc2hhdC1nZW5lcmF0ZWQpIiAvPjwvc3ZnPg==);
+  background-image: -webkit-linear-gradient(bottom, transparent 11%, #313140 11%, #313140 0%, transparent 0%);
+  background-image: -moz-linear-gradient(bottom, transparent 11%, #313140 11%, #313140 0%, transparent 0%);
+  background-image: -o-linear-gradient(bottom, transparent 11%, #313140 11%, #313140 0%, transparent 0%);
+  background-image: linear-gradient(to top, transparent 11%, #313140 11%, #313140 0%, transparent 0%);
+}
+.comments-wrapper .comment-lockup .note {
+  font-size: 14px;
+  line-height: 22px;
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 60em) {
+  .comments-wrapper .comment-lockup .note {
+    position: absolute;
+    top: auto;
+    right: -2.5em;
+    bottom: auto;
+    left: auto;
+    width: 160px;
+    height: auto;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+.comments-wrapper ul {
+  padding-left: 4.25em;
+}
+.comments-wrapper ul .comment-lockup .avatar-wrapper {
+  margin-right: 1em;
+}
+.comments-wrapper ul .comment-lockup .avatar-wrapper .avatar {
+  width: 2em;
 }
 .posts-grid {
   display: block;
@@ -2135,7 +2254,7 @@ body.single .entry-wrapper {
     padding-bottom: 3em;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   body.single .entry-wrapper {
     display: -webkit-box;
     display: -moz-box;
@@ -2147,7 +2266,7 @@ body.single .entry-wrapper {
     flex-wrap: wrap;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   body.single .entry-wrapper .entry {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -2157,7 +2276,7 @@ body.single .entry-wrapper {
     padding-right: 1.25em;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 60em) {
   body.single .entry-wrapper .sidebar {
     width: 20% !important;
     padding-left: 1.25em;

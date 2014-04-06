@@ -14,10 +14,15 @@
   }
   p {
     .cf;
+    color: @color-medium-well;
     line-height: 1.75em;
     margin-bottom: 1rem;
     margin-top: 1rem;
     position: relative;
+    &:only-of-type {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
     &:first-of-type:not(:only-of-type) { margin-top: 0; }
     &:last-of-type:not(:only-of-type) { margin-bottom: 0; }
     > img:only-child {

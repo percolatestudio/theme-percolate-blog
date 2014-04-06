@@ -71,11 +71,11 @@
             <textarea name="comment" placeholder="Share your thoughts" id="comment" cols="100%" rows="3" tabindex="3"></textarea>
 
       			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-secondary">Comment</button>
+      			<?php cancel_comment_reply_link('Cancel Reply'); ?>
     				<?php do_action('comment_form', $post->ID); ?>
     			</form>
-    			<div class="cancel-comment-reply">
-    				<?php cancel_comment_reply_link(); ?>
-    			</div>
+
+
     		<?php endif; // If registration required and not logged in ?>
     	</div>
     <?php endif; // if you delete this the sky will fall on your head ?>

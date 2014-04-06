@@ -4,19 +4,19 @@
   .std-ypadding;
   border-top: 1px solid @color-rare;
 
-  @media only screen and (min-width: 40em) {
+  @media only screen and (min-width: 60em) {
     .display(flex);
     .flex-wrap(wrap);
   }
 
   .comments {
-    @media only screen and (min-width: 40em) {
+    @media only screen and (min-width: 60em) {
       .flex(1);
       padding-right: 1.25em;
     }
   }
   .sidebar {
-    @media only screen and (min-width: 40em) {
+    @media only screen and (min-width: 60em) {
       width: 20% !important;
       padding-left: 1.25em;
     }
@@ -38,6 +38,70 @@
       width: 100%;
       @media only screen and (min-width: 40em) {
         width: auto;
+      }
+    }
+  }
+  .comment-lockup {
+    position: relative;
+
+    margin-bottom: 1.5em;
+
+    .display(flex);
+    .flex-wrap(wrap);
+
+    .avatar-wrapper {
+      display: block;
+      margin-right: 1.25em;
+      .avatar {
+        display: block;
+        height: auto;
+        width: 3em;
+      }
+    }
+    .meta { .flex(1); }
+
+    .name {
+      .background-image(none);
+      .type-secondary;
+      display: inline-block;
+      line-height: 1.75em; //same as formatting
+    }
+    .formatting {
+      margin-bottom: .5em;
+    }
+    .bullet {
+      display: inline-block;
+      margin: 0 .75em;
+      color: @color-medium-rare;
+      &:before {
+        content: '\02022';
+      }
+    }
+    .date, .comment-reply-link {
+      .font-s2;
+      text-transform: uppercase;
+      line-height: 1.75em;
+      .link-underline(@color-medium-rare, @color-primary, @color-well, 0%);
+    }
+
+    .note {
+      //this is when a comment is submitted and is awaiting moderation
+      .font-s2;
+      .position(relative, auto, auto, auto, auto, 100%);
+      @media only screen and (min-width: 60em) {
+        .position(absolute, auto, -2.5em, auto, auto, 160px);
+        .transform(translateX(100%));
+      }
+    }
+
+  }//comment-lockup
+
+  ul {
+    padding-left: 4.25em;
+    .comment-lockup {
+      .avatar-wrapper {
+        margin-right: 1em;
+        .avatar { width: 2em; }
       }
     }
   }
