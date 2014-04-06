@@ -17,7 +17,7 @@
   	<?php if (have_posts()) : ?>
   	  <ul id="loop">
     		<?php while (have_posts()) : the_post(); $results++; ?>
-    			<?php include('snip_metalockup.php'); ?>
+    			<?php include('snip_post_grid.php'); ?>
     		<?php endwhile; ?>
   		</ul>
 			<div class="navigation"><?php dr_previous_posts_link('Newer entries', '<div class="back_btn"><span class="arrow"></span>', '</div>'); ?><?php dr_next_posts_link('Older entries', '<div class="fwd_btn"><span class="arrow"></span>', '</div>'); ?></div>
