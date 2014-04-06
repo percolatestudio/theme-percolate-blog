@@ -122,18 +122,24 @@
   <div id="icons" class="module">
   <h5 class="subtitle">Icons</h5>
   <span class="icon-percolate"></span>
-  <span class="icon-atmosphere"></span>
+  <span class="icon-percolate2"></span>
   <span class="icon-arrow-down"></span>
   <span class="icon-arrow-down-thin"></span>
   <span class="icon-close-thin"></span>
   <span class="icon-circle-empty"></span>
-  <span class="icon-star"></span>
-  <span class="icon-ellipses"></span>
+  <span class="icon-comment"></span>
   <span class="icon-download"></span>
-  <span class="icon-proceed"></span>
+  <span class="icon-ellipses"></span>
+  <span class="icon-email"></span>
   <span class="icon-list"></span>
+  <span class="icon-proceed"></span>
   <span class="icon-search"></span>
+  <span class="icon-star"></span>
+  <span class="icon-user"></span>
+
   <span class="icon-github"></span>
+  <span class="icon-twitter"></span>
+  <span class="icon-facebook"></span>
 </div>
 
   <div id="forms" class="module">
