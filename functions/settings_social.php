@@ -1,5 +1,6 @@
 <?php
 //Settings
+// from https://trepmal.com/2011/03/07/add-field-to-general-settings-page/
 $new_general_setting = new new_general_setting();
 
 class new_general_setting {
@@ -15,5 +16,4 @@ class new_general_setting {
         echo '<input type="text" id="twitter" name="twitter" value="' . $value . '" />';
     }
 }
-
 ?>
