@@ -129,11 +129,7 @@ body.single {
           width: 3em;
         }
       }
-      .meta {
-        .flex(1);
-      }
-
-
+      .meta { .flex(1); }
 
       @media only screen and (min-width: 40em) {
         display: block;
@@ -158,6 +154,17 @@ body.single {
     }//author
     .date {
       .font-s2;
+    }
+    .social {
+      .display(flex);
+      .flex-wrap(wrap);
+      > a {
+        .flex(1);
+        color: #ccc;
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: .75em;
+      }
     }
   }
 

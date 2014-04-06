@@ -35,7 +35,6 @@
 
     		  	<span class="date"><?php the_time('M j, Y'); ?></span>
     		  	<?php the_tags('<div class="list-horiz"><li><b>Tags: </b></li><li>','</li><li>','</li></div>'); ?>
-  		    	<?php comments_popup_link('No Comments', '1 Comment', '% Comments'); ?>&nbsp;&nbsp;&nbsp;
 
 
 

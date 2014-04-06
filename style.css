@@ -520,8 +520,6 @@ button > [class^="icon-"],
 a > [class*=" icon-"],
 button > [class*=" icon-"] {
   font-size: 1em;
-  line-height: inherit;
-  vertical-align: text-top;
 }
 .btn-group {
   display: -webkit-box;
@@ -822,13 +820,6 @@ textarea.nochrome:hover {
 }
 .formatting p:last-of-type:not(:only-of-type) {
   margin-bottom: 0;
-}
-.formatting p:last-of-type:not(:only-of-type):after {
-  content: "\e600";
-  font-family: 'icon-atmos';
-  display: inline-block;
-  line-height: inherit;
-  margin-left: 4px;
 }
 .formatting p > img:only-child {
   margin-bottom: 0;
@@ -1174,41 +1165,6 @@ a.inverse:active {
 }
 .list-vertical > * + a {
   margin-top: .5em;
-}
-.list-vertical.users > * {
-  margin-bottom: .75em;
-}
-.list-vertical.users > *:last-child {
-  margin-bottom: 0;
-}
-.list-vertical.users > * > .avatar {
-  height: 24px;
-  margin-right: 6px;
-  width: 24px;
-}
-@media only screen and (min-width: 40em) {
-  .list-vertical.users > * > .avatar {
-    height: 30px;
-    margin-right: 10px;
-    width: 30px;
-  }
-}
-.list-vertical.users > * > .icon-ellipses:before {
-  font-size: 24px;
-  line-height: 16px;
-  margin-right: 6px;
-  text-align: center;
-  text-decoration: none !important;
-  vertical-align: middle;
-  width: 24px;
-}
-@media only screen and (min-width: 40em) {
-  .list-vertical.users > * > .icon-ellipses:before {
-    font-size: 30px;
-    line-height: 24px;
-    margin-right: 10px;
-    width: 30px;
-  }
 }
 .a-select {
   display: inline-block;
@@ -2448,4 +2404,25 @@ body.single .sidebar .author .description {
 body.single .sidebar .date {
   font-size: 14px;
   line-height: 22px;
+}
+body.single .sidebar .social {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+body.single .sidebar .social > a {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: #ccc;
+  display: block;
+  font-size: 1.5em;
+  margin-bottom: .75em;
 }

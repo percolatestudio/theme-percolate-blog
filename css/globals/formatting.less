@@ -18,19 +18,8 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
     position: relative;
-    &:first-of-type:not(:only-of-type) {
-      margin-top: 0;
-    }
-    &:last-of-type:not(:only-of-type) {
-      margin-bottom: 0;
-      &:after {
-        content: "\e600";
-        font-family: 'icon-atmos';
-        display: inline-block;
-        line-height: inherit;
-        margin-left: 4px;
-      }
-    }
+    &:first-of-type:not(:only-of-type) { margin-top: 0; }
+    &:last-of-type:not(:only-of-type) { margin-bottom: 0; }
     > img:only-child {
       margin-bottom: 0;
       margin-top: 0;
