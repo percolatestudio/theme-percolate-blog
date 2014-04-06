@@ -31,6 +31,7 @@
 
 
 		  	    <?php include('snip_attribution.php'); ?>
+		  	    <?php the_category();?>
             <?php include('snip_sociallinks.php'); ?>
 
     		  	<span class="date"><?php the_time('M j, Y'); ?></span>
