@@ -53,12 +53,18 @@
       				Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a>
       				</p>
       			<?php else : ?>
-      			  <!-- <label for="author"><strong>Name</strong></label> -->
-    					<input class="text" type="text" name="author" id="author" placeholder="Name" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 
-    			    <!-- <label for="email"><strong>Email</strong></label> -->
-    					<input class="text" type="text" name="email" id="email" placeholder="Email (will not be published)" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+      			  <div class="input-symbol left">
+      			    <!-- <label for="author"><strong>Name</strong></label> -->
+      					<input class="text" type="text" name="author" id="author" placeholder="Name" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+      					<span class="icon-user"></span>
+      			  </div>
 
+              <div class="input-symbol left">
+      			    <!-- <label for="email"><strong>Email</strong></label> -->
+      					<input class="text" type="text" name="email" id="email" placeholder="Email Address" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+      					<span class="icon-email"></span>
+              </div>
       			<?php endif; ?>
 
             <!-- <label for="comment">Comment</label> -->

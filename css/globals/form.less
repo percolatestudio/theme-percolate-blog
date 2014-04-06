@@ -28,6 +28,7 @@ label {
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
+.input-symbol,
 select,
 textarea,
 .a-select {
@@ -56,8 +57,7 @@ textarea {
   .transition( border 300ms ease-in, box-shadow 300ms ease-in );
   &:active,
   &:focus {
-    border-color: lighten(@color-primary, 50%);
-    box-shadow: @color-primary 0 0px 3px 0;
+    box-shadow: @color-primary 0 0 0 1px inset;
   }
   /* Alerts */
   &.alert {
@@ -86,7 +86,7 @@ textarea {
       left: 1em/2;
     }
     > input, > .pseudo-input {
-      padding-left: 2.5em !important;
+      padding-left: 2em !important;
     }
   }
   &.right {
@@ -104,9 +104,15 @@ textarea {
   }
   > input, > button, > .pseudo-input {
     width: 100%;
+    margin: 0 !important; //clear any inherited margin, we space the container instead
 
     /* highlight submit button when input focussed */
     &:focus + button {
+      &[class^="icon-"], &[class*=" icon-"] {
+        color: @color-primary;
+      }
+    }
+    &:focus + span {
       &[class^="icon-"], &[class*=" icon-"] {
         color: @color-primary;
       }
@@ -124,75 +130,6 @@ textarea {
     .transition( all 100ms ease-in );
     &.inverse {
       color: @color-medium;
-    }
-  }
-}
-
-
-/* Appears on the search page */
-.input-cmd-line {
-  display: inline-block;
-  position: relative;
-
-  &.right {
-    > [class^="icon-"], > [class*=" icon-"] {
-      right: .75em;
-    }
-     > .pseudo-input {
-      padding-right: 3.5em !important;
-    }
-  }
-  > .pseudo-input {
-    width: 100%;
-
-    .type-code;
-    color: @color-tertiary;
-    cursor: text;
-    font-size: .8rem;
-    padding: .63em 1em; //results in a 36, 40, 44px height
-    text-align: left;
-    @media only screen and (min-width: 30em) { font-size: .9rem; }
-    @media only screen and (min-width: 50em) { font-size: 1rem; }
-
-    &:before {
-      content: '$ ';
-    }
-  }
-  > [class^="icon-"], > [class*=" icon-"] {
-    .font-s1;
-    @media screen and (min-width: 30em) { .font-s3; }
-    @media screen and (min-width: 40em) { font-size: 18px; }
-
-    background: transparent;
-    bottom: 0;
-    color: @color-medium-rare;
-    line-height: 1em !important; //ensures that we'll be able to vertical align consistently
-    position: absolute;
-    top: 50%;
-    width: 1em;
-    height: 1em;
-    .transform(translateY(-50%));
-    .transition( all 100ms ease-in );
-
-    &:hover {
-      color: @color-primary;
-      &:after{ //tooltips
-        .font-s2;
-        @media screen and (min-width: 30em) { .font-s3; }
-        .type-primary;
-        .transform( translateX(-50%) );
-
-        background-color: rgba(0,0,0,.7);
-        border-radius: 3px;
-        color: @color-empty;
-        content: attr(data-title);
-        left: 50%;
-        padding: .25em .75em;
-        position: absolute;
-        top: 2em;
-        white-space: nowrap;
-        z-index: 98;
-      }
     }
   }
 }
