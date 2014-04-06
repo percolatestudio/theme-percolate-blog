@@ -1721,27 +1721,9 @@ nav .wrapper a {
   margin-top: 1.5em;
 }
 .comments-wrapper {
-  margin: 0;
-  padding-left: 1.25em;
-  padding-right: 1.25em;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
-  border-top: 1px solid #eeeeee;
-}
-@media screen and (min-width: 30em) {
-  .comments-wrapper {
-    margin: 0 5.555555555555555%;
-  }
-}
-@media screen and (min-width: 60em) {
-  .comments-wrapper {
-    margin: 0 11.11111111111111%;
-  }
-}
-@media screen and (min-width: 80em) {
-  .comments-wrapper {
-    margin: 0 16.666666666666664%;
-  }
+  background: #f7f7f2;
 }
 @media screen and (min-width: 30em) {
   .comments-wrapper {
@@ -1789,6 +1771,29 @@ nav .wrapper a {
   .comments-wrapper .sidebar {
     width: 20% !important;
     padding-left: 1.25em;
+  }
+}
+.comments-wrapper .commentlist {
+  margin-bottom: 3em;
+}
+.comments-wrapper .comments {
+  margin: 0;
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+}
+@media screen and (min-width: 30em) {
+  .comments-wrapper .comments {
+    margin: 0 5.555555555555555%;
+  }
+}
+@media screen and (min-width: 60em) {
+  .comments-wrapper .comments {
+    margin: 0 11.11111111111111%;
+  }
+}
+@media screen and (min-width: 80em) {
+  .comments-wrapper .comments {
+    margin: 0 16.666666666666664%;
   }
 }
 .comments-wrapper .comments .subtitle {

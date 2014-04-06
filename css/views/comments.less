@@ -1,8 +1,6 @@
 .comments-wrapper {
-  .page-margins;
-  .std-xpadding;
   .std-ypadding;
-  border-top: 1px solid @color-rare;
+  background: @color-raw;
 
   @media only screen and (min-width: 60em) {
     .display(flex);
@@ -22,8 +20,13 @@
     }
   }
 
+  .commentlist {
+    margin-bottom: 3em;
+  }
 
   .comments {
+    .page-margins;
+    .std-xpadding;
     .subtitle {
       .page-subtitle(@color-well);
       .type-secondary;
