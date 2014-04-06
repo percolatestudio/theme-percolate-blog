@@ -11,8 +11,6 @@
 	<!-- seo -->
 	<title><?php wp_title('');?><?php  echo '| ' .get_bloginfo('name');?></title>
 
-
-
 	<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post();
 	  $subtitle = get_post_meta($post->ID, "subtitle_value", $single = true);
 	  if(has_post_thumbnail()) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); }
@@ -45,14 +43,6 @@
 
 
 
-
-
-
-
-
-
-
-
 	<!-- blog -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.png">
@@ -71,7 +61,7 @@
 </head>
 <body <?php body_class($class); ?> lang="en">
 
-  <a class="menu-toggle btn-github"><span class="icon-list"></span></a>
+  <a class="menu-toggle"><span class="icon-percolate2"></span></a>
   <?php include('snip_menu.php'); ?>
 
   <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>
