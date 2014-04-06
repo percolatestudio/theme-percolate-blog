@@ -1,0 +1,57 @@
+.grid-oneup() {
+  @media screen and (min-width: 40em) { min-width: 100%; }
+  .title { .post-title-oneup(@color-empty); }
+  .subtitle { .post-subtitle-oneup(@color-empty); }
+  .post-content {
+    //does not need to be uniform with adjacent posts when all by itself
+    //thus no top:X%
+    .transform(translate3d(-50%, -50%, 0px));
+  }
+}
+.grid-twoup() {
+  @media screen and (min-width: 40em) { min-width: 50%; }
+  .post-content {
+    @media screen and (min-width: 40em) { top: 36%; }
+    @media screen and (min-width: 50em) { top: 40%; }
+  }
+}
+.grid-threeup() {
+  @media screen and (min-width: 40em) { min-width: 33.33%; }
+  .post-content {
+    @media screen and (min-width: 40em) { top: 35%; }
+    @media screen and (min-width: 50em) { top: 40%; }
+  }
+}
+
+.posts-grid {
+  display: block;
+  overflow: hidden; //prevents 1px spacing
+  position: relative;
+
+  .display(flex);
+  .flex-wrap(wrap);
+
+
+  .post {
+    .flex(1);
+    cursor: pointer;
+    display: block;
+    position: relative;
+
+    //account for chrome's non-standard scrollbar/viewport measurement
+    height: 240px;
+    min-width: 100%;
+    @media screen and (min-width: 40em) { height: 400px; }
+
+    //Note: this does not extend beyond 9 grid items
+    &:nth-child(1), &:nth-child(6)  {
+      .grid-oneup;
+    }
+    &:nth-child(n+2):nth-child(-n+5) {
+      .grid-twoup;
+    }
+    &:nth-child(n+7):nth-child(-n+9) {
+      .grid-threeup;
+    }
+  }
+}
