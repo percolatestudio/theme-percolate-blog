@@ -9,6 +9,7 @@
 
   > * {
     .flex(1);
+    cursor: pointer;
     display: block;
     position: relative;
 
@@ -123,8 +124,10 @@
     .font-s2;
     color: @color-empty;
     > a {
-      .link-underline(@color-empty, @color-empty, @color-well);
-      .background-image(none);
+      .link-underline(@color-empty, @color-empty, rgba(255,255,255, .7));
+      &:not(:hover):not(:active) {
+        .background-image(none);
+      }
     }
   }
 }
