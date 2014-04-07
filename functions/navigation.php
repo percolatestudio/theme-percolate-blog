@@ -68,4 +68,13 @@ function dr_next_comments_link($label = '', $pre = '', $post = '') {
 	if(!empty($buffer)) echo $pre,$buffer,$post;
 }
 
+//Link for next and previous classes
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+    return 'class="btn-tertiary"';
+}
+
+
 ?>

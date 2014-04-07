@@ -31,7 +31,7 @@
       	<?php endif;?>
       <?php endwhile; ?>
     </div>
-  		<div class="navigation"><?php dr_previous_posts_link('Newer entries', '<div class="back_btn"><span class="arrow"></span>', '</div>'); ?><?php dr_next_posts_link('Older entries', '<div class="fwd_btn"><span class="arrow"></span>', '</div>'); ?></div>
+		<div class="navigation"><?php dr_previous_posts_link('Newer entries', '<div class="back_btn"><span class="arrow"></span>', '</div>'); ?><?php dr_next_posts_link('Older entries', '<div class="fwd_btn"><span class="arrow"></span>', '</div>'); ?></div>
   <?php else : ?>
   <?php endif; ?>
 

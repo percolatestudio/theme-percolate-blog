@@ -5,4 +5,26 @@ body.archive {
   .posts-grid {
     .page-margins;
   }
+  .navigation {
+    .page-margins;
+    .std-ypadding;
+    .std-xpadding;
+    text-align: center;
+
+    &:empty {
+      display: none;
+    }
+
+    @media screen and (min-width: 50em) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    > a {
+      width: 100%;
+      @media screen and (min-width: 50em) {
+        width: 33.33%;
+      }
+    }
+  }
 }
+
