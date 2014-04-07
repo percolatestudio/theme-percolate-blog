@@ -3,7 +3,9 @@
 .posts-grid {
   > * {
     &:after { //Overlay for text readability atop images
+      .backface-visibility(hidden);
       .fill-with-absolute-position;
+     .transition(all ease-in 200ms);
       background: black;
       content: "";
       opacity: 0.2;
@@ -14,6 +16,9 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+      &:hover:after {
+        opacity: .30;
+      }
     }
     &:not(.has-image) { //Overlay for posts without an image
       background-color: @color-medium-well;
@@ -34,7 +39,7 @@
     .post-content {
       position: absolute;
       left: 50%;
-      top: 54%;
+      top: 53%;
       width: 100%;
 
       //for single stacked columns
