@@ -16,4 +16,12 @@ jQuery(document).ready(function($) {
       window.location = link.attr('href');
     }
   });
+
+  //hacked together, needs refactor
+  $('.toggle-iframe > a').click(function(toggle) {
+    if (! $(toggle.target).hasClass('active')) {
+      $(this).addClass('active').siblings().removeClass('active').closest('.toggle-iframe').toggleClass('source');
+    }
+  });
+
 });

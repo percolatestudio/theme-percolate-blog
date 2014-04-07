@@ -1,0 +1,95 @@
+.toggle-iframe {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+  //animation to toggle demo/source
+  //default state is to view the demo
+  > iframe.demo,
+  > div.source {
+    .transition(all ease-in 200ms);
+    display: block;
+    overflow: hidden;
+  }
+  > iframe.demo {
+    max-height: 300em;
+    opacity: 1;
+  }
+  > div.source {
+    max-height: 0;
+    opacity: 0;
+  }
+  &.source {
+    > iframe.demo {
+      max-height: 0;
+      opacity: 0;
+    }
+    > div.source {
+      max-height: 300em;
+      opacity: 1;
+    }
+  }
+  //end animation
+
+  //toggles
+  > a.demo,
+  > a.source {
+    .link-inverse;
+    background: @color-medium-rare;
+    border-radius: 3px;
+    color: @color-empty;
+    display: inline-block;
+    margin-bottom: .75em;
+    margin-right: .5em;
+    padding: .5em .5em;
+
+    &:hover:not(.active) {
+      background: @color-primary;
+      &:after {
+        border-left-color: @color-primary;
+      }
+    }
+    &.active {
+      background: @color-primary;
+      &:after {
+        border-left-color: @color-primary;
+      }
+    }
+  }
+  //toggle placement
+  > a.demo,
+  > a.source {
+    @media only screen and (min-width: 60em) {
+      //offset positioning for larger screens
+      position: absolute;
+      .transform(translateX(-100%));
+      left: -1.25em;
+      line-height: 1em;
+
+      &:after {
+        border-right: 6px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 6px solid @color-medium-rare;
+        border-top: 5px solid transparent;
+        content: '';
+        display: inline-block;
+        margin-top: -5px;
+        right: -12px;
+        top: 50%;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+  }
+  > a.demo { top: 0; }
+  > a.source { top: 2.5em; }
+
+  //styling
+  > div.source {
+    > pre { margin: 0; }
+  }
+  //caption
+  > .caption {
+    padding-top: .75em;
+  }
+}
