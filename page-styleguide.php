@@ -123,6 +123,7 @@
   <h5 class="subtitle">Icons</h5>
   <span class="icon-percolate"></span>
   <span class="icon-percolate2"></span>
+  <span class="icon-percolate-full"></span>
   <span class="icon-arrow-down"></span>
   <span class="icon-arrow-down-thin"></span>
   <span class="icon-close-thin"></span>
