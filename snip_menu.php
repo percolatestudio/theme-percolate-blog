@@ -1,10 +1,11 @@
 <nav>
   <div class="wrapper list-vertical">
-    <a href="" class="inverse">Home</a>
-    <a href="" class="inverse">Design</a>
-    <a href="" class="inverse">Engineering</a>
-    <a href="" class="inverse">Business</a>
-    <a href="" class="inverse">Talks</a>
-    <a href="" class="inverse">About</a>
+    <a href="<?php echo site_url(); ?>">Home</a>
+    <?php
+      $listcats = wp_list_categories('title_li=&style=none&echo=0&orderby=name');
+    	$listcats = str_replace("<br />","",$listcats);
+    	echo $listcats;
+  	 ?>
+    <a href="">About</a>
   </div>
 </nav>
