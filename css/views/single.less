@@ -110,19 +110,21 @@ body.single {
     .sidebar {
       .display(flex);
       .flex-wrap(wrap);
+      .align-content(flex-start);
 
       border-top: 1px solid @color-rare;
       padding-top: 1.25em;
-      @media only screen and (min-width: 40em) {
+      @media only screen and (min-width: 60em) {
         border-top: none;
         padding-top: .25em;
       }
 
+
       .attribution {
-        .flex(2);
+        @media only screen and (max-width: 60em) { .flex(2); }//max width
       }
       .metadata {
-        .flex(1);
+        @media only screen and (max-width: 60em) { .flex(1); }//max width
       }
 
       .author {
@@ -130,7 +132,7 @@ body.single {
         .flex-wrap(wrap);
         .align-items(center);
         margin-bottom: 1.5em;
-        @media only screen and (min-width: 40em) {
+        @media only screen and (min-width: 60em) {
           display: block;
           margin-bottom: 2em;
         }
@@ -140,12 +142,12 @@ body.single {
         .avatar-wrapper {
           display: block;
           margin-right: 1.25em;
-          @media only screen and (min-width: 40em) { margin-bottom: .75em; }
+          @media only screen and (min-width: 60em) { margin-bottom: .75em; }
           .avatar {
             display: block;
             height: auto;
             width: 3em;
-            @media only screen and (min-width: 40em) { width: 5em; }
+            @media only screen and (min-width: 60em) { width: 5em; }
           }
         }
 
@@ -161,12 +163,22 @@ body.single {
         }
       }//author
       .metadata {
+        .definition {
+          .font-s2;
+          &:last-of-type {
+            margin-bottom: 1.5rem;
+          }
+          > span {
+            .section-subtitle;
+            .type-bold;
+            color: @color-medium;
+          }
+        }
         .link-social {
           color: @color-medium-rare;
-          font-size: 2em;
-        }
-        .date {
-          .section-subtitle;
+          display: inline-block;
+          font-size: 1.5em;
+          margin-right: .75rem;
         }
       }//metadata
     }//sidebar
