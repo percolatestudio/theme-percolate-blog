@@ -1,6 +1,6 @@
 .formatting {
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4 {
     .type-bold;
     .type-secondary;
     line-height: 1em;
@@ -8,6 +8,9 @@
     & + *:not(hr) { //clears margin of element directly following a Heading
       margin-top: 0 !important;
     }
+  }
+  h5, h6 {
+    .std-xpadding;
   }
   hr + * {
     margin-top: 0 !important;

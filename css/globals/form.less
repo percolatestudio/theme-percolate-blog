@@ -35,15 +35,6 @@ textarea,
   margin-bottom: 1em;
 }
 
-/* Input styles */
-input:not([type="checkbox"]):not([type="radio"]) {
-  padding: .375em .75em; //more compact buttons
-  line-height: 1.5em !important;
-  @media screen and (min-width: 40em) {
-    padding: .375em 1em;
-  }
-}
-
 input:not([type="checkbox"]):not([type="radio"]),
 textarea {
   .font-s2;
@@ -53,8 +44,15 @@ textarea {
   border-radius: 3px;
   box-shadow: #ddd 0 0 0 1px inset;
   box-sizing: border-box;
-  padding: .375em .75em;
   .transition( border 300ms ease-in, box-shadow 300ms ease-in );
+
+  //padding that ensures buttons and forms are similar dimensions
+  padding: .5em .75em; //more compact buttons
+  line-height: 1.5em !important;
+  @media screen and (min-width: 40em) {
+    padding: .5em 1em;
+  }
+
   &:active,
   &:focus {
     box-shadow: @color-primary 0 0 0 1px inset;
