@@ -26,14 +26,8 @@
   		  		<?php wp_link_pages(); ?>
 		  	  </div>
 		  	  <div class="sidebar">
-
 		  	    <?php include('snip_attribution.php'); ?>
-		  	    <?php the_category();?>
-            <?php include('snip_sociallinks.php'); ?>
-
-    		  	<span class="date"><?php the_time('M j, Y'); ?></span>
-    		  	<?php the_tags('<div class="list-horiz"><li><b>Tags: </b></li><li>','</li><li>','</li></div>'); ?>
-
+            <?php include('snip_metadata.php'); ?>
   		    </div>
 		  	</div>
 
