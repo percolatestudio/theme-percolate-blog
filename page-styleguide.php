@@ -23,7 +23,7 @@
   <div id="typography" class="module">
   <h5 class="subtitle">Typography</h5>
   <ul class="two-up">
-    <li><h6>Headings</h6><div class="font-m1">Lora</div></li>
+    <li><h6>Headings</h6><div class="font-m1 headings">Lora</div></li>
     <li><h6>Body</h6><div class="font-m1 type-secondary">Source Sans Pro</div></li>
   </ul>
   <ul class="two-up horiz">

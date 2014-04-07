@@ -1,7 +1,14 @@
 .page-template-page-styleguide-php {
   overflow: hidden;
 
+  .section-std {
+    .page-margins;
+  }
+
   .module {
+    .std-xpadding;
+    .std-ypadding;
+    background: white;
     margin-bottom: 2em;
     .two-up {
       display: inline-block;
@@ -15,21 +22,9 @@
     }
   }
 
-  #links {
-    li {
-        margin-bottom: .75em;
-      }
-    h6 {
-      clear: both;
-      display: inline-block;
-      margin-right: 40px;
-      text-align: left;
-      text-transform: uppercase;
-      vertical-align: bottom;
-      width: 60px;
-    }
-  }
   #typography {
+    .headings {.type-secondary();}
+    .body {}
     .font-l3 { .font-l3(); }
     .font-l2 { .font-l2(); }
     .font-l1 { .font-l1(); }
@@ -72,8 +67,8 @@
       &.subtext { .font-s2; }
       &.fineprint { .font-s1; }
     }
-
   }
+
   #colors {
     [class^="color-"] {
       @color-dimension: 28px;
@@ -116,8 +111,6 @@
     .color-pinterest:after { background: @color-pinterest ; }
     .color-youtube:after { background: @color-youtube ; }
   }
-  #buttons {
-  }
   #icons {
    [class^="icon-"] {
      background: @color-rare;
@@ -146,5 +139,19 @@
       white-space: nowrap;
     }
    }
+  }
+  #links {
+    li {
+        margin-bottom: .75em;
+      }
+    h6 {
+      clear: both;
+      display: inline-block;
+      margin-right: 40px;
+      text-align: left;
+      text-transform: uppercase;
+      vertical-align: bottom;
+      width: 60px;
+    }
   }
 }

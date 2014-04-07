@@ -2143,8 +2143,51 @@ footer {
 .page-template-page-styleguide-php {
   overflow: hidden;
 }
+.page-template-page-styleguide-php .section-std {
+  margin: 0;
+}
+@media screen and (min-width: 50em) {
+  .page-template-page-styleguide-php .section-std {
+    margin: 0 5.555555555555555%;
+  }
+}
+@media screen and (min-width: 70em) {
+  .page-template-page-styleguide-php .section-std {
+    margin: 0 11.11111111111111%;
+  }
+}
+@media screen and (min-width: 90em) {
+  .page-template-page-styleguide-php .section-std {
+    margin: 0 16.666666666666664%;
+  }
+}
 .page-template-page-styleguide-php .module {
+  padding-left: 1.25em;
+  padding-right: 1.25em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background: white;
   margin-bottom: 2em;
+}
+@media screen and (min-width: 30em) {
+  .page-template-page-styleguide-php .module {
+    padding-top: 2em;
+  }
+}
+@media screen and (min-width: 40em) {
+  .page-template-page-styleguide-php .module {
+    padding-top: 3em;
+  }
+}
+@media screen and (min-width: 30em) {
+  .page-template-page-styleguide-php .module {
+    padding-bottom: 2em;
+  }
+}
+@media screen and (min-width: 40em) {
+  .page-template-page-styleguide-php .module {
+    padding-bottom: 3em;
+  }
 }
 .page-template-page-styleguide-php .module .two-up {
   display: inline-block;
@@ -2158,17 +2201,9 @@ footer {
     margin-left: -6px;
   }
 }
-.page-template-page-styleguide-php #links li {
-  margin-bottom: .75em;
-}
-.page-template-page-styleguide-php #links h6 {
-  clear: both;
-  display: inline-block;
-  margin-right: 40px;
-  text-align: left;
-  text-transform: uppercase;
-  vertical-align: bottom;
-  width: 60px;
+.page-template-page-styleguide-php #typography .headings {
+  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
+  font-weight: 400;
 }
 .page-template-page-styleguide-php #typography .font-l3 {
   font-size: 56px;
@@ -2362,6 +2397,18 @@ footer {
   position: absolute;
   z-index: 98;
   white-space: nowrap;
+}
+.page-template-page-styleguide-php #links li {
+  margin-bottom: .75em;
+}
+.page-template-page-styleguide-php #links h6 {
+  clear: both;
+  display: inline-block;
+  margin-right: 40px;
+  text-align: left;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  width: 60px;
 }
 .menu-toggle {
   position: relative;
