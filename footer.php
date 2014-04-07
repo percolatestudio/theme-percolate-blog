@@ -1,4 +1,4 @@
-    <?php if(is_archive()) {?><footer>&copy; 2012&mdash;<?php echo date('Y'); ?> Percolate Studio</footer><?php }?>
+    <?php if( is_archive() || is_404() ) {?><footer>&copy; 2012&mdash;<?php echo date('Y'); ?> Percolate Studio</footer><?php }?>
   </div><!-- end .content wrapper -->
 
   <!-- <?php echo get_num_queries() . " queries, "; timer_stop(1); echo " seconds"; ?> -->
