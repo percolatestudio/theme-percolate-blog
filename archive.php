@@ -24,16 +24,9 @@
 		$i = 0; ?>
     <div class="posts-grid">
       <?php while (have_posts()) : the_post(); $i++; ?>
-        <?php if ($i == 1 and $paged < 1) :?>
+        <?php if ($i == 1 or $i == 6 and $paged < 1) :?>
     			<?php include('snip_post_grid_large.php'); ?>
       	<?php else: ?>
-    			<?php include('snip_post_grid.php'); ?>
-    			<?php include('snip_post_grid.php'); ?>
-    			<?php include('snip_post_grid.php'); ?>
-    			<?php include('snip_post_grid.php'); ?>
-    			<?php include('snip_post_grid.php'); ?>
-    			<?php include('snip_post_grid.php'); ?>
-    			<?php include('snip_post_grid.php'); ?>
     			<?php include('snip_post_grid.php'); ?>
       	<?php endif;?>
       <?php endwhile; ?>

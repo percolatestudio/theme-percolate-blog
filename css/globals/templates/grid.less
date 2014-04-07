@@ -9,14 +9,14 @@
   }
 }
 .grid-twoup() {
-  @media screen and (min-width: 40em) { min-width: 50%; }
+  @media screen and (min-width: 40em) { min-width: 50%; max-width: 50%; }
   .post-content {
     @media screen and (min-width: 40em) { top: 36%; }
     @media screen and (min-width: 50em) { top: 40%; }
   }
 }
 .grid-threeup() {
-  @media screen and (min-width: 40em) { min-width: 33.33%; }
+  @media screen and (min-width: 40em) { min-width: 33.33%; max-width: 33.33%; }
   .post-content {
     @media screen and (min-width: 40em) { top: 35%; }
     @media screen and (min-width: 50em) { top: 40%; }
@@ -31,8 +31,7 @@
   .display(flex);
   .flex-wrap(wrap);
 
-
-  .post {
+  > .post {
     .flex(1);
     cursor: pointer;
     display: block;
@@ -43,15 +42,42 @@
     min-width: 100%;
     @media screen and (min-width: 40em) { height: 400px; }
 
-    //Note: this does not extend beyond 9 grid items
-    &:nth-child(1), &:nth-child(6)  {
-      .grid-oneup;
-    }
-    &:nth-child(n+2):nth-child(-n+5) {
-      .grid-twoup;
-    }
-    &:nth-child(n+7):nth-child(-n+9) {
-      .grid-threeup;
-    }
+    body.archive & {
+      //Style for archive pages only
+      //Note: this does not extend beyond 9 grid items
+      &:nth-child(1), &:nth-child(6)  {
+        .grid-oneup;
+      }
+      &:nth-child(n+2):nth-child(-n+5) {
+        .grid-twoup;
+      }
+      &:nth-child(n+7):nth-child(-n+9) {
+        .grid-threeup;
+      }
+    }//archive
+
+    body.single & {
+      /* one item */
+      &:first-child:nth-last-child(1) {
+        .grid-oneup;
+      }
+
+      /* two items */
+      &:first-child:nth-last-child(2),
+      &:first-child:nth-last-child(2) ~ div {
+        .grid-twoup;
+      }
+
+      /* three items */
+      &:first-child:nth-last-child(3),
+      &:first-child:nth-last-child(3) ~ div {
+        .grid-threeup;
+      }
+    }//single
+
   }
+
+
+
+
 }

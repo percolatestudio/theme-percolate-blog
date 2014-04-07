@@ -1,25 +1,7 @@
-// Grid
+// Grid item
 // Generic Layout and Master styles
 .posts-grid {
   > * {
-
-    /* one item */
-    &:first-child:nth-last-child(1) {
-      .grid-oneup;
-    }
-
-    /* two items */
-    &:first-child:nth-last-child(2),
-    &:first-child:nth-last-child(2) ~ div {
-      .grid-twoup;
-    }
-
-    /* three items */
-    &:first-child:nth-last-child(3),
-    &:first-child:nth-last-child(3) ~ div {
-      .grid-threeup;
-    }
-
     &:after { //Overlay for text readability atop images
       .fill-with-absolute-position;
       background: black;
