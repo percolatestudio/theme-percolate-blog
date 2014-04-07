@@ -2,8 +2,8 @@
 // Generic Layout and Master styles
 .posts-grid {
   > * {
+    .transform(translate3d(0,0,0));//improve performance for bg cover
     &:after { //Overlay for text readability atop images
-      .backface-visibility(hidden);
       .fill-with-absolute-position;
      .transition(all ease-in 200ms);
       background: black;
