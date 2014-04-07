@@ -10,7 +10,8 @@ jQuery(document).ready(function($) {
 
   //post grid
   //map clicks to go to the post
-  $('.posts-grid *:not(.author)').click(function() {
+  //TODO FIX ME
+  $('.posts-grid > * > *:not(.author)').click(function() {
     var postLink = $(this).find('.title > a').attr('href');
     window.location = postLink;
   });
