@@ -10,7 +10,15 @@
       <?php } elseif (is_day()) { ?><?php the_time('F jS, Y'); ?>
       <?php } elseif (is_month()) { ?><?php the_time('F, Y'); ?>
       <?php } elseif (is_year()) { ?><?php the_time('Y'); ?>
-      <?php } elseif (is_author()) { ?>Author Archive
+      <?php } elseif (is_author()) { ?>
+        <?php
+          if(get_query_var('author_name')) :
+              $curauth = get_user_by('slug', get_query_var('author_name'));
+          else :
+              $curauth = get_userdata(get_query_var('author'));
+          endif;
+          echo $curauth->display_name;
+        ?>
       <?php } else { ?><?php single_cat_title(); ?>
       <?php } ?>
     </h1>
