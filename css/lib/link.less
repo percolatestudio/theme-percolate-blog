@@ -18,3 +18,13 @@
     .background-image(linear-gradient(to top, transparent 11%, @active 11%, @active @weight, transparent @weight));
   }
 }
+
+.link-inverse() {
+  color: @color-empty;
+  &:hover {
+    color: @color-rare;
+  }
+  &:active {
+    color: @color-medium-rare;
+  }
+}
