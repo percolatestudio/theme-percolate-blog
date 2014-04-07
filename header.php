@@ -11,6 +11,10 @@
 	<!-- seo -->
 	<title><?php wp_title('| ', true, 'right');?><?php echo get_bloginfo('name');?></title>
 
+  <?php if ( is_attachment() || is_404() ) { ?>
+  	<meta name="robots" content="noindex, nofollow">
+	<?php } ?>
+
 	<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post();
 	  $subtitle = get_post_meta($post->ID, "subtitle_value", $single = true);
 	  if(has_post_thumbnail()) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); }

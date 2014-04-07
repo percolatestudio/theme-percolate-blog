@@ -12,11 +12,13 @@
     	}
     ?>
 
-    <div class="subtitle">
+    <div class="section-heading">
+      <h3 class="section-title">
     	<?php comments_number(
       	'Comments',
       	'<span class="number">1</span> Comment',
       	'<span class="number">%</span> Comments' );?>
+      </h3>
     </div>
 
     <!-- You can start editing here. -->

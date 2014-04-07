@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 
-
   <?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
-
 
       <?php if(has_post_thumbnail()) {
         $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
@@ -29,7 +27,6 @@
 		  	  </div>
 		  	  <div class="sidebar">
 
-
 		  	    <?php include('snip_attribution.php'); ?>
 		  	    <?php the_category();?>
             <?php include('snip_sociallinks.php'); ?>
@@ -37,21 +34,11 @@
     		  	<span class="date"><?php the_time('M j, Y'); ?></span>
     		  	<?php the_tags('<div class="list-horiz"><li><b>Tags: </b></li><li>','</li><li>','</li></div>'); ?>
 
-
-
   		    </div>
 		  	</div>
 
-
-
-        <?php // include('snip_recent.php'); ?>
-
-
 		<?php endwhile; ?>
-	<?php else : ?>
-  	<p>404</p>
-	<?php endif; ?>
-
+	<?php else : endif; ?>
 
 
 	<?php
@@ -62,6 +49,5 @@
 	?>
 
   <?php include('snip_adjacentposts.php'); ?>
-  <?php // get_sidebar(); ?>
 
 <?php get_footer(); ?>

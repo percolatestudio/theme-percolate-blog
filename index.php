@@ -1,10 +1,23 @@
 <?php get_header(); ?>
 
   <header class="default">
-    <h1 class="page-title">Percolate Blog</h1>
+    <h1 class="page-title">
+      <?php $post = $posts[0]; // Hack for the_date() functionality ?>
+      <?php if (is_home()) { ?><?php echo get_bloginfo('name');?>
+      <?php } elseif (is_category()) { ?><?php single_cat_title(); ?>
+      <?php } elseif( is_tag() ) { ?>Posts Tagged &#8216;<?php single_tag_title(); ?>&#8217;
+      <?php } elseif (is_day()) { ?><?php the_time('F jS, Y'); ?>
+      <?php } elseif (is_day()) { ?><?php the_time('F jS, Y'); ?>
+      <?php } elseif (is_month()) { ?><?php the_time('F, Y'); ?>
+      <?php } elseif (is_year()) { ?><?php the_time('Y'); ?>
+      <?php } elseif (is_author()) { ?>Author Archive
+      <?php } else { ?><?php single_cat_title(); ?>
+      <?php } ?>
+    </h1>
+    <!-- <h2 class="page-subtitle"><?php $category=get_category($cat); echo $category->description; ?></h2> -->
   </header>
 
-	<?php if (have_posts()) :
+  <?php if (have_posts()) :
 	  $i = 0;
 	 ?>
 	  <div class="posts-grid">
@@ -16,10 +29,7 @@
       	<?php endif;?>
   		<?php endwhile; ?>
 	  </div>
-		<div class="navigation">
-		  <?php dr_previous_posts_link('Previous', '', ''); ?>
-		  <?php dr_next_posts_link('Next', '', ''); ?>
-	  </div>
+		<div class="navigation"><?php dr_previous_posts_link('Previous', '', ''); ?><?php dr_next_posts_link('Next', '', ''); ?></div>
 	<?php else : ?>
 	<?php endif; ?>
 

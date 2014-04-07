@@ -1,7 +1,7 @@
 //Main look and feel
 .section-title {
   .type-light;
-  .section-title(@color-well);
+  .post-title-oneup(@color-well);
   line-height: 1em !important;
   display: inline-block;
 
@@ -9,7 +9,6 @@
 
 //Layout for the top of <section>'s
 .section-heading {
-  .std-xpadding;
   overflow: hidden;
   text-align: left;
 
@@ -56,14 +55,6 @@
     @media screen and (min-width: 50em) {
       padding-bottom: 2.5em;
       padding-top: 2.5em;
-    }
-  }
-  &.select {
-    @media screen and (min-width: 30em) {
-      padding-bottom: 1em;
-    }
-    @media screen and (min-width: 50em) {
-      padding-bottom: 1.5em;
     }
   }
 }
