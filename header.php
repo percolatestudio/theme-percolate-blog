@@ -9,7 +9,7 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0, width=device-width">
 
 	<!-- seo -->
-	<title><?php wp_title('');?><?php  echo ' | ' .get_bloginfo('name');?></title>
+	<title><?php wp_title('| ', true, 'right');?><?php echo get_bloginfo('name');?></title>
 
 	<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post();
 	  $subtitle = get_post_meta($post->ID, "subtitle_value", $single = true);
