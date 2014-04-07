@@ -1,9 +1,14 @@
-body.archive {
+body.archive, body.home {
   .page-title {
     .type-secondary;
   }
   .posts-grid {
     .page-margins;
+    @media screen and (min-width: 50em) {
+      border-radius: 3px;
+      box-shadow: rgba(0,0,0,.1) 0 1px 3px 0;
+      overflow: hidden;
+    }
   }
   .navigation {
     .page-margins;

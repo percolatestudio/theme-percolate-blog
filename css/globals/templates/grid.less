@@ -24,6 +24,7 @@
 }
 
 .posts-grid {
+  background: @color-empty;
   display: block;
   overflow: hidden; //prevents 1px spacing
   position: relative;
@@ -40,8 +41,10 @@
     //account for chrome's non-standard scrollbar/viewport measurement
     height: 240px;
     min-width: 100%;
-    @media screen and (min-width: 40em) { height: 400px; }
+    @media screen and (min-width: 40em) { height: 320px; }
+    @media screen and (min-width: 60em) { height: 400px; }
 
+    body.home &,
     body.archive & {
       //Style for archive pages only
       //Note: this does not extend beyond 9 grid items
