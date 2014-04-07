@@ -11,15 +11,15 @@
 .grid-twoup() {
   @media screen and (min-width: 40em) { min-width: 50%; max-width: 50%; }
   .post-content {
-    @media screen and (min-width: 40em) { top: 36%; }
-    @media screen and (min-width: 50em) { top: 40%; }
+    @media screen and (min-width: 40em) { top: 32%; }
+    @media screen and (min-width: 60em) { top: 36%; }
   }
 }
 .grid-threeup() {
   @media screen and (min-width: 40em) { min-width: 33.33%; max-width: 33.33%; }
   .post-content {
-    @media screen and (min-width: 40em) { top: 35%; }
-    @media screen and (min-width: 50em) { top: 40%; }
+    @media screen and (min-width: 40em) { top: 24%; }
+    @media screen and (min-width: 60em) { top: 34%; }
   }
 }
 
@@ -78,9 +78,9 @@
       }
     }//single
 
+    body.error404 & {
+      .grid-twoup;
+    }
+
   }
-
-
-
-
 }
