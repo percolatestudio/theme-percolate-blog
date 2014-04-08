@@ -27,9 +27,7 @@
       width: 20%;
     }
   }
-  .commentlist {
-    margin-bottom: 3em;
-  }
+
 
   .comments {
 
@@ -117,9 +115,19 @@
       }
     }
   }
-  li.comment { // for respond styling
-    & + #respond { margin-bottom: 3em; }
-    &.depth-1 + #respond { padding-left: 4.25em; }
-    &.depth-2 + #respond { padding-left: 3em; }
+
+  // for respond styling and edgecases
+  .commentlist + #respond {
+    margin-top: 3em;
+  }
+  li.comment {
+    &.depth-1 + #respond,
+    &.depth-2 + #respond { // spacing between responses and next comments
+      margin-bottom: 3em;
+    }
+    &.depth-1 + #respond { padding-left: 4.25em; } //nested avatar allowance
+    &.depth-2 + #respond { padding-left: 3em; } // 2x nested avatar allowance
+    &.depth-1:last-of-type + #respond { margin-bottom: 0; } // remove margin for last comment
+
   }
 }
