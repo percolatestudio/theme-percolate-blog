@@ -6,6 +6,5 @@
     	$listcats = str_replace("<br />","",$listcats);
     	echo $listcats;
   	 ?>
-    <a href="">About</a>
   </div>
 </nav>
