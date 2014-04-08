@@ -50,12 +50,7 @@
 
 
   					<?php comment_id_fields(); ?>
-      			<?php if ( is_user_logged_in() ) : ?>
-      			  <p>
-      				Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a>
-      				</p>
-      			<?php else : ?>
-
+      			<?php if ( !is_user_logged_in() ) : ?>
       			  <div class="input-symbol left">
       			    <!-- <label for="author"><strong>Name</strong></label> -->
       					<input class="text" type="text" name="author" id="author" placeholder="Name" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
@@ -71,6 +66,10 @@
 
             <!-- <label for="comment">Comment</label> -->
             <textarea name="comment" placeholder="Share your thoughts" id="comment" cols="100%" rows="3" tabindex="3"></textarea>
+
+            <?php if ( is_user_logged_in() ) : ?>
+            <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
+      			<?php endif; ?>
 
       			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-secondary">Comment</button>
       			<?php cancel_comment_reply_link('Cancel Reply'); ?>
