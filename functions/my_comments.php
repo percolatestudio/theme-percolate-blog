@@ -26,7 +26,7 @@ if ( ! function_exists( 'my_comment' ) ) :
           <a class="date" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s'), get_comment_date('M j, Y')) ?></a>
           <span class="bullet"></span>
           <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-          <?php edit_comment_link(__('(Edit)'),'  ','') ?>
+          <?php edit_comment_link(__('Edit'),'<span class="bullet"></span>','') ?>
         </div>
       </div>
   <?php

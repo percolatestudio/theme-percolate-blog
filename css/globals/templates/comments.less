@@ -1,32 +1,38 @@
-.comments-wrapper {
-  .std-ypadding;
+.comments-wrapper{
   background: @color-empty;
+}
+.comments-container {
+  .page-margins;
+  .std-xpadding;
+  .std-ypadding;
 
-  @media only screen and (min-width: 60em) {
-    .display(flex);
-    .flex-wrap(wrap);
+  .inline-block-whitespace;
+  > * {
+    display: inline-block;
+    vertical-align: top;
   }
 
   .comments {
+    width: 100%;
     @media only screen and (min-width: 60em) {
-      .flex(1);
+      width: 80%;
       padding-right: 1.25em;
     }
   }
   .sidebar {
+    width: 100%;
     @media only screen and (min-width: 60em) {
-      width: 20% !important;
-      padding-left: 1.25em;
+      margin-top: 0;
+      padding-left: 1.25rem;
+      width: 20%;
     }
   }
-
   .commentlist {
     margin-bottom: 3em;
   }
 
   .comments {
-    .page-margins;
-    .std-xpadding;
+
     .subtitle {
       .page-subtitle(@color-well);
       .type-secondary;
@@ -79,7 +85,9 @@
         content: '\02022';
       }
     }
-    .date, .comment-reply-link {
+    .date,
+    .comment-reply-link,
+    .comment-edit-link {
       .section-subtitle;
       .link-underline(@color-medium-rare, @color-primary, @color-well, 0%);
     }
@@ -93,7 +101,6 @@
         .transform(translateX(100%));
       }
     }
-
   }//comment-lockup
 
   ul {
@@ -104,5 +111,10 @@
         .avatar { width: 2em; }
       }
     }
+  }
+  li.comment { // for respond styling
+    & + #respond { margin-bottom: 3em; }
+    &.depth-1 + #respond { padding-left: 4.25em; }
+    &.depth-2 + #respond { padding-left: 3em; }
   }
 }
