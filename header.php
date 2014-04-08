@@ -65,7 +65,7 @@
 </head>
 <body <?php body_class($class); ?> lang="en">
 
-  <a class="menu-toggle"><span class="icon-percolate-full"></span></a>
+  <a class="menu-toggle site-nav"><span class="icon-percolate-full"></span></a>
   <?php include('snip_menu.php'); ?>
 
   <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>

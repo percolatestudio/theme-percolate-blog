@@ -1,4 +1,4 @@
-.menu-toggle {
+.site-nav {
   .position(relative, 1em, auto, auto, .25em, 3em, 3em);
   //background: green;
   display: block;
@@ -20,13 +20,39 @@
 nav {
   .wrapper {
     background: @color-well;
+    overflow-y: auto;
     padding: 0 2.5em;
-
-    a {
+    .menu-header {
+      color: white;
+      text-align: center;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      border-bottom: 1px solid #666;
+      .icon-percolate-full {
+        color: @color-empty;
+        display: inline-block;
+        font-size: 2.5em;
+        height: 3rem;
+        line-height: 3rem;
+        margin-bottom: .75rem;
+      }
+      .menu-subtitle {
+        .font-s3;
+        color: rgba(255,255,255, .9);
+        line-height: 1.75em;
+        > a {
+          .link-underline(@color-empty, @color-empty, @color-primary, 14%);
+        }
+      }
+    }
+    .list-vertical > a {
       .link-inverse;
       .type-light;
       .font-m2;
       margin-top: 1.5em;
+      &:last-child {
+        margin-bottom: 1.5em;
+      }
     }
   }
 }
