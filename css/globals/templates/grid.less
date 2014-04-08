@@ -1,5 +1,5 @@
 .grid-oneup() {
-  @media screen and (min-width: 40em) { min-width: 100%; }
+  @media screen and (min-width: 40em) { width: 100%; }
   .title { .post-title-oneup(@color-empty); }
   .subtitle { .post-subtitle-oneup(@color-empty); }
   .post-content {
@@ -9,14 +9,14 @@
   }
 }
 .grid-twoup() {
-  @media screen and (min-width: 40em) { min-width: 50%; max-width: 50%; }
+  @media screen and (min-width: 40em) { width: 50%; }
   .post-content {
     @media screen and (min-width: 40em) { top: 32%; }
     @media screen and (min-width: 60em) { top: 36%; }
   }
 }
 .grid-threeup() {
-  @media screen and (min-width: 40em) { min-width: 33.33%; max-width: 33.33%; }
+  @media screen and (min-width: 40em) { width: 33.33%; }
   .post-content {
     @media screen and (min-width: 40em) { top: 24%; }
     @media screen and (min-width: 60em) { top: 34%; }
@@ -24,24 +24,21 @@
 }
 
 .posts-grid {
+  .inline-block-whitespace();
   background: @color-empty;
-  display: block;
-  overflow: hidden; //prevents 1px spacing
-  position: relative;
+  overflow: hidden;
 
-  .display(flex);
-  .flex-wrap(wrap);
 
   > .post {
-    .flex(1);
     cursor: pointer;
-    display: block;
+    display: inline-block;
     overflow: hidden;
     position: relative;
+    vertical-align: top;
 
     //account for chrome's non-standard scrollbar/viewport measurement
     height: 240px;
-    min-width: 100%;
+    width: 100%;
     @media screen and (min-width: 40em) { height: 320px; }
     @media screen and (min-width: 60em) { height: 400px; }
 
