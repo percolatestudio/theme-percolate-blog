@@ -26,8 +26,7 @@
       wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js');
       wp_enqueue_script( 'jquery' );
       wp_enqueue_script('blog', get_template_directory_uri() . '/js/blog.js',array('jquery'), false, '1.0', true);
-      //wp_enqueue_script('waypoints', get_template_directory_uri() . '/js/waypoints.min.js',array('jquery'), false, '1.0', true);
-      //wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr-2.5.3.min.js',array(), false, '1.0', true);
+      wp_enqueue_script('prism', get_template_directory_uri() . '/js/prism.js',array(), false, '1.0', true);
       wp_enqueue_script('live', get_template_directory_uri() . '/js/live.js',array(), false, '1.0', true);
     }
     if (is_singular()) { wp_enqueue_script('comment-reply',false,array('jquery')); }
