@@ -43,11 +43,16 @@
       max-width: 100%;
       width: 100%;
     }
-    button[type=submit] {
+    button[type=submit],
+    #cancel-comment-reply-link {
       width: 100%;
       @media only screen and (min-width: 40em) {
         width: auto;
       }
+    }
+    button + #cancel-comment-reply-link {
+      margin-top: .5em;
+      @media only screen and (min-width: 40em) { margin-top: 0; }
     }
   }
   .comment-lockup {
