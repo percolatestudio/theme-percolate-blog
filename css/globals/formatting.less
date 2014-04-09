@@ -1,5 +1,5 @@
 .formatting {
-
+  @spacing : 1.75rem;
   h1, h2, h3, h4 {
     .type-bold;
     .type-secondary;
@@ -8,6 +8,13 @@
     & + *:not(hr) { //clears margin of element directly following a Heading
       margin-top: 0 !important;
     }
+  }
+  //for wordpress only, we can't use H1, H2 for SEO reasons
+  h3 {
+    .font-m3;
+  }
+  h4 {
+    .font-m2;
   }
   h5, h6 {
     .std-xpadding;
@@ -19,8 +26,8 @@
     .cf;
     color: @color-medium-well;
     line-height: 1.75em;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: @spacing;
+    margin-top: @spacing;
     position: relative;
     &:only-of-type {
       margin-bottom: 0;
@@ -42,8 +49,8 @@
     border-radius: 3px;
   }
   .note {
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: @spacing;
+    margin-top: @spacing;
     &:first-child { margin-top: 0; }
     &:last-child { margin-bottom: 0; }
   }
@@ -72,8 +79,8 @@
   }
   figure {
     clear: both;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: @spacing;
+    margin-top: @spacing;
     figcaption {
       .font-s1;
       color: @color-medium;
@@ -82,7 +89,7 @@
 
   img{
     display: inline-block;
-    margin: 1rem 1.25em;
+    margin: @spacing 1.25em;
     max-width: 100%;
     position: relative;
     vertical-align: top;
@@ -97,10 +104,10 @@
     }
     &.aligncenter{
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: @spacing;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 1rem;
+      margin-top: @spacing;
     }
     &.alignnone {
       margin: 0;
@@ -123,8 +130,8 @@
   }
   ol, ul {
     list-style-position: outside;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: @spacing;
+    margin-top: @spacing;
     padding-left: 2rem;
     li {
       .font-s3;
