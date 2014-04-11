@@ -121,8 +121,11 @@
     .comment-subscription-form > * {
       .font-s2;
     }
-    .comment-subscription-form:first-child { //this only appears if you have Jetpack subscriptions activated
-      margin-top: 1em;
+    .comment-subscription-form { //this only appears if you have Jetpack subscriptions activated
+      margin-top: .75em;
+      & + .comment-subscription-form {
+        margin-top: 0;
+      }
     }
   }
 
