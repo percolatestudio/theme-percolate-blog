@@ -31,7 +31,7 @@
     style='background-image: url("<?php echo $previous_image[0] ?>");' title="<?php echo $previous_title; ?>">
     <div class="post-content">
       <h3 class="title">
-        <a class="inverse" href="<?php echo $previous_link; ?>"><?php echo $previous_title; ?></a>
+        <a class="inverse" href="<?php echo $previous_link; ?>" rel=""><?php echo $previous_title; ?></a>
       </h3>
       <h4>
         <?php if($previous_summary !== ''){ ?>
