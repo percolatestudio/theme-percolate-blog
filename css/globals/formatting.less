@@ -22,6 +22,12 @@
   hr + * {
     margin-top: 0 !important;
   }
+  p, a {
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
   p {
     .cf;
     color: @color-medium-well;
@@ -114,7 +120,6 @@
     }
   }
   blockquote {
-
     .font-s3;
     .type-secondary;
     border-left: 3px solid @color-primary;
