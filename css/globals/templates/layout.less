@@ -16,7 +16,7 @@ body {
   }
 
   &.menu-active {
-    .transform(translateX(280px));
+    .transform(translateX(260px));
     .content-overlay { //intercepts clicks and scroll events when menu is active
       .fill-with-absolute-position;
       background: transparent;
@@ -38,7 +38,8 @@ body {
 
 nav {
   .perspective(2000);
-  .position(absolute, 0, auto, auto, -280px, 280px, 100%);
+  .position(absolute, 0, auto, auto, -260px, 260px, 100%);
+  -webkit-overflow-scrolling: touch;
 
   .wrapper {
     .backface-visibility(hidden);
