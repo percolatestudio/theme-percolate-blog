@@ -30,7 +30,6 @@
 
 
   .comments {
-
     .subtitle {
       .page-subtitle(@color-well);
       .type-secondary;
@@ -117,6 +116,16 @@
   }
 
   // for respond styling and edgecases
+  #respond {
+    .subtext,
+    .comment-subscription-form > * {
+      .font-s2;
+    }
+    button + .comment-subscription-form { //this only appears if you have Jetpack subscriptions activated
+      margin-top: 1em;
+    }
+  }
+
   .commentlist + #respond {
     margin-top: 3em;
   }
