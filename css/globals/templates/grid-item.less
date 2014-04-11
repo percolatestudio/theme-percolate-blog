@@ -2,10 +2,13 @@
 // Generic Layout and Master styles
 .posts-grid {
   > * {
+    .backface-visibility(hidden);
     .transform(translate3d(0,0,0));//improve performance for bg cover
+
     &:after { //Overlay for text readability atop images
       .fill-with-absolute-position;
      .transition(all ease-in 200ms);
+     .transform(translate3d(0,0,0));
       background: black;
       content: "";
       opacity: 0.4;
@@ -16,9 +19,6 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      &:hover:after {
-        opacity: .45;
-      }
     }
     &:not(.has-image) { //Overlay for posts without an image
       background-color: @color-medium-well;
