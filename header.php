@@ -65,8 +65,8 @@
 </head>
 <body <?php body_class($class); ?> lang="en">
 
-  <a class="menu-toggle site-nav"><img src="<?php bloginfo('template_directory'); ?>/img/logo-percolate-circle.svg?v1"/></a>
   <?php include('snip_menu.php'); ?>
 
   <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>
   <div class="content">
+    <a class="menu-toggle site-nav"><img src="<?php bloginfo('template_directory'); ?>/img/logo-percolate-circle.svg?v1"/></a>

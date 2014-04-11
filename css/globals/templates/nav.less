@@ -1,9 +1,12 @@
 .site-nav {
-  .position(relative, 1em, auto, auto, .25em, 3em, 3em);
+  .position(absolute, 1em, auto, auto, .25em, 3em, 3em);
+  @media screen and (min-width: 60em) { position: fixed; }
   display: block;
   padding: 8px;
   text-align: center;
-  z-index: 20;
+  z-index: 1;
+  .transform(translate3d(0,0,0));
+  .backface-visibility(hidden);
   > img {
     display: inline-block;
     height: 2em;
