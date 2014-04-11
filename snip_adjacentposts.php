@@ -10,7 +10,7 @@
     $previous_title = $previous_post->post_title;
     $previous_link = get_permalink( $previous_post->ID );
     $previous_summary = get_post_meta($previous_post->ID, "subtitle_value", $single = true);
-    $previous_image = wp_get_attachment_image_src( get_post_thumbnail_id($previous_post->ID), 'large');
+    $previous_image = wp_get_attachment_image_src( get_post_thumbnail_id($previous_post->ID), 'medium');
 
     //next post
     $in_same_cat = false;
@@ -22,7 +22,7 @@
     $next_title = $next_post->post_title;
     $next_link = get_permalink( $next_post->ID );
     $next_summary = get_post_meta($next_post->ID, "subtitle_value", $single = true);
-    $next_image = wp_get_attachment_image_src( get_post_thumbnail_id($next_post->ID), 'large');
+    $next_image = wp_get_attachment_image_src( get_post_thumbnail_id($next_post->ID), 'medium');
 
 
   ?>
