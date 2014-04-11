@@ -1,10 +1,16 @@
 // Layout animations
 @transition-time: 600ms;
 @transition-distance: 260px;
+
+html {
+  overflow: hidden; //prevents side scrolling
+}
+
 body {
   .fill-with-absolute-position;
   background: black;
   overflow: hidden; //prevents scrolling when menu is open
+
 
   > * {
     .transition(all @transition-time cubic-bezier(0.175, 0.885, 0.335, 1.05));
