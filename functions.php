@@ -25,10 +25,11 @@
       wp_deregister_script( 'jquery' );
       wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js');
       wp_enqueue_script( 'jquery' );
+      wp_register_script( 'gfycat', 'http://test.gfycat.com/gfycat_test.js');
+      wp_enqueue_script( 'gfycat' );
       wp_enqueue_script('blog', get_template_directory_uri() . '/js/blog.js',array('jquery'), false, '1.0', true);
       wp_enqueue_script('prism', get_template_directory_uri() . '/js/prism.js',array(), false, '1.0', true);
       wp_enqueue_script('fastclick', get_template_directory_uri() . '/js/fastclick.js',array(), false, '1.0', true);
-      wp_enqueue_script('gfycat', get_template_directory_uri() . '/js/gfycat.js',array(), false, '1.0', true);
       //wp_enqueue_script('live', get_template_directory_uri() . '/js/live.js',array(), false, '1.0', true);
     }
     if (is_singular()) { wp_enqueue_script('comment-reply',false,array('jquery')); }
