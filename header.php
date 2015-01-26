@@ -49,7 +49,7 @@
 
 	<!-- blog -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.png">
+	<link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/favicon.png?v2">
 	<?php wp_head(); ?>
 
 	<!-- styles -->

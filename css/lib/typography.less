@@ -1,11 +1,27 @@
-.type-primary() {
-  font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif;
+.type-regular() {
+  font-family: 'DINWeb', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
   font-weight: 400;
 }
 
-.type-secondary() {
-  font-family: "Lora", "Baskerville old face", Garamond, "Times New Roman", serif;
-  font-weight: 400;
+.type-italic() {
+  font-family: 'DIN', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
+.type-light() {
+  font-family: 'DIN', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+.type-semibold() {
+  font-family: 'DIN', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+}
+
+.type-bold() {
+  font-family: 'DIN', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 
 .type-code() {
@@ -13,13 +29,9 @@
   font-weight: 400;
 }
 
-.type-light() {
-  font-weight: 300;
-}
-
-.type-bold() {
-  //this is technically semibold, bold is too heavy
-  font-weight: 600;
+.type-secondary() {
+  font-family: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  font-style: normal;
 }
 
 
@@ -28,49 +40,49 @@
 
 .font-l3() {
   font-size: 56px;
-  line-height: 60px;
+  line-height: 64px;
 }
 
 .font-l2() {
   font-size: 48px;
-  line-height: 52px;
+  line-height: 56px;
 }
 
 .font-l1() {
-  font-size: 40px;
+  font-size: 36px;
   line-height: 44px;
 }
 
 /* Medium fonts */
 
 .font-m3() {
-  font-size: 32px;
-  line-height: 36px;
+  font-size: 28px;
+  line-height: 40px;
 }
 
 .font-m2() {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 36px;
 }
 
 .font-m1() {
   font-size: 20px;
-  line-height: 24px;
+  line-height: 32px;
 }
 
 /* Small fonts */
 
-.font-s3() {
+.font-s3() { //this sets the baseline for the layout but gets overridden per template
   font-size: 16px;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .font-s2() {
   font-size: 14px;
-  line-height: 22px;
+  line-height: 24px;
 }
 
 .font-s1() {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 13px;
+  line-height: 22px;
 }
