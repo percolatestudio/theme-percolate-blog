@@ -69,4 +69,4 @@
 
   <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>
   <div class="content">
-    <a class="menu-toggle site-nav"><img src="<?php bloginfo('template_directory'); ?>/img/logo-percolate-circle.svg?v1"/></a>
+    <a class="menu-toggle site-nav"><img src="<?php bloginfo('template_directory'); ?>/img/logo.svg"/></a>
