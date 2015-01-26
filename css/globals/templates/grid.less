@@ -2,25 +2,12 @@
   @media screen and (min-width: 40em) { width: 100%; }
   .title { .post-title-oneup(@color-empty); }
   .subtitle { .post-subtitle-oneup(@color-empty); }
-  .post-content {
-    //does not need to be uniform with adjacent posts when all by itself
-    //thus no top:X%
-    .transform(translate3d(-50%, -50%, 0px));
-  }
 }
 .grid-twoup() {
   @media screen and (min-width: 40em) { width: 50%; }
-  .post-content {
-    @media screen and (min-width: 40em) { top: 32%; }
-    @media screen and (min-width: 60em) { top: 36%; }
-  }
 }
 .grid-threeup() {
   @media screen and (min-width: 40em) { width: 33.33%; }
-  .post-content {
-    @media screen and (min-width: 40em) { top: 24%; }
-    @media screen and (min-width: 60em) { top: 34%; }
-  }
 }
 
 .posts-grid {

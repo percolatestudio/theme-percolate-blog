@@ -11,9 +11,9 @@
     <h3 class="title">
       <a class="inverse" href="<?php the_permalink() ?>"><?php the_title() ?></a>
     </h3>
-    <h4>
+    <h4 class="subtitle">
       <?php if($summary !== '') { ?>
-        <div class="subtitle"><?php echo get_post_meta($post->ID, "subtitle_value", $single = true);?></div>
+        <?php echo get_post_meta($post->ID, "subtitle_value", $single = true);?>
       <?php  }else{ ?>
         <?php $excerpt = get_the_excerpt(); echo string_limit_words($excerpt,10); ?>
       <?php } ?>
