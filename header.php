@@ -55,7 +55,6 @@
 	<!-- styles -->
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory'); ?>/style.css" />
 	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('template_directory'); ?>/css/views/print.css" />
-	<link rel='stylesheet' type="text/css" href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,400italic|Lora' >
 
 	<?php automatic_feed_links(); ?>
 	<!--[if lt IE 9]>
