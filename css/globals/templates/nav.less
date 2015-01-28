@@ -1,55 +1,64 @@
-.site-nav {
-  .position(absolute, 1em, auto, auto, .25em, 3em, 3em);
-  @media screen and (min-width: 60em) { position: fixed; }
-  display: block;
-  padding: 8px;
-  text-align: center;
-  z-index: 1;
-  .transform(translate3d(0,0,0));
-  .backface-visibility(hidden);
-  > img {
-    display: inline-block;
-    height: 2em;
-    line-height: 3rem;
-    width: 2em;
-  }
-}
-
 nav {
-  .wrapper {
-    background: @color-well;
-    overflow-y: auto;
-    padding: 0 2.5em;
-    .menu-header {
-      color: white;
-      text-align: center;
-      padding-top: 2em;
-      padding-bottom: 2em;
-      border-bottom: 1px solid #666;
-      .icon-percolate-full {
-        color: @color-empty;
-        display: inline-block;
-        font-size: 2.5em;
-        height: 3rem;
-        line-height: 3rem;
-        margin-bottom: .75rem;
-      }
-      .menu-subtitle {
-        .font-s3;
-        color: rgba(255,255,255, .9);
-        line-height: 1.75em;
-        > a {
-          .link-underline(@color-empty, @color-empty, @color-primary, 14%);
-        }
-      }
+  .page-margins;
+  background: @color-full;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  .logo {
+    .transform(rotate(0deg));
+    .transition(all 1200ms @easing);
+    display: block;
+    height: 1.25em;
+    margin: .5em auto;
+    width: 1.25em;
+
+    @media screen and (min-width: @breakpoint) {
+      .transform(rotate(720deg));
     }
-    .list-vertical > a {
-      .link-inverse;
-      .type-light;
-      .font-m2;
-      margin-top: 1.5em;
-      &:last-child {
-        margin-bottom: 1.5em;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+  .nav-group {
+    .position(absolute, 8px, auto, auto, auto);
+
+    left: 1.25em;
+    @media screen and (min-width: @breakpoint) { left: 2em; }
+
+    &.right {
+      left: auto;
+      right: 1.25em;
+      @media screen and (min-width: @breakpoint) { right: 2em; }
+    }
+
+    a {
+      .font-s1;
+      .type-semibold;
+      color: @color-medium;
+      display: inline-block;
+      letter-spacing: .3em;
+      outline: none;
+      text-indent: .3em;
+      text-transform: uppercase;
+      text-decoration: none;
+      vertical-align: top;
+
+      &:hover,
+      &.active { color: @color-empty; }
+      &:active { color: @color-well; }
+      & + a { margin-left: 3em; }
+
+      &:not([data-menu]):not([data-contact]) { display: none; } //hide everything not menu or contact
+      &[data-menu] { margin-left: 0; } //reset margin left for menu
+
+      @media screen and (min-width: @breakpoint) {
+        &:not([data-menu]):not([data-contact]) { display: inline-block; } //show everything
+        &[data-menu] { display: none; } //hide menu on large screens
       }
     }
   }

@@ -52,9 +52,7 @@
   @media screen and (min-width: 50em) { .font-s3; }
 }
 
-.section-subtitle {
-  .font-s2;
-}
+
 
 .title-caps() {
   letter-spacing: .3em;
@@ -62,7 +60,16 @@
   text-transform: uppercase;
 }
 
-.ellipsize() {
+.ellipsized() {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.force-wrap() {
+  word-wrap: break-word;
+  word-break: break-all;
+ -ms-word-break: break-all;
+  word-break: break-word; // Non-standard for webkit
+  .hyphens(auto);
 }

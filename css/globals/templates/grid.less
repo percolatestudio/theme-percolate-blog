@@ -1,33 +1,36 @@
 .grid-oneup() {
-  @media screen and (min-width: 40em) { width: 100%; }
+  @media screen and (min-width: @breakpoint) { width: 100%; }
   .title { .post-title-oneup(@color-empty); }
   .subtitle { .post-subtitle-oneup(@color-empty); }
 }
 .grid-twoup() {
-  @media screen and (min-width: 40em) { width: 50%; }
+  @media screen and (min-width: @breakpoint) { width: 50%; }
 }
 .grid-threeup() {
-  @media screen and (min-width: 40em) { width: 33.33%; }
+  @media screen and (min-width: @breakpoint) { width: 33.33%; }
 }
 
 .posts-grid {
-  .inline-block-whitespace();
+  .page-margins;
+  .clearfix;
   background: @color-empty;
-  overflow: hidden;
-
+  clear: both;
+  height: 50%;
+  min-height: 300px;
+  @media screen and (min-width:  @breakpoint) { min-height: 600px;}
+  position: relative;
 
   > .post {
     cursor: pointer;
-    display: inline-block;
+    float: left;
     overflow: hidden;
     position: relative;
-    vertical-align: top;
+
 
     //account for chrome's non-standard scrollbar/viewport measurement
-    height: 240px;
+    height: 100%;
     width: 100%;
-    @media screen and (min-width: 40em) { height: 320px; }
-    @media screen and (min-width: 60em) { height: 400px; }
+
 
     body.home &,
     body.archive & {

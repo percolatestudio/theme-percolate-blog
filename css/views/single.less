@@ -3,42 +3,27 @@ body.single {
     .page-margins;
     .std-xpadding;
     .std-ypadding;
-
-    .inline-block-whitespace;
-    > * {
-      display: inline-block;
-      vertical-align: top;
-    }
-    .entry {
-      width: 100%;
-      @media only screen and (min-width: 60em) {
-        width: 80%;
-        padding-right: 1.25em;
-      }
-    }
-    .sidebar {
-      margin-top: 3rem;
-      width: 100%;
-      @media only screen and (min-width: 60em) {
-        margin-top: 0;
-        padding-left: 1.25rem;
-        width: 20%;
-      }
-    }
   }
+
   header {
+    .page-margins;
     background-color: @color-medium-well;
-    height: 75%;
+    height: 40%;
+    @media only screen and (min-width: @breakpoint) { height: 90%; }
     overflow: hidden;
     position: relative;
+
     width: 100%;
     z-index: 0;
+
+    min-height: 20em;
+    max-height: 65em;
 
 
     .hero-content {
       .page-margins;
       .std-xpadding;
-      .position(absolute, 53%, 0, auto, 0);
+      .position(absolute, 50%, 0, auto, 0);
       .transform(translate3d(0, -50%, 0px));
       text-align: center;
       z-index: 1;
@@ -47,11 +32,44 @@ body.single {
         .page-title(@color-empty);
         .type-light;
 
-        @media only screen and (min-width: 40em) { margin-bottom: 1rem; }
+        @media only screen and (min-width: @breakpoint) { margin-bottom: 1rem; }
       }
       .post-subtitle {
         .page-subtitle(@color-empty);
         .type-italic;
+      }
+    }
+
+    .attribution {
+      .position(absolute, auto, 0, 1em ,0);
+      text-align: center;
+      z-index: 1;
+
+      .author {
+        display: inline-block;
+        margin: 0 .5em;
+        .avatar-wrapper {
+          display: inline-block;
+          margin-bottom: 1em;
+          width: 3em;
+          vertical-align: top;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .name {
+          .font-s1;
+          .title-caps;
+          .type-bold;
+          display: block;
+        }
+      }
+
+      .time {
+        color: @color-medium;
       }
     }
 
@@ -76,9 +94,10 @@ body.single {
 
       &:after {
         .fill-with-absolute-position;
-        background: black;
+        //background: rgba(0,0,0,.3);
+        .background-image(linear-gradient(top, rgba(0,0,0,.3), rgba(0,0,0,.3) 75%, rgba(0,0,0,.7) 100%));
+        opacity: 1;
         content: "";
-        opacity: 0.3;
         z-index: 0;
       }
       .hero-content {
@@ -92,8 +111,17 @@ body.single {
     }//has image
 
   }//header
+
   .entry-wrapper {
+    .page-margins;
+    background: @color-empty;
+
     .entry {
+      @media only screen and (min-width: @breakpoint) {
+        margin: 1.5rem auto;
+        max-width: 800px;
+        width: 75%;
+      }
       > p {
         position: relative;
       }
@@ -176,7 +204,7 @@ body.single {
             margin-bottom: 1.5rem;
           }
           > span {
-            .section-subtitle;
+            .font-s2;
             .type-bold;
             color: @color-medium;
           }

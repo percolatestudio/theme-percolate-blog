@@ -45,25 +45,3 @@ body {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-
-nav {
-  .perspective(2000);
-  .position(absolute, 0, auto, auto, -@transition-distance, @transition-distance, 100%);
-  -webkit-overflow-scrolling: touch;
-
-  .wrapper {
-    .backface-visibility(hidden);
-    .fill-with-absolute-position;
-    .transition(all @transition-time cubic-bezier(0.175, 0.885, 0.335, 1.05));
-    .transform-origin(100% 0%);
-    .transform-style(preserve-3d);
-
-
-    .transform(rotateY(-90deg));
-    opacity: .25;
-    body.menu-active & {
-      .transform(rotateY(0deg));
-      opacity: 1;
-    }
-  }
-}

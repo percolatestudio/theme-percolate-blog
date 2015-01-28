@@ -1,35 +1,11 @@
-.comments-wrapper{
-  background: @color-empty;
-}
-.comments-container {
-  .page-margins;
-  .std-xpadding;
-  .std-ypadding;
+.section-comments {
+  background: @color-raw-alt !important;
 
-  .inline-block-whitespace;
-  > * {
-    display: inline-block;
-    vertical-align: top;
+  .title-section {
+    padding-bottom: 1.25rem;
   }
 
-  .comments {
-    width: 100%;
-    @media only screen and (min-width: 60em) {
-      width: 80%;
-      padding-right: 1.25em;
-    }
-  }
-  .sidebar {
-    width: 100%;
-    @media only screen and (min-width: 60em) {
-      margin-top: 0;
-      padding-left: 1.25rem;
-      width: 20%;
-    }
-  }
-
-
-  .comments {
+  form {
     .subtitle {
       .page-subtitle(@color-well);
       margin-bottom: .5em;
@@ -51,94 +27,128 @@
       @media only screen and (min-width: 40em) { margin-top: 0; }
     }
   }
-  .comment-lockup {
-    margin-bottom: 1.5em;
-    position: relative;
 
-    .display(flex);
-    .flex-wrap(wrap);
+}
 
-    .avatar-wrapper {
+.commentlist {
+  .std-xpadding;
+  .std-ypadding;
+
+  @media only screen and (min-width: @breakpoint) {
+    margin: 0 auto;
+    max-width: 800px;
+    width: 75%;
+  }
+}
+
+.comment-lockup {
+  margin-bottom: 1.5em;
+  position: relative;
+
+  .display(flex);
+  .flex-wrap(wrap);
+
+  .avatar-wrapper {
+    display: block;
+    margin-right: 1.25em;
+    .avatar {
       display: block;
-      margin-right: 1.25em;
-      .avatar {
-        display: block;
-        height: auto;
-        width: 3em;
-      }
+      height: auto;
+      width: 3em;
     }
-    .meta { .flex(1); }
+  }
+  .meta { .flex(1); }
 
-    .name {
-      .background-image(none);
-      .type-semibold;
-      display: inline-block;
-      line-height: 1.75em; //same as formatting
+  .name {
+    .background-image(none);
+    .type-semibold;
+    display: inline-block;
+    line-height: 1.75em; //same as formatting
+  }
+  .formatting {
+    margin-bottom: .5em;
+  }
+  .bullet {
+    display: inline-block;
+    margin: 0 .75em;
+    color: @color-medium-rare;
+    &:before {
+      content: '\02022';
     }
-    .formatting {
-      margin-bottom: .5em;
-    }
-    .bullet {
-      display: inline-block;
-      margin: 0 .75em;
-      color: @color-medium-rare;
-      &:before {
-        content: '\02022';
-      }
-    }
-    .date,
-    .comment-reply-link,
-    .comment-edit-link {
-      .section-subtitle;
-      .link-underline(@color-medium-rare, @color-primary, @color-well, 0%);
-    }
+  }
+  .date,
+  .comment-reply-link,
+  .comment-edit-link {
+    .font-s2;
+    .link-underline(@color-medium-rare, @color-primary, @color-well, 0%);
+  }
 
-    .note {
-      //this is when a comment is submitted and is awaiting moderation
-      .font-s2;
-      .position(relative, auto, auto, auto, auto, 100%);
-      @media only screen and (min-width: 60em) {
-        .position(absolute, auto, -2.5em, auto, auto, 160px);
-        .transform(translateX(100%));
-      }
+  .note {
+    //this is when a comment is submitted and is awaiting moderation
+    .font-s2;
+    .position(relative, auto, auto, auto, auto, 100%);
+    @media only screen and (min-width: @breakpoint) {
+      .position(absolute, auto, -2.5em, auto, auto, 160px);
+      .transform(translateX(100%));
     }
-  }//comment-lockup
+  }
+}//comment-lockup
 
-  ul {
-    padding-left: 4.25em;
-    .comment-lockup {
-      .avatar-wrapper {
-        margin-right: 1em;
-        .avatar { width: 2em; }
-      }
+ul { //nested comments
+  padding-left: 4.25em;
+  .comment-lockup {
+    .avatar-wrapper {
+      margin-right: .75em;
+      .avatar { width: 1.75em; }
+    }
+  }
+}
+
+// for respond styling and edgecases
+#respond {
+  .std-xpadding;
+
+  fieldset {
+    padding-top: 0; //overrides fieldset styling
+    padding-bottom: 0; //overrides fieldset styling
+
+  }
+
+  .subtext,
+  .comment-subscription-form > * {
+    .font-s2;
+  }
+  .comment-subscription-form { //this only appears if you have Jetpack subscriptions activated
+    margin-top: .75em;
+    & + .comment-subscription-form {
+      margin-top: 0;
     }
   }
 
-  // for respond styling and edgecases
-  #respond {
-    .subtext,
-    .comment-subscription-form > * {
-      .font-s2;
-    }
-    .comment-subscription-form { //this only appears if you have Jetpack subscriptions activated
-      margin-top: .75em;
-      & + .comment-subscription-form {
-        margin-top: 0;
-      }
-    }
+  textarea {
+    margin-bottom: 2rem;
   }
+}
 
-  .commentlist + #respond {
-    margin-top: 3em;
-  }
-  li.comment {
-    &.depth-1 + #respond,
-    &.depth-2 + #respond { // spacing between responses and next comments
-      margin-bottom: 3em;
-    }
-    &.depth-1 + #respond { padding-left: 4.25em; } //nested avatar allowance
-    &.depth-2 + #respond { padding-left: 3em; } // 2x nested avatar allowance
-    &.depth-1:last-of-type + #respond { margin-bottom: 0; } // remove margin for last comment
+.commentlist + #respond, {
+  margin-top: -2rem;
+  margin-bottom: 2.5rem;
 
+
+  @media only screen and (min-width: @breakpoint) {
+    margin-left: 12.5%;
+    max-width: 640px;
+    width: 75%;
   }
+}
+
+li.comment {
+  &.depth-1 + #respond,
+  &.depth-2 + #respond { // spacing between responses and next comments
+    margin-bottom: 3em;
+  }
+  &.depth-1 + #respond { padding-left: 4.25em; } //nested avatar allowance
+
+  &.depth-1:last-of-type + #respond { margin-bottom: 0; } // remove margin for last comment
+
 }

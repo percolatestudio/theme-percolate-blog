@@ -1,126 +1,186 @@
-a,
-button {
-  &[class^="btn-"],
-  &[class*=" btn-"] {
-    /* Sizing */
-    .font-s2;
-    line-height: 1.5em !important; //override line-height always so we can use em's to size.
-    padding: .5em .75em; //more compact buttons
-    @media screen and (min-width: 40em) {
-      .font-s3;
-      line-height: 1.5em !important; //override line-height always so we can use em's to size.
-      padding: .5em 1em;
-    }
+[class^="btn-"],
+[class*=" btn-"] {
+  .transition( all 200ms ease-in );
+  .type-semibold;
 
-    .type-bold;
-    border-radius: 3px;
-    display: inline-block;
+  /* Sizing */
+  .font-s2;
+  line-height: 20px !important; //override line-height always so we can use em's to size.
+  padding: .6em 1.25em .54em; //more compact buttons
+  @media screen and (min-width: @breakpoint) {
+    .font-s3;
+    line-height: 20px !important; //override line-height always so we can use em's to size.
+    padding: .975em 1.25em .775em; //more compact buttons 8 15 yields 48px button
+  }
+
+
+
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important; //prevents global link styles from applying
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &.caps {
+    .title-caps;
+    color: @color-empty;
+    text-indent:.3em; //required to balance out the extra right spacing from letter-spacing
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      text-indent: 0;
+    }
+  }
+  &.upload {
     position: relative;
-    text-align: center;
-    text-decoration: none !important; //prevents global link styles from applying
-    .transition( all 200ms ease-in );
-    white-space: nowrap;
-    &[class*="primary"] {
-      background-color: @color-primary;
-      color: @color-empty;
-      &:hover{
-        background-color: darken(@color-primary, 5%);
-      }
-      &:active {
-        box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
-      }
+    input[type="file"] {
+      opacity: 0;
+      .position(absolute, 0,0,0,0);
     }
-    &[class*="secondary"] {
-      background: @color-secondary;
-      color: @color-empty;
-      &:hover{
-        background-color: darken(@color-secondary, 5%);
-      }
-      &:active{
-        box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
-      }
-    }
-    &[class*="tertiary"],
-    &[class*="toggle"] {
-      box-shadow: @color-primary 0 0 0 1px inset;
-      color: @color-primary;
-      .transition( box-shadow 100ms ease-in-out, color 300ms ease-in );
-      &:hover{
-        box-shadow: darken(@color-primary, 10%) 0 0 0 1px inset;
-        color: darken(@color-primary, 10%);
-      }
-      &:active, &.active {
-        box-shadow: @color-primary 0 0 0 3em inset;
-        color: @color-empty;
-      }
-    }
-    &[class*="github"] {
-      .font-s2;
-      box-shadow: @color-empty 0 0 0 1px inset;
-      color: @color-empty;
-      line-height: 1.5em !important; //override line-height always so we can use em's to size.
-      padding: .3em .7em;
-      .transition( box-shadow 100ms ease-in-out, color 300ms ease-in );
+  }
+  &[class*="small"] {
+    padding: .35em 1em;
+  }
+  &[class*="primary"] {
+    background-color: @color-primary;
+    color: @color-empty;
 
-      &:active, &.active {
-        box-shadow: rgba(255,255,255, .7) 0 0 0 3em inset;
-        color: @color-primary;
-      }
-      header.black & {
-        box-shadow: @color-well 0 0 0 1px inset;
-        color: @color-well;
-      }
-      .nav-visible & {
-        box-shadow: none;
-        background-color: @color-secondary;
-        color: @color-empty;
+    &:hover{ background-color: darken(@color-primary, 5%); }
+    &:active { box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
+  }
+  &[class*="secondary"] {
+    background: darken(@color-rare, 3%);
+    color: @color-full;
+
+    &:hover{ background-color: darken(@color-rare, 5%); }
+    &:active{ box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset; }
+  }
+  &[class*="tertiary"] {
+    background-color: darken(@color-rare, 5%);
+    color: @color-full;
+    &:hover{
+      background-color: darken(@color-rare, 10%);
+    }
+    &:active{
+      box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
+    }
+  }
+  &[class*="pagination"] {
+    color: @color-well;
+    padding: .65em 1em;
+    &:first-of-type { //beginning cap
+      border-radius: 3px 0 0 3px;
+      background: @color-rare;
+    }
+    &:last-of-type { //end cap
+      border-radius: 0 3px 3px 0;
+      background: @color-medium-rare;
+    }
+    &:hover{
+      background-color: darken(@color-medium-rare, 10%) !important;
+      >[class^="icon-"],
+      >[class*=" icon-"] {
+        color: @color-full;
       }
     }
-    &[class*="cmd-line"] {
-      .type-code;
-      cursor: text;
-      font-size: .70em;
-      padding: .5em 1.1em; //results in a 28, 32, 36px high button respectively
-      text-align: left;
-      @media only screen and (min-width: 30em) { font-size: .80em; }
-      @media only screen and (min-width: 40em) { font-size: .90em; }
-      &:before {
-        content: '$ ';
-      }
-      >[class^="icon-"], >[class*=" icon-"] {
-        color: @color-medium-rare;
-        margin-left: -6px;
-      }
+    &:active{
+      box-shadow: rgba(0,0,0,.3) 0 1px 3px 0 inset;
     }
-    &[disabled] {
-      opacity: .2;
+    >[class^="icon-"],
+    >[class*=" icon-"] {
+      color: @color-well;
+      font-size: 1rem;
+      margin-right: 0;
     }
+  }
+  &[class*="toggle"] {
+    .type-regular;
+    .transition( all 100ms ease-in-out, color 300ms ease-in );
+
+    background: rgba(255,255,255,.5);
+    color: @color-medium;
+
+    &:hover{
+      color: @color-primary;
+    }
+    &:active {
+      .type-semibold;
+      background: @color-empty;
+      color: @color-primary;
+    }
+  }
+  //overlays
+  &[class*="wire"] {
+    .type-semibold;
+    background-color: transparent;
+    box-shadow: rgba(255, 255, 255, .95) 0 0 0 2px inset;
+    color: @color-empty;
+    &:hover {}
+    &:active {}
+
+    &[class*="inverse"] {
+      box-shadow: @color-well 0 0 0 2px inset;
+      color: @color-full;
+      &:hover {}
+      &:active {}
+    }
+  }
+
+
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: .5;
   }
   >[class^="icon-"],
   >[class*=" icon-"] {
+    display: inline-block;
     font-size: 1em;
+    line-height: inherit;
+    margin-right: .5em;
+    vertical-align: top; // Alignment because line-height inherits the button lineheight /// prevents 1px vertical offset
+    width: 1em;
   }
-}
+}//end btn
 
-.btn-group {
-  .display(flex);
-  .flex-wrap(wrap);
+.btns-group {
+  @media screen and (min-width: @breakpoint) {
+    .display(flex);
+    .flex-wrap(wrap);
+  }
+
   max-width: 400px;
   width: 100%;
-  > .btn-toggle {
-    .ellipsize;
-    .flex(1);
-    border-radius: 0;
-    float: left;
 
-    & + .btn-toggle {
-      margin-left: -1px;
+  [class*="btn-toggle"] {
+    .user-select(none);
+    cursor: pointer;
+    float: left;
+    margin-bottom: 0; // Override label style
+
+    @media screen and (min-width: @breakpoint) {
+      .ellipsized;
+      .flex(1);
     }
-    &:first-of-type {
-      border-radius: 3px 0 0 3px;
+
+    &:not(:first-of-type) {
+      margin-top: 2px;
+      @media screen and (min-width: @breakpoint) {
+        margin-left: 2px;
+        margin-top: 0;
+      }
     }
-    &:last-of-type {
-      border-radius: 0 3px 3px 0;
-    }
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] { display: none; }
+
+  input[type="radio"]:checked + label,
+  input[type="checkbox"]:checked + label, {
+    // taken from btn-toggle:active
+    .type-semibold;
+    background: @color-empty;
+    color: @color-primary;
   }
 }

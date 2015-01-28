@@ -64,8 +64,8 @@
 </head>
 <body <?php body_class($class); ?> lang="en">
 
-  <?php include('snip_menu.php'); ?>
+  <?php include('snip_contactoverlay.php'); ?>
+  <?php include('snip_menuoverlay.php'); ?>
 
-  <div class="content-overlay"><!-- invisible screen to intercept clicks when menu is open --></div>
   <div class="content">
-    <a class="menu-toggle site-nav"><img src="<?php bloginfo('template_directory'); ?>/img/logo.svg"/></a>
+    <?php include('snip_menu.php'); ?>
