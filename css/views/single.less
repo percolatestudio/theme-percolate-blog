@@ -1,22 +1,25 @@
 body.single {
-  .entry-wrapper {
+  .wrapper-content {
     .page-margins;
-    .std-xpadding;
     .std-ypadding;
+    .std-xpadding;
+
+    background: @color-empty;
+    clear: both;
+    overflow: hidden;
   }
 
   header {
     .page-margins;
     background-color: @color-medium-well;
-    height: 40%;
-    @media only screen and (min-width: @breakpoint) { height: 90%; }
+    height: 90%;
     overflow: hidden;
     position: relative;
 
     width: 100%;
     z-index: 0;
 
-    min-height: 20em;
+    min-height: 25em;
     max-height: 65em;
 
 
@@ -41,18 +44,26 @@ body.single {
     }
 
     .attribution {
-      .position(absolute, auto, 0, 1em ,0);
+      .std-xpadding;
+      .position(absolute, auto, 0, 1.25em, 0);
+
       text-align: center;
+
       z-index: 1;
 
       .author {
         display: inline-block;
-        margin: 0 .5em;
+        margin: 0 1em 1em;
+
         .avatar-wrapper {
           display: inline-block;
-          margin-bottom: 1em;
-          width: 3em;
-          vertical-align: top;
+          vertical-align: middle;
+
+          width: 2em;
+          @media only screen and (min-width: @breakpoint) {
+            margin-bottom: 1em;
+            width: 3em;
+          }
 
           img {
             width: 100%;
@@ -64,12 +75,20 @@ body.single {
           .font-s1;
           .title-caps;
           .type-bold;
-          display: block;
+          display: inline-block;
+          @media only screen and (min-width: @breakpoint) { display: block; }
+          opacity: .8;
         }
       }
+    }
+    .metadata {
+      .font-s1;
+      color: @color-empty;
+      opacity: .8;
 
-      .time {
-        color: @color-medium;
+      a {
+        .type-bold;
+        .link-inverse;
       }
     }
 
@@ -112,110 +131,202 @@ body.single {
 
   }//header
 
-  .entry-wrapper {
-    .page-margins;
-    background: @color-empty;
+  .entry {
+    @media only screen and (min-width: @breakpoint) {
+      margin: 1.5rem auto;
+      max-width: 800px;
+      width: 75%;
+    }
 
-    .entry {
-      @media only screen and (min-width: @breakpoint) {
-        margin: 1.5rem auto;
-        max-width: 800px;
-        width: 75%;
-      }
-      > p {
-        position: relative;
-      }
-      > p:first-child:first-of-type:first-letter {
-        //add dropcap if the first child is a paragraph
-        .page-title(@color-well);
-        line-height: 1;
-        margin-right: .4em;
-        float: left;
-        position: relative;
-        top: 0px;
-        vertical-align: top;
-      }
-    }//entry
-    .sidebar {
-      .inline-block-whitespace;
+    > p {
+      position: relative;
+    }
+    > p:first-child:first-of-type:first-letter {
+      //add dropcap if the first child is a paragraph
+      .page-title(@color-well);
+      line-height: 1;
+      margin-right: .4em;
+      float: left;
+      position: relative;
+      top: 0px;
+      vertical-align: top;
+    }
+  }//entry
+  .sidebar {
+    .inline-block-whitespace;
 
-      border-top: 1px solid @color-rare;
-      padding-top: 1.25rem;
+    border-top: 1px solid @color-rare;
+    padding-top: 1.25rem;
+    @media only screen and (min-width: 60em) {
+      border-top: none;
+      padding-top: .25rem;
+    }
+
+    > * {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+      @media only screen and (min-width: 60em) { width: 100%; }
+    }
+    .metadata {
+      padding-left: 1.25em;
+      @media only screen and (min-width: 60em) { padding-left: 0;  }
+    }
+
+
+
+
+    .author {
+      .display(flex);
+      .flex-wrap(wrap);
+      .align-items(center);
+      margin-bottom: 1.5em;
       @media only screen and (min-width: 60em) {
-        border-top: none;
-        padding-top: .25rem;
+        display: block;
+        margin-bottom: 2em;
       }
 
-      > * {
+      .meta { .flex(1); }
+
+      .avatar-wrapper {
+        display: block;
+        margin-right: 1.25em;
+        @media only screen and (min-width: @breakpoint) { margin-bottom: .75em; }
+        .avatar {
+          display: block;
+          height: auto;
+          width: 3em;
+          @media only screen and (min-width: @breakpoint) { width: 5em; }
+        }
+      }
+
+      .name {
+        .font-s3;
         display: inline-block;
-        vertical-align: top;
-        width: 50%;
-        @media only screen and (min-width: 60em) { width: 100%; }
+        line-height: 1;
       }
-      .metadata {
-        padding-left: 1.25em;
-        @media only screen and (min-width: 60em) { padding-left: 0;  }
+      .description {
+        .type-light;
+        line-height: 1;
       }
+      .twitter {
+        .font-s2;
+      }
+    }//author
+    .metadata {
+      .definition {
+        .font-s2;
+        &:last-of-type {
+          margin-bottom: 1.5rem;
+        }
+        > span {
+          .font-s2;
+          .type-bold;
+          color: @color-medium;
+        }
+      }
+      .link-social {
+        color: @color-medium-rare;
+        display: inline-block;
+        font-size: 1.5em;
+        margin-right: .75rem;
+      }
+    }//metadata
+  }//sidebar
+
+  .section-ancillary {
+    overflow: visible;
+
+    @media only screen and (min-width: @breakpoint) {
+      .display(flex);
+      .flex-wrap(wrap);
+
+      .byline,
+      .social {
+        .flex(1);
+      }
+    }
+
+    .title-section {
+      padding-bottom: 1.25rem;
+    }
 
 
 
+    .byline {
+      background: @color-rare;
 
       .author {
-        .display(flex);
-        .flex-wrap(wrap);
-        .align-items(center);
-        margin-bottom: 1.5em;
-        @media only screen and (min-width: 60em) {
-          display: block;
-          margin-bottom: 2em;
+        margin-bottom: 3rem;
+        overflow: hidden;
+      }
+
+      .attribution {
+        .std-xpadding;
+        .std-ypadding;
+      }
+
+      .avatar-wrapper {
+        float: left;
+        margin-right: 1.5rem;
+      }
+      .meta {
+        overflow: hidden;
+
+        .subtitle-section {
+          .font-m2;
+          .type-semibold;
         }
 
-        .meta { .flex(1); }
-
-        .avatar-wrapper {
-          display: block;
-          margin-right: 1.25em;
-          @media only screen and (min-width: 60em) { margin-bottom: .75em; }
-          .avatar {
-            display: block;
-            height: auto;
-            width: 3em;
-            @media only screen and (min-width: 60em) { width: 5em; }
-          }
+        .subtitle-section + p {
+          .font-m1;
+          color: @color-medium-well;
+          margin-bottom: .25rem;
         }
 
-        .name {
-          .font-s3;
-          display: inline-block;
-          line-height: 1;
+        .monochrome {
+          .type-semibold;
+          margin-right: 1rem;
         }
-        .description {
-          .type-light;
-          line-height: 1;
-        }
-        .twitter {
-          .font-s2;
-        }
-      }//author
-      .metadata {
-        .definition {
-          .font-s2;
-          &:last-of-type {
-            margin-bottom: 1.5rem;
-          }
-          > span {
-            .font-s2;
-            .type-bold;
-            color: @color-medium;
-          }
-        }
-        .link-social {
-          color: @color-medium-rare;
-          display: inline-block;
-          font-size: 1.5em;
-          margin-right: .75rem;
-        }
-      }//metadata
-    }//sidebar
-  }//entry-wrapper
+      }
+    }
+    .social {
+      background: @color-raw-alt;
+      overflow: hidden;
+    }
+
+    .link-social {
+      .std-xpadding;
+      .std-ypadding;
+      position: relative;
+      margin-bottom: 3rem;
+      text-align: center;
+      float: left;
+      width: 50%;
+
+
+      .count-social {
+        .type-light;
+        color: @color-medium-well;
+        display: block;
+        font-size: 84px;
+        line-height: 1;
+      }
+
+      .name-social {
+        .font-m2;
+        .type-semibold;
+        color: @color-medium-well;
+        display: block;
+      }
+    }
+    .xcomments {
+      background: @color-medium-rare;
+    }
+
+  }
+  .collage {
+    .page-margins;
+  }
+
 }

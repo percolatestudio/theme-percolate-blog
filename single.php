@@ -28,28 +28,25 @@
               <?php $author_posts_url = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename ); ?>
               <a class="avatar-wrapper" href="<?php echo $author_posts_url; ?>"><?php echo get_avatar( $coauthor->user_email, '72' ); ?></a>
 
-              <?php if(get_the_author_meta('twitter', $coauthor->ID) != '') { ?>
-                <a class="name inverse" href="http://twitter.com/<?php the_author_meta('twitter', $coauthor->ID) ?>"><?php echo $coauthor->display_name; ?></a>
-              <?php } else { ?>
-                <a class="name inverse" rel="author" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a>
-              <?php } ?>
+              <a class="name inverse" rel="author" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a>
             </div>
           <?php endforeach; ?>
 
         <?php } else { ?>
 
-          <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )) ?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '72'); ?></a>
+          <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )) ?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '64'); ?></a>
           By <?php the_author_posts_link();?>
 
         <?php }?>
-        <div class="time">Published on <?php the_time('M j, Y'); ?></div>
+        <div class="metadata"><span>Published</span> <?php the_time('M j, Y'); ?> <span>in</span> <?php the_category(', '); ?></div>
       </div>
+
 
 
 
     </header>
 
-  	<div class="entry-wrapper">
+  	<div class="wrapper-content">
   	  <div class="entry formatting">
 		  	<?php the_content(); ?>
 	  		<?php wp_link_pages(); ?>
@@ -59,43 +56,59 @@
 	<?php endwhile; ?>
 	<?php else : endif; ?>
 
+  <section class="section-ancillary">
+    <div class="byline">
+      <div class="title-section">Author</div>
+      <div class="attribution">
+        <?php if ( function_exists( 'coauthors_posts_links' ) ) { ?>
 
+          <?php foreach( get_coauthors() as $coauthor ) : ?>
+            <div class="author">
+              <?php $author_posts_url = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename ); ?>
+              <a class="avatar-wrapper" href="<?php echo $author_posts_url; ?>"><?php echo get_avatar( $coauthor->user_email, '72' ); ?></a>
+              <div class="meta">
+                <div class="subtitle-section"><?php echo $coauthor->display_name; ?></div>
+                <p class="description"><?php echo $coauthor->description; ?></p>
+                <?php if(get_the_author_meta('twitter', $coauthor->ID) != '') { ?>
+                  <a class="monochrome" href="http://twitter.com/<?php the_author_meta('twitter', $coauthor->ID) ?>">Follow @<?php the_author_meta('twitter', $coauthor->ID) ?></a>
+                <?php } ?>
+                <a class="monochrome" rel="author" href="<?php echo $author_posts_url; ?>">View posts</a>
+              </div>
+            </div>
+          <?php endforeach; ?>
+
+        <?php } else { ?>
+
+          <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )) ?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '72'); ?></a>
+          By <?php the_author_posts_link();?>
+
+        <?php }?>
+      </div>
+    </div>
+    <div class="social">
+      <div class="title-section">Social</div>
+      <a class="link-social twitter" href="http://twitter.com/home?status=Currently reading <?php the_permalink(); ?>" title="Tweet this article" target="_blank">
+        <span class="wrapper-count">
+          <span class="count-social">17</span>
+          <span class="name-social">Twitter</span>
+        </span>
+      </a>
+
+      <!-- More info on FB share -->
+      <a class="link-social facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>" onclick="return fbs_click()" target="_blank">
+        <span class="wrapper-count">
+          <span class="count-social">51</span>
+          <span class="name-social">Facebook</span>
+        </span>
+      </a>
+    </div>
+	</section>
 	<?php
 	  wp_reset_query();
 	  global $withcomments;
 	  $withcomments = 1;
 	  comments_template();
 	?>
-
-  <div class="sidebar">
-
-    <?php include('snip_metadata.php'); ?>
-  </div>
-
-	<div class="attribution">
-  <?php if ( function_exists( 'coauthors_posts_links' ) ) { ?>
-
-    <?php foreach( get_coauthors() as $coauthor ) : ?>
-      <div class="author">
-        <?php $author_posts_url = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename ); ?>
-        <a class="avatar-wrapper" href="<?php echo $author_posts_url; ?>"><?php echo get_avatar( $coauthor->user_email, '72' ); ?></a>
-        <div class="meta">
-          <a class="name" rel="author" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a>
-          <div class="description"><?php echo $coauthor->description; ?></div>
-          <?php if(get_the_author_meta('twitter', $coauthor->ID) != '') { ?>
-          <a class="twitter" href="http://twitter.com/<?php the_author_meta('twitter', $coauthor->ID) ?>">@<?php the_author_meta('twitter', $coauthor->ID) ?></a>
-        <?php } ?>
-        </div>
-      </div>
-    <?php endforeach; ?>
-
-  <?php } else { ?>
-
-    <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )) ?>"><?php echo get_avatar( get_the_author_meta('user_email'), $size = '72'); ?></a>
-    By <?php the_author_posts_link();?>
-
-  <?php }?>
-</div>
 
   <?php include('snip_adjacentposts.php'); ?>
 

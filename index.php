@@ -22,13 +22,14 @@
       <?php } else { ?><?php single_cat_title(); ?>
       <?php } ?>
     </h1>
+    <?php if (is_home()) { ?><h2 class="page-subtitle">A journal about product design & engineering</h2><?php } ?>
     <!-- <h2 class="page-subtitle"><?php $category=get_category($cat); echo $category->description; ?></h2> -->
   </header>
 
   <?php if (have_posts()) :
 	  $i = 0;
 	 ?>
-	  <div class="posts-grid">
+	  <div class="collage">
   		<?php while (have_posts()) : the_post(); $i++; ?>
   			<?php if ($i == 1 or $i == 6 and $paged < 1) :?>
     			<?php include('snip_post_grid_large.php'); ?>

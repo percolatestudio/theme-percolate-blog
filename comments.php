@@ -11,14 +11,12 @@
   	}
   ?>
 
-
   <h2 class="title-section">
-	<?php comments_number(
+  <?php comments_number(
   	'Comments',
   	'<span class="number">1</span> Comment',
   	'<span class="number">%</span> Comments' );?>
   </h2>
-
 
   <!-- You can start editing here. -->
   <?php if ( have_comments() ) : ?>
@@ -66,17 +64,18 @@
             <!-- <label for="comment">Comment</label> -->
             <textarea name="comment" placeholder="Share your thoughts" id="comment" cols="100%" rows="3" tabindex="3"></textarea>
 
+            <div class="fieldset-group">
+        			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-secondary caps">Comment</button>
+        			<?php cancel_comment_reply_link('Cancel'); ?>
+        			<?php do_action('comment_form', $post->ID); ?>
+            </div>
+
             <?php if ( is_user_logged_in() ) : ?>
             <p class="subtext">Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
       			<?php endif; ?>
 
-      			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-secondary caps">Comment</button>
-      			<?php cancel_comment_reply_link('Cancel'); ?>
-    				<?php do_action('comment_form', $post->ID); ?>
           </fieldset>
   			</form>
-
-
   		<?php endif; // If registration required and not logged in ?>
   	</div>
   <?php endif; // if you delete this the sky will fall on your head ?>

@@ -1,18 +1,16 @@
 body.archive,
 body.home,
 body.error404 {
-  .posts-grid {
+  .collage {
     .page-margins;
-    @media screen and (min-width: 50em) {
-      border-radius: 3px;
-      box-shadow: rgba(0,0,0,.1) 0 1px 3px 0;
-    }
+    background: @color-empty;
   }
   .navigation {
     .page-margins;
     .std-ypadding;
     .std-xpadding;
     text-align: center;
+    clear: both;
 
     &:empty {
       display: none;

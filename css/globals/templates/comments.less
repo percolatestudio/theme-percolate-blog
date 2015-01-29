@@ -1,8 +1,21 @@
 .section-comments {
-  background: @color-raw-alt !important;
+  &:after {
+    .position(absolute, 0, auto, 0, 2.75em, 2px);
+    .transform(translateX(-50%));
+
+    @media screen and (min-width: @breakpoint) {
+      left: 50%;
+    }
+
+    background: @color-raw;
+    content: '';
+    z-index: 0;
+  }
 
   .title-section {
-    padding-bottom: 1.25rem;
+    //to mask the vertical line in the bg
+    background: @color-empty;
+    display: inline-block;
   }
 
   form {
@@ -32,18 +45,19 @@
 
 .commentlist {
   .std-xpadding;
-  .std-ypadding;
 
   @media only screen and (min-width: @breakpoint) {
-    margin: 0 auto;
+    padding: 0;
+    margin: 3rem auto;
     max-width: 800px;
     width: 75%;
   }
 }
 
 .comment-lockup {
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
   position: relative;
+  z-index: 1;
 
   .display(flex);
   .flex-wrap(wrap);
@@ -62,6 +76,7 @@
   .name {
     .background-image(none);
     .type-semibold;
+    .font-m1;
     display: inline-block;
     line-height: 1.75em; //same as formatting
   }
@@ -86,11 +101,6 @@
   .note {
     //this is when a comment is submitted and is awaiting moderation
     .font-s2;
-    .position(relative, auto, auto, auto, auto, 100%);
-    @media only screen and (min-width: @breakpoint) {
-      .position(absolute, auto, -2.5em, auto, auto, 160px);
-      .transform(translateX(100%));
-    }
   }
 }//comment-lockup
 
@@ -107,11 +117,27 @@ ul { //nested comments
 // for respond styling and edgecases
 #respond {
   .std-xpadding;
+  .std-ypadding;
+  background: @color-empty;
+  border: 2px solid @color-raw;
+
+  @media only screen and (min-width: @breakpoint) {
+    margin-bottom: 6em;
+  }
+  position: relative;
+  z-index: 1;
 
   fieldset {
     padding-top: 0; //overrides fieldset styling
     padding-bottom: 0; //overrides fieldset styling
+  }
 
+  .fieldset-group {
+    .display(flex);
+    .flex-wrap(wrap);
+    > * {
+      .flex(1);
+    }
   }
 
   .subtext,
@@ -130,25 +156,24 @@ ul { //nested comments
   }
 }
 
-.commentlist + #respond, {
-  margin-top: -2rem;
-  margin-bottom: 2.5rem;
-
-
+.commentlist + #respond,
+.title-section + #respond {
+  //if the response follows a comment lists
+  //if the response is by itself
+  //We do this because we'd need to cancel this out when the response is nested via 'reply'
   @media only screen and (min-width: @breakpoint) {
-    margin-left: 12.5%;
-    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
     width: 75%;
   }
 }
 
 li.comment {
   &.depth-1 + #respond,
-  &.depth-2 + #respond { // spacing between responses and next comments
-    margin-bottom: 3em;
-  }
-  &.depth-1 + #respond { padding-left: 4.25em; } //nested avatar allowance
+  &.depth-2 + #respond {} // spacing between responses and next comments
 
+  &.depth-1 + #respond { margin-left: 4.25em; } //nested avatar allowance
+  &.depth-2 + #respond { margin-left: 2.25em; } //nested avatar allowance
   &.depth-1:last-of-type + #respond { margin-bottom: 0; } // remove margin for last comment
-
 }
