@@ -1,11 +1,17 @@
 jQuery(document).ready(function($) {
   //menu interactions
-	$('.menu-toggle').click(function() {
-  	$('body').toggleClass('menu-active');
-  	$('nav .wrapper').toggleClass('active');
-	});
-	$('.content-overlay').click(function() {
-  	$('body').toggleClass('menu-active');
+  $('[data-contact]').click(function() {
+    //alert('cats');
+  	$('body').removeClass('menu-open').toggleClass('contact-open');
+  });
+  $('[data-menu]').click(function() {
+  	$('body').toggleClass('menu-open');
+  });
+  $('.overlay-close').click(function() {
+  	$('body').removeClass('contact-open').removeClass('menu-open');
+  });
+  $('.wrapper-menu a').click(function() {
+  	$('body').removeClass('menu-open');
   });
 
   //post grid

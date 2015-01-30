@@ -2,43 +2,44 @@ header {
   &.default {
     .page-margins;
     .std-xpadding;
-    .std-ypadding;
     background: @color-empty;
-
-    @media screen and (min-width: 60em) {
-      padding-top: 4em;
-      padding-bottom: 4em;
-    }
-
     text-align: center;
 
-    > .page-title {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    @media screen and (min-width: @breakpoint) {
+      padding-top: 6em;
+      padding-bottom: 6em;
+    }
+
+    .page-title {
       .page-title (@color-well);
-      .type-light;
-      margin-bottom: .75rem;
-      &:only-child {
-        margin-bottom: 0;
+      @media screen and (min-width: @breakpoint) { .type-light; }
+      margin-bottom: .25em;
+      &:only-child { margin-bottom: 0; }
+    }
+    .page-subtitle {
+      .page-subtitle(@color-well);
+      ul {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        vertical-align: middle;
+        li {
+          float: left;
+          a {
+            .link-underline(@color-medium, @color-primary, @color-well, 0%);
+            .type-semibold;
+            text-transform: lowercase;
+          }
+        }
+        li:not(:first-child):not(:last-child):before {
+          content: ', '
+        }
+        li:last-child:before {
+          content: '\00a0 \0026 \00a0'
+        }
       }
     }
-    > .page-subtitle {
-      .page-subtitle(@color-well);
-    }
-    > .description {
-      .page-subtitle (@color-well);
-      margin-bottom: 1em;
-    }
-    > .list-horiz {
-      .font-s3-responsive;
-    }
-    > .btn-group {
-      margin-top: 1em;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  &.overlay-responsive {
-    padding-top: 1.5em;
-    @media screen and (min-width: 30em) { padding-top: 3em; }
-    @media screen and (min-width: 40em) { padding-top: 6em; }
   }
 }

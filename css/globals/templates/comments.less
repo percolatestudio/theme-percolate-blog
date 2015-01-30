@@ -1,15 +1,13 @@
 .section-comments {
   &:after {
+    //line in the background of the comments
     .position(absolute, 0, auto, 0, 2.75em, 2px);
     .transform(translateX(-50%));
-
-    @media screen and (min-width: @breakpoint) {
-      left: 50%;
-    }
-
     background: @color-raw;
     content: '';
     z-index: 0;
+
+    @media screen and (min-width: @breakpoint) { left: 50%; }
   }
 
   .title-section {
@@ -23,11 +21,13 @@
       .page-subtitle(@color-well);
       margin-bottom: .5em;
     }
+
     .input-symbol,
     textarea {
       max-width: 100%;
       width: 100%;
     }
+
     button[type=submit],
     #cancel-comment-reply-link {
       width: 100%;
@@ -35,12 +35,12 @@
         width: auto;
       }
     }
+
     button + #cancel-comment-reply-link {
       margin-top: .5em;
       @media only screen and (min-width: 40em) { margin-top: 0; }
     }
   }
-
 }
 
 .commentlist {
@@ -55,12 +55,13 @@
 }
 
 .comment-lockup {
+  .display(flex);
+  .flex-wrap(wrap);
   margin-bottom: 3em;
   position: relative;
   z-index: 1;
 
-  .display(flex);
-  .flex-wrap(wrap);
+  .meta { .flex(1); }
 
   .avatar-wrapper {
     display: block;
@@ -71,30 +72,27 @@
       width: 3em;
     }
   }
-  .meta { .flex(1); }
 
   .name {
-    .background-image(none);
     .type-semibold;
     .font-m1;
     display: inline-block;
     line-height: 1.75em; //same as formatting
   }
-  .formatting {
-    margin-bottom: .5em;
-  }
+  .formatting { margin-bottom: .5em; }
+
   .bullet {
     display: inline-block;
     margin: 0 .75em;
     color: @color-medium-rare;
-    &:before {
-      content: '\02022';
-    }
+    &:before { content: '\02022'; }
   }
+
   .date,
   .comment-reply-link,
   .comment-edit-link {
     .font-s2;
+    .type-semibold;
     .link-underline(@color-medium-rare, @color-primary, @color-well, 0%);
   }
 
@@ -120,12 +118,10 @@ ul { //nested comments
   .std-ypadding;
   background: @color-empty;
   border: 2px solid @color-raw;
-
-  @media only screen and (min-width: @breakpoint) {
-    margin-bottom: 6em;
-  }
   position: relative;
   z-index: 1;
+
+  @media only screen and (min-width: @breakpoint) { margin-bottom: 6em; }
 
   fieldset {
     padding-top: 0; //overrides fieldset styling
@@ -146,14 +142,10 @@ ul { //nested comments
   }
   .comment-subscription-form { //this only appears if you have Jetpack subscriptions activated
     margin-top: .75em;
-    & + .comment-subscription-form {
-      margin-top: 0;
-    }
+    & + .comment-subscription-form { margin-top: 0; }
   }
 
-  textarea {
-    margin-bottom: 2rem;
-  }
+  textarea { margin-bottom: 2rem; }
 }
 
 .commentlist + #respond,

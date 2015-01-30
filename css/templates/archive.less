@@ -1,28 +1,32 @@
 body.archive,
 body.home,
 body.error404 {
+
   .collage {
     .page-margins;
     background: @color-empty;
+    @media screen and (max-width: @breakpoint) {
+      height: 25%;
+      min-height: 300px;
+    }
   }
+
   .navigation {
     .page-margins;
     .std-ypadding;
     .std-xpadding;
-    text-align: center;
     clear: both;
+    text-align: center;s
 
-    &:empty {
-      display: none;
-    }
+    &:empty { display: none; }
 
-    @media screen and (min-width: 50em) {
+    @media screen and (min-width: @breakpoint) {
       padding-left: 0;
       padding-right: 0;
     }
     > a {
       width: 100%;
-      @media screen and (min-width: 50em) {
+      @media screen and (min-width: @breakpoint) {
         width: 33.33%;
       }
     }

@@ -27,7 +27,6 @@
             <div class="author">
               <?php $author_posts_url = get_author_posts_url( $coauthor->ID, $coauthor->user_nicename ); ?>
               <a class="avatar-wrapper" href="<?php echo $author_posts_url; ?>"><?php echo get_avatar( $coauthor->user_email, '72' ); ?></a>
-
               <a class="name inverse" rel="author" href="<?php echo $author_posts_url; ?>"><?php echo $coauthor->display_name; ?></a>
             </div>
           <?php endforeach; ?>
@@ -40,10 +39,6 @@
         <?php }?>
         <div class="metadata"><span>Published</span> <?php the_time('M j, Y'); ?> <span>in</span> <?php the_category(', '); ?></div>
       </div>
-
-
-
-
     </header>
 
   	<div class="wrapper-content">

@@ -1,6 +1,6 @@
 .formatting {
   @spacing : 1.75rem;
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     .type-semibold;
     line-height: 1em;
     padding: .5em 0;
@@ -16,7 +16,7 @@
     .font-m2;
   }
   h5, h6 {
-    .std-xpadding;
+    .font-m1;
   }
   hr + * {
     margin-top: 0 !important;
@@ -28,7 +28,7 @@
     hyphens: auto;
   }
   p {
-    .cf;
+    .clearfix;
     color: @color-well;
     line-height: 1.75em;
     margin-bottom: @spacing;
@@ -204,5 +204,4 @@
   table tr th :last-child, table tr td :last-child {
     margin-bottom: 0;
   }
-
 }

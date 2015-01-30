@@ -22,8 +22,9 @@
       <?php } else { ?><?php single_cat_title(); ?>
       <?php } ?>
     </h1>
-    <?php if (is_home()) { ?><h2 class="page-subtitle">A journal about product design & engineering</h2><?php } ?>
-    <!-- <h2 class="page-subtitle"><?php $category=get_category($cat); echo $category->description; ?></h2> -->
+    <?php if (is_home()) { ?><h2 class="page-subtitle">Notes on <ul><?php wp_list_categories('title_li=');?></ul></h2>
+    <?php } elseif (is_category()) { ?><h2 class="page-subtitle"><?php $category=get_category($cat); echo $category->description; ?></h2>
+    <?php } elseif (is_author()) { ?><h2 class="page-subtitle"><?php echo $curauth->description; ?><?php } ?>
   </header>
 
   <?php if (have_posts()) :

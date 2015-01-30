@@ -6,7 +6,7 @@
   .transform(translate3d(0,0,0));//improve performance for bg cover
 
   &.bg-image:after { //Overlay for text readability atop images
-    .fill-with-absolute-position;
+   .position(absolute, 0, 0, 0, 0);
    .transition(all ease-in 200ms);
    .transform(translate3d(0,0,0));
     background: black;
@@ -32,27 +32,27 @@
       z-index: 0;
     }
   }
+
+  //the note in the top left corner next/previous post for adjacentposts
+  .subtitle-item {
+    .position(absolute, 0, 0, auto, 0, 100%);
+    .std-xpadding;
+    .std-ypadding;
+    .type-bold;
+    .title-caps;
+    color: rgba(255,255,255,.5);
+    line-height: 1;
+    text-indent: 0;
+    z-index: 1;
+
+    .font-s3;
+    @media screen and (min-width: @breakpoint) { .font-m1; }
+  }
+
 }
 
-.subtitle-item {
-  .position(absolute, 0, 0, auto, 0, 100%);
-  .std-xpadding;
-  .std-ypadding;
-  .type-bold;
-  .title-caps;
-
-  line-height: 1;
-  .font-s3;
-  @media screen and (min-width: @breakpoint) { .font-m1; }
-
-
-  color: rgba(255,255,255,.5);
-  text-indent: 0;
-  z-index: 1;
-}
 
 //Style
-
 .post-content {
   .std-xpadding;
   .position(absolute, 52%, 0, auto, 0);
@@ -62,8 +62,8 @@
   z-index: 1;
 
   .title {
-    .post-title(@color-empty);
     .type-light;
+    .post-title(@color-empty);
     display: inline-block;
     margin-bottom: .33em;
     text-shadow: rgba(0,0,0,.15) 0 1px 3px;

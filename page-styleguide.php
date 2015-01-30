@@ -7,15 +7,6 @@
 
 <header class="default">
   <h1 class="page-title">Styleguide</h1>
-  <div class="list-horiz">
-    <a href="#typography" class="nochrome">Typography</a> <span class="bullet"></span>
-    <a href="#colors" class="nochrome">Colors</a> <span class="bullet"></span>
-    <a href="#buttons" class="nochrome">Buttons</a> <span class="bullet"></span>
-    <a href="#icons" class="nochrome">Icons</a> <span class="bullet"></span>
-    <a href="#forms" class="nochrome">Forms</a> <span class="bullet"></span>
-    <a href="#links" class="nochrome">Links</a> <span class="bullet"></span>
-    <a href="#formatting" class="nochrome">Formatting</a>
-  </div>
 </header>
 
 <section class="section-std">
@@ -23,8 +14,8 @@
   <div id="typography" class="module">
   <h5 class="subtitle">Typography</h5>
   <ul class="two-up">
-    <li><h6>Headings</h6><div class="font-m1 headings">Lora</div></li>
-    <li><h6>Body</h6><div class="font-m1">Source Sans Pro</div></li>
+    <li><h6>Headings</h6><div class="font-m1 headings">Din Pro</div></li>
+    <li><h6>Body</h6><div class="font-m1">Din Pro</div></li>
   </ul>
   <ul class="two-up horiz">
     <li>

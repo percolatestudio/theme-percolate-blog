@@ -31,7 +31,6 @@
       wp_enqueue_script('fastclick', get_template_directory_uri() . '/js/fastclick.js',array(), false, '1.0', true);
       //wp_enqueue_script('gfycat', get_template_directory_uri() . '/js/gfycat_test.js',array(), false, '1.0', true);
       wp_enqueue_script('gfycat', get_template_directory_uri() . '/js/gfycat_test.min.js',array(), false, '1.0', true);
-      //wp_enqueue_script('live', get_template_directory_uri() . '/js/live.js',array(), false, '1.0', true);
     }
     if (is_singular()) { wp_enqueue_script('comment-reply',false,array('jquery')); }
   }

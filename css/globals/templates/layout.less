@@ -1,46 +1,71 @@
-// Layout animations
-@transition-time: 600ms;
-@transition-distance: 260px;
+@transition-time: 400ms;
+
+//Loosely based on ps.com's layout
 
 html {
-  overflow: hidden; //prevents side scrolling
+  overflow-y: auto;
 }
 
 body {
-  .fill-with-absolute-position;
-  background: black;
-  overflow: hidden; //prevents scrolling when menu is open
+  .position(absolute, 0, 0, 0, 0);
+  overflow: hidden;//prevents the scale in and out transitions from causing flickering scrollbars
 
 
-  > * {
-    .transition(all @transition-time cubic-bezier(0.175, 0.885, 0.335, 1.05));
-    .backface-visibility(hidden);
-  }
-
-  .site-nav {
-    .transform(scale(1));
-    .transition(all @transition-time cubic-bezier(0.175, 0.885, 0.335, 1.05));
+  &.menu-open .overlay-screen-menu,
+  &.contact-open .overlay-screen-contact {
+   .position(absolute, 0, 0, 0, 0);
     opacity: 1;
+    overflow-y: scroll; // do not move, hijacks scroll from content if moved
+    overflow-x: hidden;
+    z-index: 9;
   }
 
-  &.menu-active {
-    > * { .transform(translateX(@transition-distance)); }
-
-    .content-overlay { //intercepts clicks and scroll events when menu is active
-      .fill-with-absolute-position;
-      background: transparent;
-      z-index: 2;
-    }
-    .site-nav {
-      opacity: 0;
-      .transform(scale(0));
+  &.menu-open,
+  &.contact-open {
+    .content {
+      opacity: 1;
+      position: fixed;
+      .transform(scale3d(0.85, 0.85, 1));
+      .transition( all @transition-time * 3 cubic-bezier(0.175, 0.885, 0.335, 1.050));
     }
   }
+}
 
+.overlay-screen-menu,
+.overlay-screen-contact {
+  .position(fixed, 0, 0, 0, 0);
+  opacity: 0;
+  .transition(all 250ms ease-in-out);
+  z-index: -1;
+  -webkit-overflow-scrolling: touch;
+  //do not add backface to this, scrolling will not register on the overlay
 }
 
 .content {
-  .fill-with-absolute-position;
+  .position(absolute, 0, 0, 0, 0);
+  .transform( scale3d(1,1,1) );
+  &:not(.velocity-animating) {
+    .transition( all @transition-time cubic-bezier(0.175, 0.885, 0.335, 1.050) );
+  }
+
+  background: @color-raw;
+  box-shadow: rgba(0,0,0,.3) 0 0 10px 3px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+  -webkit-overflow-scrolling: touch;
+
+  //Fixes choppy scrolling in safari
+  //https://github.com/Prinzhorn/skrollr/issues/342#issuecomment-27512033
+  .backface-visibility( hidden );
+}
+
+html {
+  background: @color-full;
+}
+
+.content {
+  .position(absolute, 0, 0, 0, 0);
   background: @color-raw;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
