@@ -51,18 +51,16 @@
     </div>
     <div class="social">
 
+      <form action="https://percolatestudio.us3.list-manage.com/subscribe/post">
+        <input type="hidden" name="u" value="4eaab348037bea8afae9acd5f">
+        <input type="hidden" name="id" value="a118b8ae30">
 
-      <form action="//percolatestudio.us3.list-manage.com/subscribe/post?u=4eaab348037bea8afae9acd5f&amp;id=a118b8ae30" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div class="input-symbol left">
-  				<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Get the newsletter">
-  				<span class="icon-email"></span>
-        </div>
+          <input name="EMAIL" type="email" size="20" value="" placeholder="Add your email">
+          <span class="icon-email"></span>
 
-    		<div class="response" id="mce-error-response" style="display:none"></div>
-    		<div class="response" id="mce-success-response" style="display:none"></div>
-    	    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;"><input type="text" name="b_4eaab348037bea8afae9acd5f_a118b8ae30" tabindex="-1" value=""></div>
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="display:none">
+        </div>
+        <button type="submit" style="display:none;" name="subscribe" id="mc-embedded-subscribe"></button>
       </form>
 
       <a href="http://twitter.com/percolatestudio" class="monochrome" target="_blank"><span class="icon-twitter"></span></a>
