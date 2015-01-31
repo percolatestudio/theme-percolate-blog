@@ -6,6 +6,13 @@
   min-height: 600px;
   position: relative;
 
+  &.responsive {
+    @media screen and (max-width: @breakpoint) {
+      height: 25%;
+      min-height: 300px;
+    }
+  }
+
   &.short { // band-like collage, single row
     height: 25%;
     min-height: 300px;

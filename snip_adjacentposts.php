@@ -1,4 +1,4 @@
-<div class="collage">
+<div class="collage responsive">
   <?php
     //previous post
     $in_same_cat = false;
