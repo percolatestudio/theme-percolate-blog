@@ -13,7 +13,6 @@ body {
 
   &.menu-open .overlay-screen-menu,
   &.contact-open .overlay-screen-contact {
-   .position(absolute, 0, 0, 0, 0);
     opacity: 1;
     overflow-y: scroll; // do not move, hijacks scroll from content if moved
     overflow-x: hidden;
@@ -33,9 +32,10 @@ body {
 
 .overlay-screen-menu,
 .overlay-screen-contact {
-  .position(fixed, 0, 0, 0, 0);
-  opacity: 0;
+  .position(absolute, 0, 0, 0, 0);
   .transition(all 250ms ease-in-out);
+  .transform(translate3d(0,0,0));
+  opacity: 0;
   z-index: -1;
   -webkit-overflow-scrolling: touch;
   //do not add backface to this, scrolling will not register on the overlay
