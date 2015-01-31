@@ -56,7 +56,7 @@
         <input type="hidden" name="id" value="a118b8ae30">
 
         <div class="input-symbol left">
-          <input name="EMAIL" type="email" size="20" value="" placeholder="Add your email">
+          <input name="EMAIL" type="email" size="20" value="" placeholder="Get the newsletter">
           <span class="icon-email"></span>
 
         </div>
