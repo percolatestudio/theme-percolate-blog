@@ -1,45 +1,56 @@
 header {
-  &.default {
-    .page-margins;
-    .std-xpadding;
-    background: @color-empty;
-    text-align: center;
-
-    padding-top: 4em;
-    padding-bottom: 4em;
-    @media screen and (min-width: @breakpoint) {
-      padding-top: 6em;
-      padding-bottom: 6em;
-    }
-
-    .page-title {
-      .page-title (@color-well);
-      @media screen and (min-width: @breakpoint) { .type-light; }
-      margin-bottom: .25em;
-      &:only-child { margin-bottom: 0; }
-    }
-    .page-subtitle {
-      .page-subtitle(@color-well);
-      ul {
-        display: inline-block;
-        list-style: none;
-        padding: 0;
-        vertical-align: middle;
-        li {
-          float: left;
-          a {
-            .link-underline(@color-medium, @color-primary, @color-well, 0%);
-            .type-semibold;
-            text-transform: lowercase;
-          }
-        }
-        li:not(:first-child):not(:last-child):before {
-          content: ', '
-        }
-        li:last-child:before {
-          content: '\00a0 \0026 \00a0'
-        }
-      }
+  &.collage {
+    @media screen and (max-width: @breakpoint) {
+      height: auto !important;
+      min-height: 0 !important;
     }
   }
+
+  .title-page {
+    .font-l2;
+    @media screen and (min-width: @breakpoint) { .font-l3; }
+
+    .type-light;
+    .std-xpadding;
+    .std-ypadding;
+    letter-spacing: -.05em;
+    line-height: 1;
+  }
+
+  .description-page {
+    .font-m1;
+    .std-xpadding;
+    .std-ypadding;
+    color: @color-well;
+
+    @media screen and (min-width: @breakpoint) {
+      .font-m2;
+      .position(absolute, auto, 0, 0, 0);
+    }
+
+    a {
+      .link-underline(@color-medium, @color-primary, @color-well, 0%);
+      .type-semibold;
+      text-transform: lowercase;
+    }
+    a:not(:first-child):not(:last-child):before { content: ', ' }
+    a:last-child:before { content: '\00a0 \0026 \00a0' }
+  }
+
+  form { display: inline-block; } //ensures form lines up with social icons
+
+  .social {
+    .std-xpadding;
+    .std-ypadding;
+    @media screen and (min-width: @breakpoint) {
+      .position(absolute, auto, 0, 0);
+    }
+    a {
+      .font-m1;
+      display: inline-block;
+      margin-left: 1em;
+      vertical-align: middle;
+    }
+  }
+
 }

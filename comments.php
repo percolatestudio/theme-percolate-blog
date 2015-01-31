@@ -65,7 +65,7 @@
             <textarea name="comment" placeholder="Share your thoughts" id="comment" cols="100%" rows="3" tabindex="3"></textarea>
 
             <div class="fieldset-group">
-        			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-secondary caps">Comment</button>
+        			<button name="submit" type="submit" id="submit" tabindex="4" class="btn-primary caps">Comment</button>
         			<?php cancel_comment_reply_link('Cancel'); ?>
         			<?php do_action('comment_form', $post->ID); ?>
             </div>

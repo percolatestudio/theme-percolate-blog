@@ -11,7 +11,7 @@
       class="<?php if(has_post_thumbnail()) {echo 'has-image';}?>"
       style='background-image: url("<?php echo $large_image_url[0] ?>");' title="<?php the_title() ?>">
       <div class="hero-content">
-        <h1 class="post-title"><?php the_title() ?></h1>
+        <h1 class="post-title"><?php the_title(); ?></h1>
 		  	<h2 class="post-subtitle">
 	        <?php
 		  	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
@@ -81,19 +81,28 @@
       </div>
     </div>
     <div class="social">
-      <div class="title-section">Social</div>
-      <a class="link-social twitter" href="http://twitter.com/home?status=Currently reading <?php the_permalink(); ?>" title="Tweet this article" target="_blank">
+      <div class="title-section">Share
+        <a class="title-section-action monochrome" href="http://eepurl.com/SHH3n" target="_blank">Get the newsletter</a>
+      </div>
+      <a data-twitter="button" class="link-social twitter">
         <span class="wrapper-count">
-          <span class="count-social">17</span>
+          <span data-twitter="counter" class="count-social">-</span>
           <span class="name-social">Twitter</span>
         </span>
       </a>
 
       <!-- More info on FB share -->
-      <a class="link-social facebook" href="http://www.facebook.com/share.php?u=<?php the_permalink(); ?>" onclick="return fbs_click()" target="_blank">
+      <a data-facebook="button" class="link-social facebook">
         <span class="wrapper-count">
-          <span class="count-social">51</span>
+          <span data-facebook="counter" class="count-social">-</span>
           <span class="name-social">Facebook</span>
+        </span>
+      </a>
+
+      <a class="link-social rss" href="<?php bloginfo('rss2_url'); ?>">
+        <span class="wrapper-count">
+          <span class="count-social"><span class="icon-rss"></span></span>
+          <span class="name-social">Subscribe</span>
         </span>
       </a>
     </div>

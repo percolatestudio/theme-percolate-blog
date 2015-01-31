@@ -14,15 +14,6 @@ jQuery(document).ready(function($) {
   	$('body').removeClass('menu-open');
   });
 
-  //post grid
-  //map clicks to go to the post
-  $('.post').click(function(ev) {
-    if (! $(ev.target).hasClass('author')) {
-      var link = $(ev.currentTarget).find('a:not(.author)').first();
-      window.location = link.attr('href');
-    }
-  });
-
   //hacked together, needs refactor
   $('.toggle-iframe > a').click(function(toggle) {
     if (! $(toggle.target).hasClass('active')) {
@@ -34,5 +25,20 @@ jQuery(document).ready(function($) {
   window.addEventListener('load', function() {
       new FastClick(document.body);
   }, false);
+
+  // Social plugin
+  var url = window.location.href;
+
+  $('[data-facebook=button]').social({
+    network: 'facebook',
+    counter: '[data-facebook=counter]',
+    url: url
+  });
+
+  $('[data-twitter=button]').social({
+    network: 'twitter',
+    counter: '[data-twitter=counter]',
+    url: url
+  });
 
 });

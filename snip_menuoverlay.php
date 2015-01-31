@@ -22,6 +22,8 @@
       <a href="http://percolatestudio.com/careers" class="monochrome">Join Us</a>
       <a href="http://blog.percolatestudio.com" class="monochrome">Blog</a>
       <a data-contact class="monochrome">Contact</a>
+      <a href="http://twitter.com/percolatestudio" class="monochrome" target="_blank"><span class="icon-twitter"></span></a>
+      <a href="http://github.com/percolatestudio" class="monochrome" target="_blank"><span class="icon-github"></span></a>
     </div>
   </div>
 </div>
