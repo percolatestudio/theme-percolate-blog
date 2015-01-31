@@ -23,16 +23,28 @@
         <?php } else { ?><?php single_cat_title(); ?>
         <?php } ?>
       </h1>
-      <?php if (is_home()) { ?><h2 class="description-page">Notes on
-
-
-      <?php
-      $args = array( 'parent' => 0 );
-      $categories = get_categories( $args );
-      foreach ( $categories as $category ) {
-      	echo '<a class="monochrome" href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a>';
-      }
-      ?>
+      <?php if (is_home()) { ?>
+        <h2 class="description-page">Notes on
+          <?php
+          $args = array( 'parent' => 0 );
+          $categories = get_categories( $args );
+          foreach ( $categories as $index => $category ) : ?>
+            <a class="monochrome" href="<?php echo get_category_link( $category->term_id ); ?>"><?php echo $category->name; ?></a><?php
+              $categoriesLength = count($categories);
+              if($index < $categoriesLength - 1) {
+                // draw a comma or and
+                if($index == $categoriesLength - 2) {
+                  if ($categoriesLength == 2) {
+                    echo " &amp; ";
+                  } else {
+                    echo ", and ";
+                  }
+                } else {
+                  echo ", ";
+                }
+              }
+            ?>
+          <?php endforeach; ?>
         </h2>
       <?php } elseif (is_category()) { ?><h2 class="description-page"><?php $category=get_category($cat); echo $category->description; ?></h2>
       <?php } elseif (is_author()) { ?><h2 class="description-page"><?php echo $curauth->description; ?><?php } ?></h2>
