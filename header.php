@@ -74,7 +74,7 @@
   <div class="content">
     <nav>
       <div class="nav-group">
-        <a href="http://percolatestudio.com/why">Why</a>
+        <a href="http://percolatestudio.com/">Home</a>
         <a href="http://percolatestudio.com/how">How</a>
         <a href="http://percolatestudio.com/what">What</a>
         <a data-menu>Menu</a>
