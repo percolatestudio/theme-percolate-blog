@@ -99,7 +99,7 @@
         </span>
       </a>
 
-      <a class="link-social rss" href="<?php bloginfo('rss2_url'); ?>">
+      <a class="link-social rss" href="<?php bloginfo('url'); ?>/?feed=mailchimp">
         <span class="wrapper-count">
           <span class="count-social"><span class="icon-rss"></span></span>
           <span class="name-social">Subscribe</span>

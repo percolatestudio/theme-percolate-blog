@@ -65,7 +65,7 @@
 
       <a href="http://twitter.com/percolatestudio" class="monochrome" target="_blank"><span class="icon-twitter"></span></a>
       <a href="http://github.com/percolatestudio" class="monochrome" target="_blank"><span class="icon-github"></span></a>
-      <a href="<?php bloginfo('rss2_url'); ?>" class="monochrome" target="_blank"><span class="icon-rss"></span></a>
+      <a href="<?php bloginfo('url'); ?>/?feed=mailchimp" class="monochrome" target="_blank"><span class="icon-rss"></span></a>
     </div>
   </header>
 
