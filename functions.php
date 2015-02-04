@@ -4,6 +4,7 @@
 
   include(THEMELIB . 'breadcrumb.php');
   include(THEMELIB . 'custom-summary.php');
+  include(THEMELIB . 'custom-rss.php');
   include(THEMELIB . 'comments-reply.php');
   include(THEMELIB . 'enable_wp.php');
   include(THEMELIB . 'excerpt.php');
