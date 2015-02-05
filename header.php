@@ -68,7 +68,7 @@
 </head>
 <body <?php body_class($class); ?> lang="en">
 
-  <?php include('snip_contactoverlay.php'); ?>
+  <div class="overlay-screen-contact"></div>
   <?php include('snip_menuoverlay.php'); ?>
 
   <div class="content">

@@ -41,4 +41,12 @@ jQuery(document).ready(function($) {
     url: url
   });
 
+  //contact form
+  React.render(
+    React.createElement(Percolate.Contact.Overlay, {
+      containerElement: document.body
+    }),
+    $('.overlay-screen-contact').get(0)
+  );
+
 });

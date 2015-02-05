@@ -33,6 +33,10 @@
       //wp_enqueue_script('gfycat', get_template_directory_uri() . '/js/gfycat_test.js',array(), false, '1.0', true);
       wp_enqueue_script('gfycat', get_template_directory_uri() . '/js/gfycat_test.min.js',array(), false, '1.0', true);
       wp_enqueue_script('jquery-social', get_template_directory_uri() . '/js/jquery.social.js',array('jquery'), false, '1.0', true);
+      wp_enqueue_script('lodash', get_template_directory_uri() . '/js/lodash.min.js',array(), false, '1.0', true);
+      wp_enqueue_script('autosize', get_template_directory_uri() . '/js/jquery.autosize.min.js',array('jquery'), false, '1.0', true);
+      wp_enqueue_script('react', get_template_directory_uri() . '/js/react-with-addons-0.12.2.min.js',array(), false, '1.0', true);
+      wp_enqueue_script('percolate-contact', get_template_directory_uri() . '/js/percolate-contact-form.min.js',array(), false, '1.0', true);
     }
     if (is_singular()) { wp_enqueue_script('comment-reply',false,array('jquery')); }
   }
