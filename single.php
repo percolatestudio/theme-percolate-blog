@@ -65,7 +65,7 @@
                 <div class="subtitle-section"><?php echo $coauthor->display_name; ?></div>
                 <p class="description"><?php echo $coauthor->description; ?></p>
                 <?php if(get_the_author_meta('twitter', $coauthor->ID) != '') { ?>
-                  <a class="monochrome" href="http://twitter.com/<?php the_author_meta('twitter', $coauthor->ID) ?>">Follow @<?php the_author_meta('twitter', $coauthor->ID) ?></a>
+                  <a class="monochrome" target="_blank" href="http://twitter.com/<?php the_author_meta('twitter', $coauthor->ID) ?>">Follow @<?php the_author_meta('twitter', $coauthor->ID) ?></a>
                 <?php } ?>
                 <a class="monochrome" rel="author" href="<?php echo $author_posts_url; ?>">View posts</a>
               </div>
