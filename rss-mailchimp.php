@@ -55,7 +55,13 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
           <?php the_excerpt_rss() ?>
         ]]>
       </description>
-      <content:encoded><![CDATA[<?php the_excerpt_rss() ?>]]></content:encoded>
+      <content:encoded><![CDATA[
+        <h2><?php
+      	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
+    		  if($summary !== ''){ echo $summary; }
+        ?></h2>
+        <?php the_excerpt_rss() ?>]]>
+      </content:encoded>
       <?php rss_enclosure(); ?>
       <?php do_action('rss2_item'); ?>
     </item>
