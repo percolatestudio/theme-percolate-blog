@@ -48,10 +48,10 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 
       <description>
         <![CDATA[
-          <b><?php
+          <h2><?php
         	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
       		  if($summary !== ''){ echo $summary; }
-          ?></b>.
+          ?></h2>
           <?php the_excerpt_rss() ?>
         ]]>
       </description>
