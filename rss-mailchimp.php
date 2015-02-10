@@ -52,7 +52,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
         	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
       		  if($summary !== ''){ echo $summary; }
           ?></h2>
-          <?php the_excerpt_rss() ?>
+          <p><?php the_excerpt_rss() ?></p>
         ]]>
       </description>
       <content:encoded><![CDATA[
@@ -60,7 +60,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
       	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
     		  if($summary !== ''){ echo $summary; }
         ?></h2>
-        <?php the_excerpt_rss() ?>]]>
+        <p><?php the_excerpt_rss() ?></p>]]>
       </content:encoded>
       <?php rss_enclosure(); ?>
       <?php do_action('rss2_item'); ?>
