@@ -46,7 +46,15 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
         <category><?php echo $category->name; ?></category>
       <?php endforeach; ?>
 
-      <description><![CDATA[<?php the_excerpt_rss() ?>]]></description>
+      <description>
+        <![CDATA[
+          <b><?php
+        	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
+      		  if($summary !== ''){ echo $summary; }
+          ?></b>.
+          <?php the_excerpt_rss() ?>
+        ]]>
+      </description>
       <content:encoded><![CDATA[<?php the_excerpt_rss() ?>]]></content:encoded>
       <?php rss_enclosure(); ?>
       <?php do_action('rss2_item'); ?>
