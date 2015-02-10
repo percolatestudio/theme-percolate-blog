@@ -83,7 +83,7 @@
       <a href="http://percolatestudio.com/" class="logo"><img src="<?php bloginfo('template_directory'); ?>/img/logo.svg"/></a>
 
       <div class="nav-group right">
-        <a href="http://percolatestudio.com/careers">Join Us</a>
+        <a href="http://percolatestudio.com/careers">Join</a>
         <a href="http://blog.percolatestudio.com" class="active">Blog</a>
         <a data-contact>Contact</a>
       </div>
