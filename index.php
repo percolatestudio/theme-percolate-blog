@@ -43,8 +43,7 @@
                   echo ", ";
                 }
               }
-            ?>
-          <?php endforeach; ?>
+              ?><?php endforeach; ?>.
         </h2>
       <?php } elseif (is_category()) { ?><h2 class="description-page"><?php $category=get_category($cat); echo $category->description; ?></h2>
       <?php } elseif (is_author()) { ?><h2 class="description-page"><?php echo $curauth->description; ?><?php } ?></h2>
