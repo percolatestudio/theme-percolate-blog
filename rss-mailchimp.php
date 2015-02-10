@@ -48,7 +48,7 @@ echo '<?xml version="1.0" encoding="'.get_option('blog_charset').'"?'.'>';
 
       <description>
         <![CDATA[
-          <h2 style="margin:0;"><?php
+          <h2 style="margin: 0; color: #666; font-style: italic; font-weight: normal; font-size: 18px;"><?php
         	  $summary = get_post_meta($post->ID, "subtitle_value", $single = true);
       		  if($summary !== ''){ echo $summary; }
           ?></h2>
