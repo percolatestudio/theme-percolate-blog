@@ -10,7 +10,7 @@
 
 	<!-- seo -->
 
-	<title><?php if (is_home()) { echo ' '.get_bloginfo('name').' | ' ; } else { wp_title('| ', true, 'right'); }?>Percolate Studio</title>
+	<title><?php wp_title('| ', true, 'right');?><?php echo get_bloginfo('name');?></title>
 
   <?php if ( is_attachment() || is_404() ) { ?>
   	<meta name="robots" content="noindex, nofollow">
