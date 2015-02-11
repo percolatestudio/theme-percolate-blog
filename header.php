@@ -10,7 +10,7 @@
 
 	<!-- seo -->
 
-	<title><?php wp_title('| ', true, 'right');?><?php echo get_bloginfo('name');?></title>
+	<title><?php wp_title('');?></title>
 
   <?php if ( is_attachment() || is_404() ) { ?>
   	<meta name="robots" content="noindex, nofollow">
