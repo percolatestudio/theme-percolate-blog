@@ -25,7 +25,7 @@
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@<?php echo get_option('twitter');?>">
-    <meta name="twitter:title" content="<?php echo trim(wp_title('', false)); ?>">
+    <meta name="twitter:title" content="<?php the_title(); ?>">
     <meta name="twitter:description" content="<?php echo $subtitle; ?>">
     <meta name="twitter:creator" content="@<?php the_author_meta('twitter') ?>">
     <meta name="twitter:image" content="<?php echo $large_image_url[0]; ?>">
