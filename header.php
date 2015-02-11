@@ -9,7 +9,8 @@
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0, width=device-width">
 
 	<!-- seo -->
-	<title><?php wp_title('| ', true, 'right');?><?php echo get_bloginfo('name');?></title>
+
+	<title><?php if (is_home()) { echo ' '.get_bloginfo('name').' | ' ; } else { wp_title('| ', true, 'right'); }?>Percolate Studio</title>
 
   <?php if ( is_attachment() || is_404() ) { ?>
   	<meta name="robots" content="noindex, nofollow">
