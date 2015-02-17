@@ -50,7 +50,14 @@
 
   <?php endif; ?>
 
-
+  <?php if ( is_author() ) :
+    if(get_query_var('author_name')) :
+        $curauth = get_user_by('slug', get_query_var('author_name'));
+    else :
+        $curauth = get_userdata(get_query_var('author'));
+    endif; ?>
+    <meta name="description" content="<?php echo $curauth->description; ?>" />
+  <?php endif; ?>
 
 	<!-- blog -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
