@@ -17,9 +17,10 @@
  */
 
 (function ( $ ) {
-  var twitterTitle = encodeURI( $('meta[name="twitter:title"]').attr('content') || document.title );
-  var twitterAccount = encodeURI( $('meta[name="twitter:creator"]').attr('content') || document.title );
-  var hashTags = encodeURI($('meta[property="article:tag"]').map(function(idx, x){ return $(x).attr('content'); }).get().join());
+  // TODO: these should be able to be passed in
+  var twitterTitle = encodeURIComponent( $('meta[name="twitter:title"]').attr('content') || document.title );
+  var twitterAccount = encodeURIComponent( $('meta[name="twitter:creator"]').attr('content') || document.title );
+  var hashTags = encodeURIComponent($('meta[property="article:tag"]').map(function(idx, x){ return $(x).attr('content'); }).get().join());
 
   var networks = {
     facebook: {
@@ -47,38 +48,75 @@
       convertNumber: function(data) {
         return data.stargazers_count;
       }
+    },
+    hackernews: {
+      counterUrl: 'http://hn.algolia.com/api/v1/search?tags=story&query={url}',
+      // Logic lifted from: https://github.com/segmentio/hn-button.com/blob/master/lib/iframe/index.js
+      convertNumber: function(data) {
+        // Store the story's objectId for later when the button is clicked
+        this._storyObjectId = data.objectID;
+
+        return data.points || 0;
+      },
+      
+      popupUrlFn: function(url) {
+        var id = this._storyObjectId;
+        var base = 'https://news.ycombinator.com/';
+        var href = id
+          ? base + 'item?id=' + id
+          : base + 'submitlink?u=' + encodeURIComponent(url) + '&t=' 
+            + twitterTitle;
+
+        return href;
+      },
+      
+      popupWidth: 800,
+      popupHeight: 600,
     }
   }
 
   // Opens a popup according to options
   var openPopup = function(options) {
     var network = networks[options.network];
-    var popupUrl = network.popupUrl.replace('{url}',
-      encodeURIComponent(options.url));
-    var left = Math.round(screen.width / 2 - network.popupWidth / 2);
-    var top = 0;
+    
+    if (network.popupUrl) {
+      var popupUrl = network.popupUrl.replace('{url}',
+        encodeURIComponent(options.url));
 
-    if (screen.height > network.popupHeight) {
-      top = Math.round(screen.height / 3 - network.popupHeight / 2);
-    }
-
-    var win = window.open(popupUrl, 'social', 'left=' + left + ',top=' + top
-      + ',' + 'width=' + network.popupWidth + ',height=' + network.popupHeight
-      + ',personalbar=0,toolbar=0,scrollbars=1,resizable=1');
-
-    if (win) {
-      win.focus();
-      var timer = setInterval($.proxy(function() {
-        if (!win.closed)
-          return;
-
-        clearInterval(timer);
-        updateCounter(options);
-      }, this), options.popopPollInterval);
+      popItUp(popupUrl);
+    } else if (network.popupUrlFn){
+      popItUp(network.popupUrlFn(url));
     } else {
-      // just go there if we can't open the popup
-      location.href = popupUrl;
+      console.error('Cant find popupUrl');
     }
+    
+    function popItUp(url) {
+      var left = Math.round(screen.width / 2 - network.popupWidth / 2);
+      var top = 0;
+
+      if (screen.height > network.popupHeight) {
+        top = Math.round(screen.height / 3 - network.popupHeight / 2);
+      }
+
+      var win = window.open(url, 'social', 'left=' + left + ',top=' + top
+        + ',' + 'width=' + network.popupWidth + ',height=' + network.popupHeight
+        + ',personalbar=0,toolbar=0,scrollbars=1,resizable=1');
+
+      if (win) {
+        win.focus();
+        var timer = setInterval($.proxy(function() {
+          if (!win.closed)
+            return;
+
+          clearInterval(timer);
+          updateCounter(options);
+        }, this), options.popopPollInterval);
+      } else {
+        // just go there if we can't open the popup
+        location.href = url;
+      }
+    }
+
   }
 
   // Updates the counter according to options

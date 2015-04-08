@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <title>jQuery Social test</title>    
+    <meta name="twitter:title" content="The Atmosphere Story">
+    <link rel="canonical" href="http://blog.percolatestudio.com/engineering/the-atmosphere-story/">
+  </head>
+  <body>
+    <a data-twitter="button" class="link-social twitter">
+      <span class="wrapper-count">
+        <span data-twitter="counter" class="count-social">-</span>
+        <span class="name-social">Twitter</span>
+      </span>
+    </a>
+
+    <a data-facebook="button" class="link-social facebook">
+      <span class="wrapper-count">
+        <span data-facebook="counter" class="count-social">-</span>
+        <span class="name-social">Facebook</span>
+      </span>
+    </a>
+
+    <a data-hackernews="button" class="link-social hackernews">
+      <span class="wrapper-count">
+        <span data-hackernews="counter" class="count-social">-</span>
+        <span class="name-social">Hacker News</span>
+      </span>
+    </a>
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="jquery.social.js"></script>
+    <script>
+      var url = $('link[rel="canonical"]').attr('href') || window.location.href;
+
+      $('[data-facebook=button]').social({
+        network: 'facebook',
+        counter: '[data-facebook=counter]',
+        url: url
+      });
+
+      $('[data-twitter=button]').social({
+        network: 'twitter',
+        counter: '[data-twitter=counter]',
+        url: url
+      });
+
+      $('[data-hackernews=button]').social({
+        network: 'hackernews',
+        counter: '[data-hackernews=counter]',
+        url: url
+      });
+    </script>
+  </body>
+</html>
