@@ -16,6 +16,7 @@
   include(THEMELIB . 'social.php');
   include(THEMELIB . 'post_images.php');
   include(THEMELIB . 'public-preview-settings.php');
+  include(THEMELIB . 'remove-jetpack-opengraph-tags.php');
 
   // Remove the WordPress Generator – via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
   function remove_generators() { return ''; }
