@@ -94,7 +94,7 @@
 
       popItUp(popupUrl);
     } else if (network.popupUrlFn){
-      popItUp(network.popupUrlFn(url));
+      popItUp(network.popupUrlFn(options.url));
     } else {
       console.error('Cant find popupUrl');
     }
