@@ -106,7 +106,7 @@
         </span>
       </a>
 
-      <a data-facebook="button" class="link-social facebook">
+      <a data-hn="button" class="link-social hn">
         <span class="wrapper-count">
           <span data-facebook="counter" class="count-social">-</span>
           <span class="name-social">Hacker<br>News</span>
