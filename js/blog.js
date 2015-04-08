@@ -41,6 +41,12 @@ jQuery(document).ready(function($) {
     url: url
   });
 
+  $('[data-hackernews=button]').social({
+    network: 'hackernews',
+    counter: '[data-hackernews=counter]',
+    url: url
+  });
+
   //contact form
   React.render(
     React.createElement(Percolate.Contact.Overlay, {
