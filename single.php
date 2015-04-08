@@ -45,6 +45,21 @@
   	  <div class="entry formatting">
 		  	<?php the_content(); ?>
 	  		<?php wp_link_pages(); ?>
+
+        <div class="callout-newsletter">
+          <div class="title-callout">Get the Newsletter</div>
+
+  	  		<form class="fieldset" action="https://percolatestudio.us3.list-manage.com/subscribe/post">
+            <input type="hidden" name="u" value="4eaab348037bea8afae9acd5f">
+            <input type="hidden" name="id" value="a118b8ae30">
+
+            <div class="input-symbol left">
+              <input name="EMAIL" type="email" size="20" value="" placeholder="Add your email to get the latest news & articles like this">
+              <span class="icon-email"></span>
+            </div>
+            <button type="submit" style="display:none;" name="subscribe" id="mc-embedded-subscribe"></button>
+          </form>
+        </div>
   	  </div>
   	</div>
 
@@ -82,7 +97,7 @@
     </div>
     <div class="social">
       <div class="title-section">Share
-        <a class="title-section-action monochrome" href="http://eepurl.com/SHH3n" target="_blank">Get the newsletter</a>
+        <a class="title-section-action monochrome" href="<?php bloginfo('url'); ?>/?feed=mailchimp" target="_blank">Subscribe</a>
       </div>
       <a data-twitter="button" class="link-social twitter">
         <span class="wrapper-count">

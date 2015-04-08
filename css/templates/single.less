@@ -151,6 +151,35 @@ body.single {
     }
   }//entry
 
+  .callout-newsletter {
+    .std-xpadding;
+    .std-ypadding;
+    background: @color-note;
+    margin-top: 1.5em;
+    @media only screen and (min-width: @breakpoint) { margin-top: 3em; }
+    position: relative;
+    z-index: 1;
+
+    //override std-xpadding on mobile
+    padding-left: 2rem;
+    padding-right: 2rem; //20
+
+    .title-callout {
+      .font-s3;
+      .title-caps;
+      .type-bold;
+      color: @color-primary;
+      margin-bottom: .5rem;
+      text-indent: 0;
+    }
+
+    .fieldset {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+
   .section-ancillary {
     overflow: visible;
 
