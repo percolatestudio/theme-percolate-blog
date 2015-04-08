@@ -56,23 +56,29 @@
       counterUrl: 'http://hn.algolia.com/api/v1/search?tags=story&query={url}',
       // Logic lifted from: https://github.com/segmentio/hn-button.com/blob/master/lib/iframe/index.js
       convertNumber: function(data) {
-        // Store the story's objectId for later when the button is clicked
-        this._storyObjectId = data.objectID;
+        var points = 0;
 
-        return data.points || 0;
+        if (data.hits && data.hits[0]) {
+          story = data.hits[0];
+          points = story.points;
+          // Store the story's objectId for later when the button is clicked
+          this._storyObjectId = story.objectID;
+        }
+
+        return points;
       },
-      
+
       popupUrlFn: function(url) {
         var id = this._storyObjectId;
         var base = 'https://news.ycombinator.com/';
         var href = id
           ? base + 'item?id=' + id
-          : base + 'submitlink?u=' + encodeURIComponent(url) + '&t=' 
+          : base + 'submitlink?u=' + encodeURIComponent(url) + '&t='
             + twitterTitle;
 
         return href;
       },
-      
+
       popupWidth: 800,
       popupHeight: 600,
     }
@@ -81,7 +87,7 @@
   // Opens a popup according to options
   var openPopup = function(options) {
     var network = networks[options.network];
-    
+
     if (network.popupUrl) {
       var popupUrl = network.popupUrl.replace('{url}',
         encodeURIComponent(options.url));
@@ -92,7 +98,7 @@
     } else {
       console.error('Cant find popupUrl');
     }
-    
+
     function popItUp(url) {
       var left = Math.round(screen.width / 2 - network.popupWidth / 2);
       var top = 0;
