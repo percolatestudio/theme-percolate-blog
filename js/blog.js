@@ -27,7 +27,7 @@ jQuery(document).ready(function($) {
   }, false);
 
   // Social plugin
-  var url = window.location.href;
+  var url = $('link[rel="canonical"]').attr('href') || window.location.href;
 
   $('[data-facebook=button]').social({
     network: 'facebook',
