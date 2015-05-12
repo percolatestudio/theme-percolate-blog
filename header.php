@@ -18,7 +18,7 @@
 
 	<?php if (is_single() || is_page() ) : if ( have_posts() ) : while ( have_posts() ) : the_post();
 	  $subtitle = get_post_meta($post->ID, "subtitle_value", $single = true);
-	  if(has_post_thumbnail()) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large'); }
+	  if(has_post_thumbnail()) { $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'); }
   ?>
     <!-- If we're on a single post or page -->
     <meta name="description" content="<?php echo $subtitle; ?>" />
