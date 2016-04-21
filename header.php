@@ -93,6 +93,6 @@
       <div class="nav-group right">
         <a href="http://percolatestudio.com/careers">Join</a>
         <a href="http://blog.percolatestudio.com" class="active">Blog</a>
-        <a data-contact>Contact</a>
+        <a href="http://percolatestudio.com/#contact">Contact</a>
       </div>
     </nav>
